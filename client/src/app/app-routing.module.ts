@@ -10,6 +10,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UsersComponent } from './components/users/users.component';
 import { MentiusComponent } from './components/mentius/mentius.component';
 import { CertificadoLaboralComponent } from './components/certificado-laboral/certificado-laboral.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'gente/:page', component:UsersComponent},
   {path: 'Mentius', component:MentiusComponent},
   {path: 'certificado-laboral', component:CertificadoLaboralComponent},
+  {path: 'noticias', component:NoticiasComponent},
   {path: '**', component:ErrorComponent }
 ];
 

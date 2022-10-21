@@ -9,15 +9,16 @@ var md_auth = require('../middlewares/authenticated.js');
 var multipart = require('connect-multiparty');
 var md_upload = multipart({uploadDir: './uploads/noticias'});
 
-api.get('/home', md_auth.ensurreAuth, NoticiaController.home);
-api.post('/register', NoticiaController.saveNoticia);
-api.post('/login', NoticiaController.loginNoticia);
-api.get('/noticia/:id', md_auth.ensurreAuth, NoticiaController.getNoticia);
-api.get('/noticias', md_auth.ensurreAuth, NoticiaController.getNoticias);
-api.get('/counters/:id?', md_auth.ensurreAuth, NoticiaController.getCounters);
-api.put('/update-noticia/:id', md_auth.ensurreAuth, NoticiaController.updateNoticia);
-api.post('/upload-image-noticia/:id', [md_auth.ensurreAuth, md_upload], NoticiaController.uploadImage);
-api.get('/get-image-noticia/:imageFile', NoticiaController.getImageFile);
+api.post('/subir-noticia', NoticiaController.saveNoticia);
+api.get('/noticia/:id', NoticiaController.getNoticia);
+api.get('/noticias', NoticiaController.getNoticias);
+api.put('/update-noticia/:id', NoticiaController.updateNoticia);
+api.delete('/noticia/:id', NoticiaController.deleteNoticia);
+api.post('/upload-image-noticia/:id',[md_upload] ,NoticiaController.uploadNoticiaImage);
+api.get('/get-image-noticia/:imageFile', NoticiaController.getNoticiaImageFile);
 
+/*
+api.get('/counters/:id?', md_auth.ensurreAuth, NoticiaController.getCounters);
+*/
 
 module.exports = api;

@@ -20,6 +20,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { MentiusComponent } from './components/mentius/mentius.component';
 import { MenuComprimidoComponent } from './components/menu-comprimido/menu-comprimido.component';
 import { CertificadoLaboralComponent } from './components/certificado-laboral/certificado-laboral.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CertificadoLaboralComponent } from './components/certificado-laboral/ce
     MentiusComponent,
     MenuComprimidoComponent,
     CertificadoLaboralComponent,
+    NoticiasComponent,
   ],
   imports: [
     BrowserModule,
