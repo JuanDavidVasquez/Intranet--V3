@@ -10,8 +10,9 @@ function saveNoticia(req, res) {
   var params = req.body;
   var noticia = new Noticia();
 
-  noticia.titulo = params.titulo;
+  
   noticia.resumen = params.resumen;
+  noticia.tNoticia = params.tNoticia;
   noticia.image = null;
 
   noticia.save((err, noticiaStored) => {

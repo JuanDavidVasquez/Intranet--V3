@@ -17,8 +17,6 @@ declare var $:any;
   providers: [NoticiaService, UploadService, UserService]
 })
 export class NoticiasComponent implements OnInit {
-
-  public title:string;
   public identity;
   public token;
   public status:string;
@@ -32,10 +30,9 @@ export class NoticiasComponent implements OnInit {
     private _noticiaService:NoticiaService,
     private _userService:UserService
   ) {
-    this.title = 'Noticias';
+ 
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
-  
     this.url = GLOBAL.url;
    }
 

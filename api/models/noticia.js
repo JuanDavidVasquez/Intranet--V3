@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var NoticiaSchema = Schema ({
-    titulo:     String,
+    tNoticia:    String,
     resumen:    String,
     image:      String
 });
