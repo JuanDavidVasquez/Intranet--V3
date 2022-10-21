@@ -171,14 +171,10 @@ h1{
 
 .parallax {
   /* The image used */
-  background-image: url('../../../assets/img/parallax/parallex.jpg');
-
-  /* Set a specific height */
-  min-height: 500px; 
-
-  /* Create the parallax scrolling effect */
+  background-image: url('../../../assets/img/parallax/p1.jpg');
+  min-height: 475px;
   background-attachment: fixed;
-  background-position: center;
+  /* background-position: center; */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }

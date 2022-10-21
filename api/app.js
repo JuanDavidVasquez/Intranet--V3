@@ -11,6 +11,7 @@ const app = express();
 
 //cargar archivos rutas
 var user_routes = require('./routes/user');
+var noticia_routes = require('./routes/noticia');
 var follow_routes = require('./routes/follow');
 const follow = require('./models/follow');
 
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 
 //rutas
 app.use('/api', user_routes);
+app.use('/api', noticia_routes);
 app.use('/api', follow_routes);
 
 //exportar

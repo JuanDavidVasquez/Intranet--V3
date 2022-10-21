@@ -25,16 +25,28 @@ p{
 #firma{
     max-width: 350px;
 }
-
-.regreso{
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    left: 90%;
+.menu{
     background: #194764;
-    padding: 25px;
-    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    top: 95%;
+    width: 100%;
+}
+.regreso{
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 500ms;
+}
+.regreso a:hover{
+    background: white;
+    color: #194764;
 }
 .regreso a{
     color: white;
+    text-decoration: none;
+    padding: 15px;
 }
