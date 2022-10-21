@@ -1,0 +1,81 @@
+.footer{
+    height: 30vh;
+    padding-top: 40px;
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+img{
+    width: 20%; 
+}
+
+#procesos, p{
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: cursive;
+    text-shadow: 4px -8px 10px black;
+    transition: all 500ms;
+}
+#procesos:hover::after{
+    content: "| ' En busca de lo increible'"; 
+}
+
+.animacion::after{
+    content: "Inovar";
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: cursive;
+    text-shadow: 4px -8px 10px black;
+    transition: all 500ms;
+    animation-name: formRight;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes formRight {
+    0%{
+
+        content: "Innovar";
+    }
+    10%{
+
+        content: "Innovar";
+    }
+    20%{
+
+        content: "Crear";
+    }
+    30%{
+
+        content: "Crear";
+    }
+    40%{
+
+        content: "Diseñar";
+    }
+    50%{
+
+        content: "Diseñar";
+    }
+    60%{
+
+        content: "Eficacia";
+    }
+    70%{
+
+        content: "Eficacia";
+    }
+    80%{
+
+        content: "Automatización";
+    }
+    90%{
+        content: "Automatización";
+    }
+}

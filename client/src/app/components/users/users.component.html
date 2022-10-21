@@ -1,0 +1,21 @@
+<div class="col-lg-8">
+    <h1 class="h1-strong">
+        {{title}}
+    </h1>
+
+    <div class="people">
+        <div *ngFor="let user of users" class="item-user">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="user_name pull-letf">
+                        <div *ngIf="user.image" class="image_user pull-left">
+                            <img src="{{ url+'get-image-user/'+ user.image }}" class="img-avatar"/>
+                        </div>
+                        <a href="#"> {{ user.name + ' ' + user.surname }}</a>
+                        <p>{{ user.nick }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

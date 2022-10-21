@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col" id="logos">
+                <img src="../../../assets/img/logotopo slogan R Arriba.png" id="logo" />
+            </div>
+        </div>
+        <div class="row">
+            <h3>Bogotá D.C, (fecha)</h3>
+        </div>
+        <div class="row">
+            <h2>CERTIFICACIÓN LABORAL</h2>
+            <p>
+                El Señor {{ user.name }} {{ user.surname }} {{ user.surname2 }}  
+                identificado con CC N° {{ user.cedula }} labora para esta compañía desde
+                el día {{ user.fechaIngreso }} hasta el día {{ user.fechaRetiro }}
+                con un contrato indefinido desempeñando el cargo de {{ user.cargo }} con una asignación
+                básica mensual de {{ user.salario }}.
+            </p>
+        </div>
+        <div class="row">
+            <img src="../../../assets/img/firmas/tatiana.png" id="firma"/>
+            <p>
+                TATIANA SOFÍA CÁCERES PINZÓN <br>
+                DIRECTORA DE RECURSOS HUMANOS 
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="regreso">
+    <a [routerLink]="['/Mentius']">
+        Regresar
+    </a>
+</div>

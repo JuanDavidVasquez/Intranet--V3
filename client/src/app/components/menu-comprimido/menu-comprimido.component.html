@@ -1,0 +1,49 @@
+<h1>
+    <span *ngIf="certificado">Certificado </span>
+    <span *ngIf="desprendible">Desprendible</span>
+    <span *ngIf="vacaciones">Vacaciones  </span>
+    <span *ngIf="incapacidad">Incapacidad </span>
+    <span *ngIf="cv">C.V.</span>
+    <span *ngIf="organigrama">Organigrama </span>
+</h1>
+
+<nav class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+    <label class="menu-open-button" for="menu-open">
+     <span class="lines line-1"></span>
+     <span class="lines line-2"></span>
+     <span class="lines line-3"></span>
+   </label>
+    <a [routerLink]="['/certificado-laboral']" class="menu-item blue"
+    (mouseover)="certificado=true" (mouseout)="certificado=false"
+    > <i class="fa fa-anchor">
+        <img src="../../../assets/img/menuComprimido/certificado.png"
+        alt="Certificados" 
+        />
+    </i> </a>
+    <a [routerLink]="['/desprendibles-nomina']" class="menu-item green"
+    (mouseover)="desprendible=true" (mouseout)="desprendible=false"
+    > <i class="fa fa-coffee">
+        <img src="../../../assets/img/menuComprimido/pago.png"/>
+    </i> </a>
+    <a href="#" class="menu-item red"
+    (mouseover)="vacaciones=true" (mouseout)="vacaciones=false"
+    > <i class="fa fa-heart">
+        <img src="../../../assets/img/menuComprimido/vacaciones.png"/>
+    </i> </a>
+    <a href="#" class="menu-item purple"
+    (mouseover)="incapacidad=true" (mouseout)="incapacidad=false"
+    > <i class="fa fa-microphone">
+        <img src="../../../assets/img/menuComprimido/incapacidad.png"/>
+    </i></a>
+    <a href="#" class="menu-item orange"
+    (mouseover)="cv=true" (mouseout)="cv=false"
+    > <i class="fa fa-star">
+        <img src="../../../assets/img/menuComprimido/cv.png"/>
+    </i> </a>
+    <a [routerLink]="['/organigrama']" class="menu-item lightblue"
+    (mouseover)="organigrama=true" (mouseout)="organigrama=false"
+    > <i class="fa fa-diamond">
+        <img src="../../../assets/img/m1.png"/>
+    </i> </a>
+ </nav>

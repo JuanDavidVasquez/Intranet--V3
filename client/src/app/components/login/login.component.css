@@ -1,0 +1,251 @@
+.container-fluid{
+    background: url('../../../assets/img/login/fondo.png');
+    height: 100vh;
+}
+.container{
+    position: relative;
+    top: 24%;
+}
+.general{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo{
+    line-height: 116px;
+    letter-spacing: 5px;
+    font-size: 111px;
+    color: white;
+}
+#tituloC{
+color: #E6A436;
+}
+
+/*-- Login --*/
+
+#imgLogin{
+    
+}
+
+.login{
+    min-height: 600px;
+    max-width: 400px;
+    border-radius: 39px;
+    display: block;
+    background: #ffffffa6;
+    background: url('../../../assets/img/login/login.png');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+#imgLogin{
+    max-width: 90%;
+    max-height: 100px;
+}
+
+form{
+    display: block;
+    margin-top: 50px;
+}
+.li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    padding: 25px;
+}
+label{
+    width: 55px;
+    height: 55px;
+    padding: 5px;
+    margin: 5px;
+    background: #ffffff3b;
+    border-radius: 15px;
+    border: 1px solid transparent;
+}
+input{
+    width: 90%;
+    height: 55px;
+    background: #ffffff3b;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    outline: 0;
+}
+
+
+label img{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+input[type='submit']{
+    background-color: transparent !important;
+    color: white;
+    margin-top: 10px;
+}
+
+input[type='text']:focus  
+{
+    background-color: #fff;
+    color: #444;
+    outline-offset: 4px;
+    transition: all 500ms;
+}
+input[type='text']:-moz-focus-outer  
+{
+    color: #ccc;
+    outline-offset: 4px;
+    transition: all 500ms;
+}
+
+/*
+input[type='submit']{
+width: 90%;
+height: 55px;
+background: #ffffff3b;
+border-radius: 5px;
+border: 1px solid #fff;
+transition: all 500ms;
+}
+input[type='submit']:hover{
+    width: 90%;
+    height: 55px;
+    background: #ffffff3b;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    box-shadow: 4px 3px 8px 1px black;
+    transform: translate(7px, -10px);
+    background: #18A5B2;
+    border: 1px solid transparent;
+    color: white;
+}
+*/
+  /*-- Botones --*/
+
+  .centerer {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 10px;
+    margin-bottom: 14px;
+  }
+  .wrap{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .wrap a{
+    text-decoration: none;
+    color:  white;
+  }
+  .wrap > .btn-6 > a{
+    line-height: 65px;
+  }
+  @media (min-width: 600px) {
+  
+  }
+  [class^=btn-] {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 75px;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    z-index: 9999;
+  }
+  
+  .btn-6 {
+    color: #18A5B2;
+    text-align: center;
+    z-index: 1;
+    border-radius: 15px;
+    
+  }
+  .btn-6 .botones {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #18A5B2;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .btn-6:hover {
+    color: #dfc3e1;
+  }
+  .btn-6:hover .botones {
+    width: 225%;
+    height: 562.5px;
+  }
+  .btn-6:active {
+    background-color: #7e0e88;
+  }
+  @-webkit-keyframes criss-cross-left {
+    0% {
+      left: -20px;
+    }
+    50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      left: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+  
+  @keyframes criss-cross-left {
+    0% {
+      left: -20px;
+    }
+    50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      left: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+  @-webkit-keyframes criss-cross-right {
+    0% {
+      right: -20px;
+    }
+    50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      right: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+  @keyframes criss-cross-right {
+    0% {
+      right: -20px;
+    }
+    50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      right: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+  
