@@ -53,7 +53,7 @@
 }
 
 p{
-    position: relative;
+    position: absolute;
     color: white;
     top: 75%;
     left: 15%;

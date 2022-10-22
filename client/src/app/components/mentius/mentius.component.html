@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="container">
         <nav>
-            <ul>
+            <ul>          
                 <li>
                     <a [routerLink]="['/ti']">T.I</a>
                 </li>
@@ -17,18 +17,24 @@
                 <li>
                     <a [routerLink]="['/comercial']">Comercial</a>
                 </li>
+                <li>
+                    <a class="pointer" (click)="logout()">
+                        {{identity.name}}
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    </a>
+                </li>
             </ul>            
         </nav>
         <div class="row">
             <div class="col-6 sombreado">
                 <h1 id="mentius">Intranet<br>
                     <span id="titulo"> Men<span id="blanco">tius</span></span></h1>
-          <p>
-            Procesos amigables<br>
-            <button class="boton" (click)="noticias()">
-                Noticias
-            </button>
-        </p>
+            <p class="noticias">
+                Procesos amigables<br>
+                <button class="boton" (click)="noticias()">
+                    Noticias
+                </button>
+            </p>
                 </div>
             <div class="col-6">
 
