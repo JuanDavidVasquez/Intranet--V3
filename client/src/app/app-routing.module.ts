@@ -11,6 +11,7 @@ import { UsersComponent } from './components/users/users.component';
 import { MentiusComponent } from './components/mentius/mentius.component';
 import { CertificadoLaboralComponent } from './components/certificado-laboral/certificado-laboral.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
+import { RegisterNoticiaComponent } from './components/register-noticia/register-noticia.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'Mentius', component:MentiusComponent},
   {path: 'certificado-laboral', component:CertificadoLaboralComponent},
   {path: 'noticias', component:NoticiasComponent},
+  {path: 'register-noticia', component:RegisterNoticiaComponent},
   {path: '**', component:ErrorComponent }
 ];
 
