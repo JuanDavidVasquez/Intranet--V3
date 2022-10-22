@@ -22,6 +22,7 @@ import { MenuComprimidoComponent } from './components/menu-comprimido/menu-compr
 import { CertificadoLaboralComponent } from './components/certificado-laboral/certificado-laboral.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { RegisterNoticiaComponent } from './components/register-noticia/register-noticia.component';
+import { MenusComponent } from './components/menus/menus.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { RegisterNoticiaComponent } from './components/register-noticia/register
     CertificadoLaboralComponent,
     NoticiasComponent,
     RegisterNoticiaComponent,
+    MenusComponent,
   ],
   imports: [
     BrowserModule,

@@ -97,7 +97,7 @@ export class LoginComponent implements OnInit{
 			response => {
 				localStorage.setItem('stats', JSON.stringify(response));
 				this.status = 'success';
-				this._router.navigate(['/Mentius']);
+				this._router.navigate(['/noticias']);
 			},
 			error => {
 				console.log(<any>error);

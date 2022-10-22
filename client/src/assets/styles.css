@@ -9,5 +9,9 @@
 }
 
 .active{
-    background: #cc1717;
+    background: #34a5b28b;
+}
+
+.pointer{
+    cursor: pointer;
 }
