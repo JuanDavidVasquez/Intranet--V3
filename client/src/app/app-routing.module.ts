@@ -12,6 +12,8 @@ import { MentiusComponent } from './components/mentius/mentius.component';
 import { CertificadoLaboralComponent } from './components/certificado-laboral/certificado-laboral.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { RegisterNoticiaComponent } from './components/register-noticia/register-noticia.component';
+import { CargarImagenDeNoticiaComponent } from './components/cargar-imagen-de-noticia/cargar-imagen-de-noticia.component';
+import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,9 @@ const routes: Routes = [
   {path: 'certificado-laboral', component:CertificadoLaboralComponent},
   {path: 'noticias', component:NoticiasComponent},
   {path: 'register-noticia', component:RegisterNoticiaComponent},
+  {path: 'cargar-imagen-noticia/:id', component:CargarImagenDeNoticiaComponent},
+  {path: 'cargar-imagen-noticia', component:CargarImagenDeNoticiaComponent},
+  {path: 'dashboard-noticias', component:EditNoticiaComponent},
   {path: '**', component:ErrorComponent }
 ];
 

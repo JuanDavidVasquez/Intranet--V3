@@ -1,0 +1,12 @@
+<div class="container">
+	<h2>Noticias</h2>
+
+	<ul>
+		<li *ngFor="let noticia of noticias" class="noticia">
+			<a [routerLink]="['/cargar-imagen-noticia', noticia._id]">
+				<h3>{{noticia.tNoticia}}</h3>
+				<p>{{noticia.resumen}}</p>
+			</a>
+		</li>
+	</ul>
+</div>

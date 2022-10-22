@@ -23,6 +23,8 @@ import { CertificadoLaboralComponent } from './components/certificado-laboral/ce
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { RegisterNoticiaComponent } from './components/register-noticia/register-noticia.component';
 import { MenusComponent } from './components/menus/menus.component';
+import { CargarImagenDeNoticiaComponent } from './components/cargar-imagen-de-noticia/cargar-imagen-de-noticia.component';
+import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { MenusComponent } from './components/menus/menus.component';
     NoticiasComponent,
     RegisterNoticiaComponent,
     MenusComponent,
+    CargarImagenDeNoticiaComponent,
+    EditNoticiaComponent,
   ],
   imports: [
     BrowserModule,
