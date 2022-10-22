@@ -1,3 +1,7 @@
+.row{
+    height: 100vh;
+}
+
 #carouselExampleIndicators .carousel-item img{
     height: 50vh;
     box-shadow: 0px 0px 20px 2px black;
@@ -11,16 +15,19 @@
 
 #noticiasF{
     background-image: url(../../../assets/img/noticias/fontdoNoticia1.jpg);
+    background-position: center;
 }
 .container-fluid{
     background-image: url(../../../assets/img/noticias/fondonoticias.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .noticia{
     opacity: 35%;
     min-width: 300px;
     min-height: 300px;
     background-color: #ccc;
-    margin: 15px;
+    margin: 0px;
     transition: all 500ms
 }
 .noticia:hover{
@@ -83,6 +90,12 @@ h4{
 .carousel-control-next{
     width: 53% !important;
 }
+
+.imagen-noticia{
+    width: 100%;
+    height: 211px;
+}
+
 
 @keyframes animationNoticias{
     0%{
