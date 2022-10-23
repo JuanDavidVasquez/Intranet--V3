@@ -41,7 +41,6 @@ export class NoticiasComponent implements OnInit {
                   .css('background-position','bottom');
 
      this.getNoticias();
-     console.log(this.getNoticias);
   }
   getNoticias(){
     this._noticiaService.getNoticias().subscribe(

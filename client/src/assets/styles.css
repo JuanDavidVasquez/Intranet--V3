@@ -10,7 +10,14 @@
 
 .active{
     background: #34a5b28b;
+    color: white;
 }
+
+.active span,
+.active a{
+    color: white;
+}
+
 
 .pointer{
     cursor: pointer;
