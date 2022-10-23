@@ -4,7 +4,7 @@
         <h1 class="h1-strong p-5">
             {{ title }}
         </h1>
-        
+
         <div class="alert alert-success" *ngIf="status == 'success'">
             Se han actualizado tus datos correctamente!!
         </div>
@@ -43,4 +43,9 @@
     <h1>
         {{noticia.tNoticia}}
     </h1>
+    <div class="regresar">
+        <a [routerLink]="['/dashboard-noticias']">
+            Regresar
+        </a>
+    </div>
 </div>

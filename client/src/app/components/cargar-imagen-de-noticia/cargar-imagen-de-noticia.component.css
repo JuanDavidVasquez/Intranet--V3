@@ -1,9 +1,26 @@
+.container-fluid{
+    background-image: url(../../../assets/img/noticias/fontdoNoticia1.jpg);
+    background-repeat: space;
+    height: 100vh;
+}
 .formulario{
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 30%;
+    background-image: url(../../../assets/img/noticias/fontdoNoticia1.jpg);
 }
-
 div img{
     max-width: 400px;
+}
+.regresar a{
+    font-size: 27px;
+    transition: all 500ms;
+}
+
+.regresar a:hover{
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    transform: translate(10px, -10px);
+    box-shadow: -4px 4px 9px 0px black;
 }

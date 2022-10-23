@@ -1,0 +1,13 @@
+h2{
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+div img{
+    max-width:-webkit-fill-available;
+}
+
+p{
+    height: 105px;
+    overflow:auto;
+}
