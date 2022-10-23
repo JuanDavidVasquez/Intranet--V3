@@ -1,4 +1,4 @@
-<div class="col-lg-5">
+<div class="col-lg-5"  *ngIf="identity.cargo == 'admin'">
     <h1 class="h1-strong">{{ title }}</h1>
 
     <div class="alert alert-success" *ngIf="status == 'success'">

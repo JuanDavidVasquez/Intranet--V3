@@ -25,6 +25,7 @@ export class MenusComponent implements OnInit {
 
   ngOnInit(){
   	this.identity = this._userService.getIdentity();
+    console.log(this.identity);
   }
 
   ngDoCheck(){
