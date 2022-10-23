@@ -26,7 +26,7 @@ export class CargarImagenDeNoticiaComponent implements OnInit {
 		private _noticiaService: NoticiaService,
 		private _uploadService: UploadService
 	){
-		this.title = 'Actualizar mis datos';
+		this.title = 'Actualizar noticia';
 		this.url = GLOBAL.url;
 	}
 

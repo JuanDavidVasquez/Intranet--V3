@@ -1,43 +1,46 @@
-<div class="col-lg-5">
-    <h1 class="h1-strong">
-        {{ title }}
+<div class="container-fluid">
+    <div class="col-lg-5 formulario">
+        
+        <h1 class="h1-strong p-5">
+            {{ title }}
+        </h1>
+        
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Se han actualizado tus datos correctamente!!
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            no se han actualizado tus datos.
+        </div>
+
+        <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+
+            <p>
+                <label>Titulo de noticia</label>
+                <input type="text" name="tNoticia" #tNoticia="ngModel" [(ngModel)]="noticia.tNoticia" required
+                    class="form-control" />
+                <span *ngIf="!tNoticia.value && tNoticia.touched">
+                    El titulo es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>Contenido de noticia</label>
+                <input type="text" name="resumen" #resumen="ngModel" [(ngModel)]="noticia.resumen" required
+                    class="form-control" />
+                <span *ngIf="!resumen.value && resumen.touched">
+                    El resumen es obligatorio
+                </span>
+            </p>
+            <div *ngIf="noticia.image">
+                <img src="{{ url+'get-image-noticia/'+ noticia.image }}" />
+            </div>
+            <p>
+                <label>Imagen de noticia</label>
+                <input type="file" placeholder="Subir imágen" (change)="fileChangeEvent($event)" />
+            </p>
+            <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid" />
+        </form>
+    </div>
+    <h1>
+        {{noticia.tNoticia}}
     </h1>
-
-    <div class="alert alert-success" *ngIf="status == 'success'">
-        Se han actualizado tus datos correctamente!!
-    </div>
-    <div class="alert alert-danger" *ngIf="status == 'error'">
-        no se han actualizado tus datos.
-    </div>
-
-    <form #userEditForm="ngForm" (ngSubmit)="onSubmit()"
-    class="col-lg-12"
-    >
-
-    <p>
-        <label>Titulo de noticia</label>
-        <input type="text" name="tNoticia" #tNoticia="ngModel" [(ngModel)]="noticia.tNoticia" required class="form-control"/>
-        <span *ngIf="!tNoticia.value && tNoticia.touched">
-            El titulo es obligatorio
-        </span>
-    </p>
-    <p>
-        <label>Contenido de noticia</label>
-        <input type="text" name="resumen" #resumen="ngModel" [(ngModel)]="noticia.resumen" required class="form-control"/>
-        <span *ngIf="!resumen.value && resumen.touched">
-            El resumen es obligatorio
-        </span>
-    </p>
-    <div *ngIf="noticia.image">
-        <img src="{{ url+'get-image-noticia/'+ noticia.image }}"/>
-    </div>
-    <p>
-        <label>Imagen de noticia</label>
-        <input type="file" placeholder="Subir imágen" (change)="fileChangeEvent($event)"/>
-    </p>
-    <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid"/>
-    </form>
 </div>
-<h1>
-    {{noticia.tNoticia}}
-</h1>
