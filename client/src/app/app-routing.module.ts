@@ -14,6 +14,8 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { RegisterNoticiaComponent } from './components/register-noticia/register-noticia.component';
 import { CargarImagenDeNoticiaComponent } from './components/cargar-imagen-de-noticia/cargar-imagen-de-noticia.component';
 import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.component';
+import { RrhhComponent } from './components/rrhh/rrhh.component';
+import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path: 'cargar-imagen-noticia/:id', component:CargarImagenDeNoticiaComponent},
   {path: 'cargar-imagen-noticia', component:CargarImagenDeNoticiaComponent},
   {path: 'dashboard-noticias', component:EditNoticiaComponent},
+  {path: 'recursos-humanos', component:RrhhComponent},
+  {path: 'reclutamiento', component:ReclutamientoComponent},
   {path: '**', component:ErrorComponent }
 ];
 

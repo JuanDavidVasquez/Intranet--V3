@@ -25,6 +25,8 @@ import { RegisterNoticiaComponent } from './components/register-noticia/register
 import { MenusComponent } from './components/menus/menus.component';
 import { CargarImagenDeNoticiaComponent } from './components/cargar-imagen-de-noticia/cargar-imagen-de-noticia.component';
 import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.component';
+import { RrhhComponent } from './components/rrhh/rrhh.component';
+import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.com
     MenusComponent,
     CargarImagenDeNoticiaComponent,
     EditNoticiaComponent,
+    RrhhComponent,
+    ReclutamientoComponent,
   ],
   imports: [
     BrowserModule,

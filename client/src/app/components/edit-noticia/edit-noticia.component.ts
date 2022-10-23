@@ -3,7 +3,7 @@ import { Noticia } from 'src/app/models/noticia';
 import { NoticiaService } from 'src/app/service/noticia.service';
 import { GLOBAL } from 'src/app/service/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
+declare var $:any;
 
 @Component({
   selector: 'app-edit-noticia',
@@ -24,6 +24,8 @@ export class EditNoticiaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNoticias();
+    $('.footer').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
+    .css('background-position','bottom');
   }
 
   getNoticias(){
