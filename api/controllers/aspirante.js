@@ -100,29 +100,41 @@ function saveAspirante(req, res) {
 		if(err) return res.status(500).send({message: 'Error al devolver los datos'});
 		if(!aspirantes) return res.status(404).send({message: 'No exisen usuarios para mostrar'});
 
-		/*
-		followAspiranteIds(identity_user_id).then((value) => {
-			
-			return res.status(200).send({
-				users,
-				users_following: value.following,
-				users_follow_me: value.followed,
-			});
-			});
-		*/
 		return res.status(200).send({
 			aspirantes
 		});
-		
-		
-
-	/* 	return res.status(200).send({
-			aspirantes
-		}); */
 	});
 }
+
+function updateAspirante(req, res) {
+    var aspiranteId = req.params.id;
+    var update = req.body;
+  
+    Aspirante.findByIdAndUpdate(
+      aspiranteId,
+      update,
+      { new: true },
+      (err, aspiranteUpdated) => {
+        if (err)
+          return res
+            .status(500)
+            .send({ message: "Error al actualizar los datos" });
+        if (!aspiranteUpdated)
+          return res.status(404).send({ message: "No existe el aspirante" });
+  
+        return res.status(200).send({
+          aspirante: aspiranteUpdated,
+        });
+      }
+    );
+  }
+
+
+
+
   module.exports = {
     test,
     saveAspirante,
-    getAspirantes
+    getAspirantes,
+    updateAspirante
 }
