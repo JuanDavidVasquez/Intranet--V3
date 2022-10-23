@@ -54,8 +54,7 @@ function saveAspirante(req, res) {
   
       Aspirante.find({
         $or: [
-          { email: aspirante.email.toLowerCase() },
-          { nick: aspirante.nick.toLowerCase() },
+          { email: aspirante.email.toLowerCase() }
         ],
       }).exec((err, aspirantes) => {
         if (err)
@@ -93,8 +92,37 @@ function saveAspirante(req, res) {
     }
   }
 
+  function getAspirantes(req,res){
 
+	var identity_user_id = req.user.sub;
+
+	Aspirante.find().sort('_id').exec((err,aspirantes)=>{
+		if(err) return res.status(500).send({message: 'Error al devolver los datos'});
+		if(!aspirantes) return res.status(404).send({message: 'No exisen usuarios para mostrar'});
+
+		/*
+		followAspiranteIds(identity_user_id).then((value) => {
+			
+			return res.status(200).send({
+				users,
+				users_following: value.following,
+				users_follow_me: value.followed,
+			});
+			});
+		*/
+		return res.status(200).send({
+			aspirantes
+		});
+		
+		
+
+	/* 	return res.status(200).send({
+			aspirantes
+		}); */
+	});
+}
   module.exports = {
     test,
-    saveAspirante
+    saveAspirante,
+    getAspirantes
 }

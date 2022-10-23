@@ -11,7 +11,7 @@ var md_upload = multipart({uploadDir: './uploads/users'});
 
 api.get('/test', AspiranteController.test);
 api.post('/register-aspirante', md_auth.ensurreAuth, AspiranteController.saveAspirante);
-
+api.get('/aspirantes', md_auth.ensurreAuth, AspiranteController.getAspirantes);
 
 /*
 api.get('/aspirante/:id', md_auth.ensurreAuth, AspiranteController.getAspirante);
