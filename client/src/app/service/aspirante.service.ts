@@ -42,10 +42,11 @@ export class AspiranteService{
 		return this._http.put(this.url+'update-aspirante/'+aspirante._id, params, {headers: headers});
 	}
 
-	getAspirantes():Observable<any>{
-		let headers = new HttpHeaders().set('Content-Type','application/json');
-
+	getAspirantes(token:string):Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type','application/json')
+							           .set('Authorization', token);
 		return this._http.get(this.url+'aspirantes/', {headers: headers});
+						
 	}
 
 	getAspirante(id: string):Observable<any>{

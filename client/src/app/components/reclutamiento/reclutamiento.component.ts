@@ -44,12 +44,13 @@ export class ReclutamientoComponent implements OnInit {
 	console.log(this.identity);
 }
   getAspirantes(token){
-		this._aspiranteService.getAspirantes().subscribe(
+		this._aspiranteService.getAspirantes(token).subscribe(
 			response => {
 				if(!response.aspirantes){
 					this.status = 'error';
 				}else{
 					this.aspirantes = response.aspirantes;
+					this.token = response.token;
 				}
 			},
 			error => {
