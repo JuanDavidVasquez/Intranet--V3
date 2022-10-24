@@ -1,1 +1,16 @@
-<p>reclutamiento works!</p>
+<app-menus></app-menus>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 aspirante" *ngFor="let aspirante of aspirantes">
+                <h4>{{ aspirante.name }}</h4>
+                <span class="Ncontenido">
+                    {{ aspirante.surname }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
