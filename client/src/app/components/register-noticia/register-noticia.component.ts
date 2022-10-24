@@ -40,6 +40,7 @@ export class RegisterNoticiaComponent implements OnInit {
         if(response.noticia){
           this.status = 'success';
           form.reset();
+          this._router.navigate(['/dashboard-noticias']);
         }else{
           this.status = 'error';
         }
@@ -53,11 +54,5 @@ export class RegisterNoticiaComponent implements OnInit {
 
   ngDoCheck(){
   	this.identity = this._userService.getIdentity();
-  }
-
-  logout(){
-    localStorage.clear();
-    this.identity = null;
-    this._router.navigate(['/']);
   }
 }

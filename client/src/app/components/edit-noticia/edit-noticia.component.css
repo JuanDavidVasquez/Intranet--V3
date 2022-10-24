@@ -2,12 +2,18 @@ h2{
     padding: 15px;
     margin-bottom: 25px;
 }
-
 div img{
-    max-width:-webkit-fill-available;
+    width:400px;
+    height: 250px;
 }
-
 p{
     height: 105px;
     overflow:auto;
+}
+.new{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    font-size: 17px;
 }
