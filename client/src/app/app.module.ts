@@ -27,6 +27,7 @@ import { CargarImagenDeNoticiaComponent } from './components/cargar-imagen-de-no
 import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.component';
 import { RrhhComponent } from './components/rrhh/rrhh.component';
 import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
+import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento
     EditNoticiaComponent,
     RrhhComponent,
     ReclutamientoComponent,
+    RegisterAspiranteComponent,
   ],
   imports: [
     BrowserModule,

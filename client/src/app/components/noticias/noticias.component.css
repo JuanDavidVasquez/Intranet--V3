@@ -13,15 +13,6 @@
     text-align: -webkit-center;
 }
 
-#noticiasF{
-    background-image: url(../../../assets/img/noticias/fontdoNoticia1.jpg);
-    background-position: center;
-}
-.container-fluid{
-    background-image: url(../../../assets/img/noticias/fondonoticias.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
 .noticia{
     opacity: 35%;
     min-width: 300px;

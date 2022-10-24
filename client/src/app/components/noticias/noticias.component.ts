@@ -37,8 +37,8 @@ export class NoticiasComponent implements OnInit {
    }
 
   ngOnInit(): void {
-     $('.footer').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
-                  .css('background-position','bottom');
+       $('body').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
+      .css('background-repeat','no-repeat');
 
      this.getNoticias();
   }

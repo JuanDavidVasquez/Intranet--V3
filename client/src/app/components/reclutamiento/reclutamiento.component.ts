@@ -36,8 +36,8 @@ export class ReclutamientoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-	$('.footer').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
-	.css('background-position','bottom');
+	$('body').css('background','url(../../../assets/img/rrhh/fondorrhh.jpg)')
+				.css('background-repeat','no-repeat');
 
 	this.getAspirantes(this.token);
 	console.log(this.token+' token de reclutamiento');

@@ -39,6 +39,11 @@
                         <td>{{aspirante.psicologa}}</td>
                         <td>{{aspirante.numeroLlamada}}</td>
                         <td>{{aspirante.interaccion}}</td>
+                        <td>
+                          <a [routerLink]="['/cargar-imagen-noticia', aspirante._id]">
+                            Editar
+                          </a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
