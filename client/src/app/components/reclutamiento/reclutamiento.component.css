@@ -1,6 +1,11 @@
 .container-fluid{
     background: url(../../../assets/img/rrhh/fondorrhh.jpg);
 }
+.tablas{
+    display: flex;
+    justify-content: center;
+    min-height: 62.3vh;
+}
 h1{
     color: #f4feff;
     font-size: 45px;
@@ -31,7 +36,7 @@ h1{
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -117,4 +122,8 @@ label{
 
 .radibuttons{
     display: flexbox;
+}
+td, th {
+    padding: 0;
+    min-width: 125px;
 }
