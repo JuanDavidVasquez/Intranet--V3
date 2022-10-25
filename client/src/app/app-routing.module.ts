@@ -16,6 +16,7 @@ import { CargarImagenDeNoticiaComponent } from './components/cargar-imagen-de-no
 import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.component';
 import { RrhhComponent } from './components/rrhh/rrhh.component';
 import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
+import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'dashboard-noticias', component:EditNoticiaComponent},
   {path: 'recursos-humanos', component:RrhhComponent},
   {path: 'reclutamiento', component:ReclutamientoComponent},
+  {path: 'registro-de-aspirante', component:RegisterAspiranteComponent},
   {path: '**', component:ErrorComponent }
 ];
 
