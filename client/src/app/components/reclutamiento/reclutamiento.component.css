@@ -134,6 +134,7 @@ td, th {
 thead{
     background: #00000094;
     color: #337ab7;
+    font-size: 16px;
 }
 .registro{
     position: absolute;
@@ -151,4 +152,8 @@ thead{
     transition: all 700ms;
     transform: translate(10px, -10px);
     color: white;
+}
+
+.aspirante{
+    margin-top: 25px;
 }

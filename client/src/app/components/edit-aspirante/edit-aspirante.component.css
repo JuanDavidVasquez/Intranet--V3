@@ -19,3 +19,16 @@ input[type='submit']:hover{
     color: white;
     padding: 25px;
 }
+.regresar a{
+    font-size: 27px;
+    margin-left: 15px;
+    transition: all 500ms;
+}
+
+.regresar a:hover{
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    transform: translate(10px, -10px);
+    box-shadow: -4px 4px 9px 0px black;
+}

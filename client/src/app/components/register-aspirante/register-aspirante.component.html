@@ -120,7 +120,7 @@
                         <p>
                             <label>Fecha de entrevista</label>
                             <input type="date" name="fechaEntrevista" #fechaEntrevista="ngModel"
-                                [(ngModel)]="aspirante.fechaEntrevista" class="form-control" required>
+                                [(ngModel)]="aspirante.fechaEntrevista" class="form-control" required value="string | number | Date">
 
                             <span *ngIf="!fechaEntrevista.valid && fechaEntrevista.touched">
                                 La fecha de entrevista es obligatoria
