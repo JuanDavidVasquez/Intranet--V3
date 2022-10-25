@@ -107,15 +107,6 @@ input:focus>.label{
 .seleccion1,.seleccion2{
     width: 100%;
 }
-.table-striped>tbody>tr:nth-of-type(odd){
-    background-color: rgba(255, 255, 255, 0.452);
-}
-mat-label{
-    color: white;
-}
-label{
-    color: white;
-}
 
 #reclutador{
     font-size: 35px;
@@ -156,4 +147,17 @@ thead{
 
 .aspirante{
     margin-top: 25px;
+}
+tr{
+    background: #4eadba52  !important;
+    color: black;
+}
+tr:hover{
+    background: #000 !important;
+    color: white;
+}
+
+.cabecera{
+    color: #337ab7;
+    background: #00000082 !important;
 }
