@@ -52,7 +52,7 @@ function saveUser(req, res) {
     User.find({
       $or: [
         { email: user.email.toLowerCase() },
-        { nick: user.nick.toLowerCase() },
+        { cedula: user.cedula.toLowerCase() },
       ],
     }).exec((err, users) => {
       if (err)
