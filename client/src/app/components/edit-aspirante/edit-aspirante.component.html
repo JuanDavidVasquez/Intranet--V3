@@ -17,7 +17,7 @@
             Registro no se ha realizado.
         </div>
         <div class="container">
-            <form #registerAspiranteForm="ngForm" (ngSubmit)="onSubmit(registerAspiranteForm)">
+            <form #editAspiranteForm="ngForm" (ngSubmit)="onSubmit()">
                 <p>
                     <label>User</label>
                     <input type="text" name="user"
@@ -160,7 +160,7 @@
                 </p>
 
                 <input type="submit" value="{{ title }}" class="btn btn-succes"
-                    [disabled]="!registerAspiranteForm.form.valid" />
+                    [disabled]="!editAspiranteForm.form.valid" />
             </form>
         </div>
     </div>

@@ -7,6 +7,7 @@ import { Aspirante } from "../models/aspirante";
 @Injectable()
 export class AspiranteService{
 	public url:string;
+	public aspiranteid;
 	public identity;
 	public token;
 	public stats;
@@ -15,11 +16,13 @@ export class AspiranteService{
 		this.url = GLOBAL.url;
 	}
 
-	saveAspirante(aspirante: Aspirante): Observable<any>{
+	saveAspirante(aspirante: Aspirante,token): Observable<any>{
 		let params = JSON.stringify(aspirante);
-		let headers = new HttpHeaders().set('Content-Type', 'application/json');
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+		.set('Authorization', token);
+							         
 
-		return this._http.post(this.url+'subir-aspirante', params, {headers:headers});
+		return this._http.post(this.url+'register-aspirante', params, {headers:headers});
 	}
 
 
@@ -35,9 +38,11 @@ export class AspiranteService{
 		return this.stats;
 	}
 
-	updateAspirante(aspirante: Aspirante):Observable<any>{
+	updateAspirante(aspirante: Aspirante,token):Observable<any>{
 		let params = JSON.stringify(aspirante);
-		let headers = new HttpHeaders().set('Content-Type','application/json');
+		let headers = new HttpHeaders().set('Content-Type','application/json')
+		.set('Authorization', token);
+									   
 
 		return this._http.put(this.url+'update-aspirante/'+aspirante._id, params, {headers: headers});
 	}
@@ -49,8 +54,9 @@ export class AspiranteService{
 						
 	}
 
-	getAspirante(id: string):Observable<any>{
-		let headers = new HttpHeaders().set('Content-Type','application/json');
+	getAspirante(id: string,token):Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type','application/json')
+									   .set('Authorization', token);
 
 		return this._http.get(this.url+'aspirante/'+id, {headers: headers});
 	}
@@ -64,6 +70,17 @@ export class AspiranteService{
 		}
 
 		return this.identity;
+	}
+	getAspiranteid(){
+		let aspiranteid = JSON.parse(localStorage.getItem('aspiranteid'));
+
+		if(aspiranteid != "undefined"){
+			this.aspiranteid = aspiranteid;
+		}else{
+			this.aspiranteid = null;
+		}
+
+		return this.aspiranteid;
 	}
 
 	getToken(){

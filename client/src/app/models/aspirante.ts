@@ -6,8 +6,6 @@ export class Aspirante {
     public surname: String,
     public surname2: String,
     public email: String,
-    public password: String,
-    public rol: String,
     public fuenteReclutamiento: String,
     public cedula: String,
     public cargo: String,

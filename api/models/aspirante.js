@@ -9,8 +9,6 @@ var AspiranteSchema = Schema ({
     surname:               String,
     surname2:              String,
     email:                 String,
-    password:              String,
-    rol:                   String,
     fuenteReclutamiento:   String,
     cedula:                String,
     cargo:                 String,

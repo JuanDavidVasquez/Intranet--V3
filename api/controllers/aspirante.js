@@ -24,9 +24,7 @@ function saveAspirante(req, res) {
     aspirante.name = params.name;
     aspirante.surname = params.surname;
     aspirante.surname2 = params.surname2;
-    aspirante.nick = params.nick;
     aspirante.email = params.email;
-    aspirante.role = "ROLE_Aspirante";
     aspirante.cedula = params.cedula;
     aspirante.fuenteReclutamiento = params.fuenteReclutamiento;
     aspirante.cargo = params.cargo;
@@ -42,7 +40,7 @@ function saveAspirante(req, res) {
 
 //Aspirantes duplicados controll
     Aspirante.find({
-      $or: [{ email: aspirante.email.toLowerCase() }],
+      $or: [{ cedula: aspirante.cedula.toLowerCase() }],
     }).exec((err, aspirantes) => {
       if (err)
         return res

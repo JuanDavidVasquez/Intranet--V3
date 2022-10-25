@@ -17,6 +17,7 @@ import { EditNoticiaComponent } from './components/edit-noticia/edit-noticia.com
 import { RrhhComponent } from './components/rrhh/rrhh.component';
 import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
 import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
+import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,8 @@ const routes: Routes = [
   {path: 'recursos-humanos', component:RrhhComponent},
   {path: 'reclutamiento', component:ReclutamientoComponent},
   {path: 'registro-de-aspirante', component:RegisterAspiranteComponent},
+  {path: 'edit-aspirante/:id', component:EditAspiranteComponent},
+  {path: 'edit-aspirante', component:EditAspiranteComponent},
   {path: '**', component:ErrorComponent }
 ];
 
