@@ -14,7 +14,7 @@ export class Aspirante {
     public telefono: String,
     public citado: String,
     public observaciones: String,
-    public fechaEntrevista: String,
+    public fechaEntrevista: Date,
     public psicologa: String,
     public numeroLlamada: String,
     public interaccion: String

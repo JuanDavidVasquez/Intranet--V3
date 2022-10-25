@@ -1,0 +1,21 @@
+p{
+    max-width: 700px;
+}
+
+input[type='submit']{
+    margin-top:50px;
+    color: black;
+    transition: all 500ms;
+}
+input[type='submit']:hover{
+    color: lightblue;
+    transition: all 500ms;
+    box-shadow: 1px 1px 20px 7px lightblue;
+    background: black;
+    transform: translate(5px, -5px);
+}
+.formulario{
+    background: rgba(0, 0, 0, 0.555);
+    color: white;
+    padding: 25px;
+}

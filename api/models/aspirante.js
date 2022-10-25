@@ -17,7 +17,7 @@ var AspiranteSchema = Schema ({
     telefono:              String,
     citado:                String,
     observaciones:         String,
-    fechaEntrevista:       String,
+    fechaEntrevista:       Date,
     psicologa:             String,
     numeroLlamada:         String,
     interaccion:           String, 
