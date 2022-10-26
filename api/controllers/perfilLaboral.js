@@ -121,11 +121,36 @@ function getPerfilLaborals(req, res) {
       });
   }
 
+  //Actualizar perfil laboral
+
+  function updatePerfilLaboral(req, res) {
+    var perfilLaboralId = req.params.id;
+    var update = req.body;
+  
+    PerfilLaboral.findByIdAndUpdate(
+      perfilLaboralId,
+      update,
+      { new: true },
+      (err, perfilLaboralUpdated) => {
+        if (err)
+          return res
+            .status(500)
+            .send({ message: "Error al actualizar los datos" });
+        if (!perfilLaboralUpdated)
+          return res.status(404).send({ message: "No existe el perfilLaboral" });
+  
+        return res.status(200).send({
+          perfilLaboral: perfilLaboralUpdated,
+        });
+      }
+    );
+  }
 
 module.exports = {
   testPL,
   savePerfilLaboral,
   getPerfilLaboral,
   getPerfilLaboralUser,
-  getPerfilLaborals
+  getPerfilLaborals,
+  updatePerfilLaboral
 };

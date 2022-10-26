@@ -14,7 +14,7 @@ api.post('/register-perfil-laboral', md_auth.ensurreAuth, PerfilLaboralControlle
 api.get('/perfil-laboral/:id', md_auth.ensurreAuth, PerfilLaboralController.getPerfilLaboral);
 api.get('/perfil-laboral-user/:id', md_auth.ensurreAuth, PerfilLaboralController.getPerfilLaboralUser);
 api.get('/perfils-laborals', md_auth.ensurreAuth, PerfilLaboralController.getPerfilLaborals);
-
+api.put('/update-perfil-laboral/:id', md_auth.ensurreAuth, PerfilLaboralController.updatePerfilLaboral);
 
 /*
 api.get('/aspirante/:id', md_auth.ensurreAuth, PerfilLaboralController.getAspirante);
