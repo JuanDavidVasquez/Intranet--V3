@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   providers: [UserService, UploadService]
 })
 export class CertificadoLaboralComponent implements OnInit {
-
+	API_ENDPOINT = 'http://localhost:3700/certificadolaboral/'
   public title: string;
 	public user: User;
 	public identity;
@@ -37,6 +37,7 @@ export class CertificadoLaboralComponent implements OnInit {
 	ngOnInit(){
 		console.log(this.user._id);
 		console.log('user-edit.component se ha cargado!!');
+		console.log(this.user.fechaRetiro);
 	}
 
 	onSubmit(){
@@ -73,5 +74,19 @@ export class CertificadoLaboralComponent implements OnInit {
 	fileChangeEvent(fileInput: any){
 		this.filesToUpload = <Array<File>>fileInput.target.files;
 		console.log(this.filesToUpload);
+	}
+
+	dowlandcertificado(users: User)
+	{
+		console.log(this.API_ENDPOINT + users.cedula);
+	 	/* return this.http.post<User>(this.API_ENDPOINT + users.cedula, this.httpOptions);  */ 
+		 /* return this.http.get(this.API_ENDPOINT + this.user.cedula);  */
+
+		 return this._uploadService.dowlandcertificado(this.user).subscribe(res => {  
+			console.log('Descargando archivo');
+			window.location.href = "http://localhost:3700/certificadolaboral/" + this.user._id;
+		   }
+		   )
+
 	}
 }

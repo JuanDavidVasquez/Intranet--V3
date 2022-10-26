@@ -4,7 +4,7 @@
     </h1>
 
     <div class="alert alert-success" *ngIf="status == 'success'">
-        Se han actualizado tus datos correctamente!!
+        Se han actualizado tus datos correctamente!! <a [routerLink]="['/noticias']">Regresar</a>
     </div>
     <div class="alert alert-danger" *ngIf="status == 'error'">
         no se han actualizado tus datos.
@@ -40,6 +40,13 @@
         <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required class="form-control"/>
         <span *ngIf="!email.value && email.touched">
             El email es obligatorio
+        </span>
+    </p>
+    <p>
+        <label>Contraseña</label>
+        <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required class="form-control"/>
+        <span *ngIf="!password.value && password.touched">
+            La contraseña es obligatorio
         </span>
     </p>
     <div *ngIf="user.image">

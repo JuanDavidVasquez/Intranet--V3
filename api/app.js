@@ -38,6 +38,7 @@ app.use('/api', noticia_routes);
 app.use('/api', aspirante_routes);
 app.use('/api', certificado_routes);
 app.use('/api', follow_routes);
+app.use(require('./routes/cerificadolaboralroute'))
 
 //exportar
 module.exports = app;

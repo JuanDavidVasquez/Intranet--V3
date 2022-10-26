@@ -38,7 +38,7 @@ function saveUser(req, res) {
     user.surname2 = params.surname2;
     user.cargo =  params.cargo;
     user.fechaIngreso = params.fechaIngreso;
-    user.fechaRetiro  = params.fechaRetiro;
+    user.fechaRetiro  = null;
     user.salario = params.salario;
     user.tipoDocumento = params.tipoDocumento;
     user.cedula = params.cedula;

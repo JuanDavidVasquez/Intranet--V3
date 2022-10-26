@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col" id="logos">
-                <img src="../../../assets/img/logotopo slogan R Arriba.png" id="logo" />
+                <img src="../../../assets/img/logotopo_slogan_R_Arriba.png" id="logo" />
             </div>
         </div>
         <div class="row">
@@ -13,7 +13,8 @@
             <p>
                 El Señor {{ user.name }} {{ user.surname }} {{ user.surname2 }}  
                 identificado con CC N° {{ user.cedula }} labora para esta compañía desde
-                el día {{ user.fechaIngreso }} hasta el día {{ user.fechaRetiro }}
+                el día {{ user.fechaIngreso }} <span *ngIf="user.fechaRetiro">hasta el día {{ user.fechaRetiro }}</span>
+                <span *ngIf="!user.fechaRetiro"> a la fecha</span>  
                 con un contrato indefinido desempeñando el cargo de {{ user.cargo }} con una asignación
                 básica mensual de {{ user.salario }}.
             </p>
@@ -32,7 +33,7 @@
         <a [routerLink]="['/Mentius']">
             Regresar
         </a>
-        <a href="http://localhost:3700/api/certificado">
+        <a (click)="dowlandcertificado(user)" class="pointer">
             Descargar
         </a>
     </div>

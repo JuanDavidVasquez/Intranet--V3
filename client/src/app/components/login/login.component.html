@@ -41,11 +41,13 @@
             </div>
 
             <div class="col login">
-                <img src="../../../assets/img/logotopo slogan R Arriba.png" id="imgLogin" />
+                <img src="../../../assets/img/logotopo_slogan_R_Arriba.png" id="imgLogin" />
                 
                 <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="example-form">
                     <div class="li">
-                        <label>Correo electrónico</label>
+                        <label>
+                            <img src="../../../assets/img/login/icons8-user-64.png">
+                        </label>
                         <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                         <span *ngIf="!email.valid && email.touched">
                             El email no es correcto
@@ -53,7 +55,7 @@
                     </div>
 
                     <div class="li">
-                        <label>Contraseña</label>
+                        <label><img src="../../../assets/img/login/icons8-password-64.png"></label>
                         <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
                         <span *ngIf="!password.valid && password.touched">
                              La contraseña es obligatoria
