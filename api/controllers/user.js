@@ -453,5 +453,5 @@ module.exports = {
 	updateUser,
 	uploadImage,
 	getImageFile,
-  getCounters
+    getCounters
 }
