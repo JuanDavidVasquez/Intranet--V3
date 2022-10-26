@@ -19,6 +19,7 @@ import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento
 import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
 import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent },
   {path: 'register', component:RegisterComponent },
   {path: 'perfil', component:PerfilComponent},
+  {path: 'edit-perfil-laboral/:id', component:EditPerfilComponent},
   {path: 'home', component:HomeComponent},
   {path: 'mis-datos', component:UserEditComponent},
   {path: 'gente', component:UsersComponent},

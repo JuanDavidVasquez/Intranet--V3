@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { User } from '../../models/user';
-import { UserService } from 'src/app/service/user.service';
-import { UploadService } from 'src/app/service/upload.service';
+import { PerfilLaboral } from 'src/app/models/perfilLaboral';
+import { PerfilLaboralService } from 'src/app/service/perfilLaboral.service';
 import { GLOBAL } from 'src/app/service/global';
 import { Observable } from 'rxjs';
+
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css'],
-  providers: [UserService, UploadService]
+  providers: [PerfilLaboralService, UserService]
 })
 export class PerfilComponent implements OnInit {
 
  
 	public title: string;
+	public perfilLaboral: PerfilLaboral;
 	public user: User;
 	public identity;
 	public token;
@@ -25,10 +28,10 @@ export class PerfilComponent implements OnInit {
 	constructor(
 		private _route: ActivatedRoute,
 		private _router: Router,
+		private _perfilLaboralService: PerfilLaboralService,
 		private _userService: UserService,
-		private _uploadService: UploadService
 	){
-		this.title = 'Actualizar mis datos';
+		this.title = 'Registro de Perfil Laboral';
 		this.user = this._userService.getIdentity();
 		this.identity = this.user;
 		this.token = this._userService.getToken();
@@ -36,43 +39,28 @@ export class PerfilComponent implements OnInit {
 	}
 
 	ngOnInit(){
-		console.log(this.user._id);
-		console.log('user-edit.component se ha cargado!!');
+		this.identity = this._userService.getIdentity();
+		this.perfilLaboral = new PerfilLaboral("","","","","","","","","","","","");
+		this.url = GLOBAL.url;
 	}
-
-	onSubmit(){
-		console.log(this.user);
-		this._userService.updateUser(this.user).subscribe(
-			response => {
-				if(!response.user){
-					this.status = 'error';
-				}else{
-					this.status = 'success';
-					localStorage.setItem('identity', JSON.stringify(this.user));
-					this.identity = this.user;
-
-					// SUBIDA DE IMAGEN DE USUARIO
-					this._uploadService.makeFileRequest(this.url+'upload-image-user/'+this.user._id, [], this.filesToUpload, this.token, 'image')
-									   .then((result: any) => {
-									   		this.user.image = result.user.image;
-									   		localStorage.setItem('identity', JSON.stringify(this.user));
-									   });				
-				}
-			},
-			error => {
-				var errorMessage = <any>error;
-				console.log(errorMessage);
-
-				if(errorMessage != null){
-					this.status = 'error';
-				}
+	onSubmit(form:any){
+		console.log(this.perfilLaboral);
+		this._perfilLaboralService.savePerfilLaboral(this.perfilLaboral,this.token).subscribe(
+		  response => {
+			if(!response.perfilLaboral){
+			  this.status = 'error';
+			}else{
+			  this.status = 'success';		
 			}
+		  },
+		  error => {
+			var errorMessage = <any>error;
+			console.log(errorMessage);
+	  
+			if(errorMessage != null){
+			  this.status = 'error';
+			}
+		  }
 		);
-	}
-
-	public filesToUpload: Array<File>;
-	fileChangeEvent(fileInput: any){
-		this.filesToUpload = <Array<File>>fileInput.target.files;
-		console.log(this.filesToUpload);
-	}
+	  }
 }

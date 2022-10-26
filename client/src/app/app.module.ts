@@ -30,6 +30,7 @@ import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento
 import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
 import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     RegisterAspiranteComponent,
     EditAspiranteComponent,
     PerfilComponent,
+    EditPerfilComponent,
   ],
   imports: [
     BrowserModule,
