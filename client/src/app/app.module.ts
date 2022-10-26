@@ -29,6 +29,7 @@ import { RrhhComponent } from './components/rrhh/rrhh.component';
 import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
 import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
 import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspiran
     ReclutamientoComponent,
     RegisterAspiranteComponent,
     EditAspiranteComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,

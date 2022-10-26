@@ -18,12 +18,14 @@ import { RrhhComponent } from './components/rrhh/rrhh.component';
 import { ReclutamientoComponent } from './components/reclutamiento/reclutamiento.component';
 import { RegisterAspiranteComponent } from './components/register-aspirante/register-aspirante.component';
 import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'login', component:LoginComponent },
   {path: 'register', component:RegisterComponent },
+  {path: 'perfil', component:PerfilComponent},
   {path: 'home', component:HomeComponent},
   {path: 'mis-datos', component:UserEditComponent},
   {path: 'gente', component:UsersComponent},
