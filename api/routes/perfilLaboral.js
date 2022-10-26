@@ -11,9 +11,12 @@ var md_upload = multipart({uploadDir: './uploads/users'});
 
 api.get('/testPL', PerfilLaboralController.testPL);
 api.post('/register-perfil-laboral', md_auth.ensurreAuth, PerfilLaboralController.savePerfilLaboral);
+api.get('/perfil-laboral/:id', md_auth.ensurreAuth, PerfilLaboralController.getPerfilLaboral);
+api.get('/perfil-laboral-user/:id', md_auth.ensurreAuth, PerfilLaboralController.getPerfilLaboralUser);
+api.get('/perfils-laborals', md_auth.ensurreAuth, PerfilLaboralController.getPerfilLaborals);
+
 
 /*
-api.post('/register-aspirante', md_auth.ensurreAuth, PerfilLaboralController.saveAspirante);
 api.get('/aspirante/:id', md_auth.ensurreAuth, PerfilLaboralController.getAspirante);
 api.get('/aspirantes', md_auth.ensurreAuth, PerfilLaboralController.getAspirantes);
 api.put('/update-aspirante/:id', md_auth.ensurreAuth, PerfilLaboralController.updateAspirante);
