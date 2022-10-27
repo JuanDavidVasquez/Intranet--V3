@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
   selector: 'app-cargar-imagen-de-noticia',
   templateUrl: './cargar-imagen-de-noticia.component.html',
   styleUrls: ['./cargar-imagen-de-noticia.component.css'],
-  
   providers: [NoticiaService, UploadService]
 })
 export class CargarImagenDeNoticiaComponent implements OnInit {

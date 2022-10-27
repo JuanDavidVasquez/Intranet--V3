@@ -43,7 +43,7 @@ export class PerfilLaboralService{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.put(this.url+'perfil-laboral/'+perfilLaboral._id, params, {headers: headers});
+		return this._http.put(this.url+'update-perfil-laboral/'+perfilLaboral._id, params, {headers: headers});
 	}
 
 	getPerfilLaborals(token):Observable<any>{
@@ -53,7 +53,7 @@ export class PerfilLaboralService{
 		return this._http.get(this.url+'perfils-laborals/', {headers: headers});
 	}
 
-	getPerfilLaboral(id: string,token):Observable<any>{
+	getPerfilLaboral(id,token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
