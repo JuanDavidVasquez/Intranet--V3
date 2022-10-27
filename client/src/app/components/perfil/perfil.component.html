@@ -3,11 +3,6 @@
     <h1 class="h1-strong">
         {{ title }}
     </h1>
-    <div class="regresar">
-        <a [routerLink]="['/perfil']">
-            Regresar
-        </a>
-    </div>
     <div class="col-lg-12 formularios">
         <div class="alert alert-success" *ngIf="status == 'success'">
             Registro completado correctament, <a [routerLink]="['/perfil']">
@@ -17,14 +12,14 @@
         <div class="alert alert-danger" *ngIf="status == 'error'">
             Registro no se ha realizado.
         </div>
-        <div class="container formulario">
+        <div class="container formulario" style="margin-top: 5%;">
             <form #registroPerfilLaboralForm="ngForm" (ngSubmit)="onSubmit(registroPerfilLaboralForm)">
                 <div class="row-lg-12">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 registros">
                         <p>
                             <label>User</label>
-                            <input type="text" name="user" class="form-control" required value="{{identity._id}}"
-                                disabled="" />
+                            <input type="text" name="user" class="form-control" required value="{{identity.name}}"
+                                disabled="" id="disable" />
                         </p>
                         <p>
                             <label>Empresa</label>
@@ -58,6 +53,8 @@
                                 El cargo es obligatorio
                             </span>
                         </p>
+                        </div>
+                        <div class="col-lg-6 registros">
                         <p>
                             <label>Fecha de ingreso</label>
                             <input type="date" name="fechaIngreso" #fechaIngreso="ngModel" [(ngModel)]="perfilLaboral.fechaIngreso"
@@ -101,11 +98,51 @@
 
                     </div>
                 </div>
-                <div class="col-lg-12 text-center">
-                    <input type="submit" value="{{ title }}" class="btn btn-succes"
-                        [disabled]="!registroPerfilLaboralForm.form.valid" />
+                <div class="col-lg-12 text-center registros">
+                    <input type="submit" value="Registrar" class="btn btn-succes"
+                        [disabled]="!registroPerfilLaboralForm.form.valid"/>
                 </div>
             </form>
         </div>
     </div>
+</div>
+
+<div class="col-lg-12 aspirante">
+    <h2 class="h1-strong text-center">Registros</h2>
+    <table class="table table-Success table-striped table-hover">
+        <thead>
+          <tr class="cabecera">
+            <th scope="col">cargo</th>
+            <th scope="col">fechaIngreso</th>
+            <th scope="col">fechaRetiro</th>
+            <th scope="col">salario</th>
+            <th scope="col">motivoRetiro</th>
+            <th scope="col">jefe</th>
+            <th scope="col">contactoJefe</th>
+            <th scope="col">certificadoLaboral</th>
+            <th scope="col">empresa</th>
+            <th scope="col">personalACargo</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let perfilLaboral of perfilLaborals">
+          <tr>
+            <td>{{perfilLaboral.cargo}}</td>
+            <td>{{perfilLaboral.fechaIngreso}}</td>
+            <td>{{perfilLaboral.fechaRetiro}}</td>
+            <td>{{perfilLaboral.salario}}</td>
+            <td>{{perfilLaboral.motivoRetiro}}</td>
+            <td>{{perfilLaboral.jefe}}</td>
+            <td>{{perfilLaboral.contactoJefe}}</td>
+            <td>{{perfilLaboral.certificadoLaboral}}</td>
+            <td>{{perfilLaboral.empresa}}</td>
+            <td>{{perfilLaboral.personalACargo}}</td>
+            <td>
+              <a [routerLink]="['/edit-perfil-laboral', perfilLaboral._id]">
+                Editar
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-footer></app-footer>
 </div>

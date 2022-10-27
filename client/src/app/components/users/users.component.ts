@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
 import  { UploadService } from 'src/app/service/upload.service';
 import { GLOBAL } from 'src/app/service/global';
+
+	
 
 @Component({
   selector: 'app-users',
@@ -20,6 +22,7 @@ export class UsersComponent implements OnInit {
   public url: string;
   public users: User[];
 
+
   constructor(
     private _route:ActivatedRoute,
     private _router:Router,
@@ -30,14 +33,11 @@ export class UsersComponent implements OnInit {
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
    }
-
+  
   ngOnInit(): void {
     console.log("users.components ha sido cargado");
     this.getUsers();
   }
-
-
-
    getUsers(){
     this._userService.getUsers().subscribe(
       response =>{

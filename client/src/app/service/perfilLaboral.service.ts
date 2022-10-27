@@ -60,12 +60,13 @@ export class PerfilLaboralService{
 		return this._http.get(this.url+'perfil-laboral/'+id, {headers: headers});
 	}
 
-    getPerfilLaboralUser(user: string, token):Observable<any>{
+    getPerfilLaboralUser(user, token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
 		return this._http.get(this.url+'perfil-laboral-user/'+user, {headers: headers});
 	}
+
     getPerfilLaboralid(token){
 		let perfilLaboralid = JSON.parse(localStorage.getItem('perfilLaboralid'))
 		.set('Authorization', token);

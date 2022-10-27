@@ -90,13 +90,13 @@ function getPerfilLaboral(req, res) {
 function getPerfilLaboralUser(req, res) {
   var identity_user_Id = req.params.id;
 
-  PerfilLaboral.find({ user: identity_user_Id }, (err, perfilLaboral) => {
+  PerfilLaboral.find({ user: identity_user_Id }, (err, perfilLaborals) => {
     if (err) return res.status(500).send({ message: "Error en la petición" });
 
-    if (!perfilLaboral)
+    if (!perfilLaborals)
       return res.status(404).send({ message: "El usuario no existe" });
     return res.status(200).send({
-      perfilLaboral,
+      perfilLaborals,
     });
   });
 }

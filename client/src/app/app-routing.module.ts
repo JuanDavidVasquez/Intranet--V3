@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'login', component:LoginComponent },
   {path: 'register', component:RegisterComponent },
-  {path: 'perfil', component:PerfilComponent},
+  {path: 'perfil/:id', component:PerfilComponent},
   {path: 'edit-perfil-laboral/:id', component:EditPerfilComponent},
   {path: 'home', component:HomeComponent},
   {path: 'mis-datos', component:UserEditComponent},
