@@ -31,6 +31,7 @@ import { RegisterAspiranteComponent } from './components/register-aspirante/regi
 import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
+import { PerfilGeneralComponent } from './components/perfil-general/perfil-general.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.compon
     EditAspiranteComponent,
     PerfilComponent,
     EditPerfilComponent,
+    PerfilGeneralComponent,
   ],
   imports: [
     BrowserModule,

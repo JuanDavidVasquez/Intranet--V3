@@ -20,12 +20,14 @@ import { RegisterAspiranteComponent } from './components/register-aspirante/regi
 import { EditAspiranteComponent } from './components/edit-aspirante/edit-aspirante.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
+import { PerfilGeneralComponent } from './components/perfil-general/perfil-general.component';
 
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'login', component:LoginComponent },
   {path: 'register', component:RegisterComponent },
+  {path: 'perfil-general', component:PerfilGeneralComponent},
   {path: 'perfil/:id', component:PerfilComponent},
   {path: 'edit-perfil-laboral/:id', component:EditPerfilComponent},
   {path: 'home', component:HomeComponent},
