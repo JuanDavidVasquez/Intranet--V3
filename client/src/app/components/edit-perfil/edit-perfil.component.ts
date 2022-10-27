@@ -32,8 +32,7 @@ export class EditPerfilComponent implements OnInit {
 	private _uploadService: UploadService,
     private _userService:UserService
   ) { 
-    this.title = 'Editar de Aspirantes';
-    this.user = this._userService.getIdentity();
+    this.title = 'Editar de perfil laboral';
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
@@ -44,8 +43,7 @@ export class EditPerfilComponent implements OnInit {
     this._route.params.subscribe(params => {
 			let id = params['id'];
       this.getPerfilLaboral(id,this.token);
-		});
-		
+	});
   }
 
   getPerfilLaboral(id,token){
