@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from 'src/app/service/global';
 import { UserService } from 'src/app/service/user.service';
-
+declare var $:any;
 @Component({
   selector: 'app-perfil-general',
   templateUrl: './perfil-general.component.html',
@@ -27,7 +27,8 @@ export class PerfilGeneralComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+    $('body').css('background','url(../../../assets/img/perfiles/fondoPerfiles.jpg)')
+    .css('background-repeat','no-repeat');
   }
 
 }

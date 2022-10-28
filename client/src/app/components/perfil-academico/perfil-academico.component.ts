@@ -18,6 +18,7 @@ export class PerfilAcademicoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
 }
