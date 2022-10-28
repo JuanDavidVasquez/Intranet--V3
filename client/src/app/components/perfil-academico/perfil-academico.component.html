@@ -1,1 +1,116 @@
-<p>perfil-academico works!</p>
+<app-menus></app-menus>
+<div class="container-fluid">
+    <h1 class="h1-strong">
+        {{ title }}
+    </h1>
+    <div class="col-lg-12 formularios">
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Registro completado correctament, <a [routerLink]="['/perfil']">
+                Ver Perfil!!!
+            </a>
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            Registro no se ha realizado.
+        </div>
+        <div class="container formulario" style="margin-top: 5%;">
+            <form #registroPerfilAcademicoForm="ngForm" (ngSubmit)="onSubmit(registroPerfilAcademicoForm)">
+                <div class="row-lg-12">
+                    <div class="col-lg-6 registros">
+                        <p>
+                            <label>User</label>
+                            <input type="text" name="user" class="form-control" required value="{{identity.name}}"
+                                disabled="" id="disable" />
+                        </p>
+                        <p>
+                            <label>lvlAcademico</label>
+                            <input type="text" name="lvlAcademico" #lvlAcademico="ngModel" [(ngModel)]="perfilAcademico.lvlAcademico"
+                                class="form-control" required />
+                            <span *ngIf="!lvlAcademico.valid && lvlAcademico.touched">
+                                La lvlAcademico es obligatoria
+                            </span>
+                        </p>
+                        <p>
+                            <label>titulo</label>
+                            <input type="text" name="titulo" #titulo="ngModel" [(ngModel)]="perfilAcademico.titulo"
+                                class="form-control" required />
+                            <span *ngIf="!titulo.valid && titulo.touched">
+                                El titulo de retiro es obligatorio
+                            </span>
+                        </p>
+                        <p>
+                            <label>estado</label>
+                            <input type="text" name="estado" #estado="ngModel" [(ngModel)]="perfilAcademico.estado"
+                                class="form-control" required />
+                            <span *ngIf="!estado.valid && estado.touched">
+                                estado
+                            </span>
+                        </p>
+                        <p>
+                            <label>instituto</label>
+                            <input type="text" name="instituto" #instituto="ngModel" [(ngModel)]="perfilAcademico.instituto"
+                                class="form-control" required />
+                            <span *ngIf="!instituto.valid && instituto.touched">
+                                El instituto es obligatorio
+                            </span>
+                        </p>
+                        </div>
+                        <div class="col-lg-6 registros">
+                        <p>
+                            <label>Fecha de ingreso</label>
+                            <input type="date" name="fechaIngreso" #fechaIngreso="ngModel" [(ngModel)]="perfilAcademico.fechaIngreso"
+                                class="form-control" required />
+                            <span *ngIf="!fechaIngreso.valid && fechaIngreso.touched">
+                                El fecha de ingreso es obligatoria
+                            </span>
+                        </p>
+                        <p>
+                            <label>Fecha de retiro</label>
+                            <input type="date" name="fechaCulminacion" #fechaCulminacion="ngModel" [(ngModel)]="perfilAcademico.fechaCulminacion"
+                                class="form-control" required />
+                            <span *ngIf="!fechaCulminacion.valid && fechaCulminacion.touched">
+                                El fecha de culminación es obligatoria
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12 text-center registros">
+                    <input type="submit" value="Registrar" class="btn btn-succes"
+                        [disabled]="!registroPerfilAcademicoForm.form.valid"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 aspirante">
+    <h2 class="h1-strong text-center">Registros</h2>
+    <table class="table table-Success table-striped table-hover">
+        <thead>
+          <tr class="cabecera">
+            <th scope="col">lvlAcademico</th>
+            <th scope="col">estado</th>
+            <th scope="col">instituto</th>
+            <th scope="col">fechaIngreso</th>
+            <th scope="col">fechaCulminacion</th>
+            <th scope="col">certificadoAcademico</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let perfilAcademico of perfilAcademicos">
+          <tr>
+            <td>{{perfilAcademico.lvlAcademico}}</td>
+            <td>{{perfilAcademico.titulo}}</td>
+            <td>{{perfilAcademico.estado}}</td>
+            <td>{{perfilAcademico.instituto}}</td>
+            <td>{{perfilAcademico.fechaIngreso}}</td>
+            <td>{{perfilAcademico.fechaCulminacion}}</td>
+            <td>{{perfilAcademico.certificadoAcademico}}</td>
+            <td>
+              <a [routerLink]="['/edit-perfil-academico', perfilAcademico._id]">
+                Editar
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-footer></app-footer>
+</div>
