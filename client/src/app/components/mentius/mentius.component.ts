@@ -25,15 +25,12 @@ export class MentiusComponent implements OnInit {
       this.title = 'Intranet';
       this.url = GLOBAL.url;
   }
-
   ngOnInit(){
   	this.identity = this._userService.getIdentity();
   }
-
   ngDoCheck(){
   	this.identity = this._userService.getIdentity();
   }
-
   logout(){
     localStorage.clear();
     this.identity = null;
