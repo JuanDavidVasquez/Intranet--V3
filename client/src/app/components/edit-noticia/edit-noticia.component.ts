@@ -25,7 +25,8 @@ export class EditNoticiaComponent implements OnInit {
   ngOnInit(): void {
     this.getNoticias();
     $('body').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
-    .css('background-repeat','no-repeat');
+      .css('background-repeat','no-repeat')
+      .css('background-size','cover');
   }
 
   getNoticias(){

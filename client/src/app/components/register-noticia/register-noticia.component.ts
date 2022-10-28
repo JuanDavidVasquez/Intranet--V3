@@ -4,6 +4,7 @@ import { Noticia } from '../../models/noticia';
 import { NoticiaService } from 'src/app/service/noticia.service';
 import { GLOBAL } from 'src/app/service/global';
 import { UserService } from 'src/app/service/user.service';
+declare var $:any;
 
 @Component({
   selector: 'app-register-noticia',
@@ -33,6 +34,9 @@ export class RegisterNoticiaComponent implements OnInit {
 
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
+    $('body').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
+      .css('background-repeat','no-repeat')
+      .css('background-size','cover');
   }
   onSubmit(form:any){
 	  this._noticiaService.saveNoticia(this.noticia).subscribe(

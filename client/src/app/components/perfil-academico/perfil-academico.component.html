@@ -1,5 +1,5 @@
 <app-menus></app-menus>
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="identity.name">
     <h1 class="h1-strong">
         {{ title }}
     </h1>
@@ -82,17 +82,18 @@
     </div>
 </div>
 
-<div class="col-lg-12 aspirante">
+<div class="col-lg-12 aspirante" *ngIf="perfilAcademico && identity.name">
     <h2 class="h1-strong text-center">Registros</h2>
     <table class="table table-Success table-striped table-hover">
         <thead>
           <tr class="cabecera">
-            <th scope="col">lvlAcademico</th>
-            <th scope="col">estado</th>
-            <th scope="col">instituto</th>
-            <th scope="col">fechaIngreso</th>
-            <th scope="col">fechaCulminacion</th>
-            <th scope="col">certificadoAcademico</th>
+            <th scope="col">Nivel academico</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Instituto</th>
+            <th scope="col">Fecha de ingreso</th>
+            <th scope="col">Fecha de culminacion</th>
+            <th scope="col">Certificado academico</th>
           </tr>
         </thead>
         <tbody *ngFor="let perfilAcademico of perfilAcademicos">
@@ -103,7 +104,10 @@
             <td>{{perfilAcademico.instituto}}</td>
             <td>{{perfilAcademico.fechaIngreso}}</td>
             <td>{{perfilAcademico.fechaCulminacion}}</td>
-            <td>{{perfilAcademico.certificadoAcademico}}</td>
+            <td>
+                <span *ngIf="perfilAcademico.certificadoAcademico">Ok</span>
+                <span *ngIf="!perfilAcademico.certificadoAcademico">Sin documento</span>
+            </td>
             <td>
               <a [routerLink]="['/perfil-academico-edit', perfilAcademico._id]">
                 Editar
