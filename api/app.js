@@ -19,6 +19,9 @@ var perfilAcadmico_routes = require('./routes/perfilAcademico');
 var salud_routes = require('./routes/salud');
 var vivienda_routes = require('./routes/vivienda');
 var debilidad_routes = require('./routes/debilidad');
+var judicial_routes = require('./routes/judicial');
+var vicio_routes = require('./routes/vicio');
+var generalidad_routes = require('./routes/generalidad');
 
 
 var follow_routes = require('./routes/follow');
@@ -50,6 +53,9 @@ app.use('/api', perfilAcadmico_routes);
 app.use('/api', salud_routes);
 app.use('/api', vivienda_routes);
 app.use('/api', debilidad_routes);
+app.use('/api', judicial_routes);
+app.use('/api', vicio_routes);
+app.use('/api', generalidad_routes);
 
 app.use(require('./routes/cerificadolaboralroute'));
 

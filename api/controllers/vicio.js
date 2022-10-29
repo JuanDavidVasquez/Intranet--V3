@@ -5,44 +5,46 @@ var fs = require('fs');
 var path = require("path");
 
 //Cargar modelo
-var Judicial = require("../models/judicial");
+var Vicio = require("../models/vicio");
 var User = require("../models/user");
 var jwt = require("../services/jwt");
 
 //Metodo de pruebas
-function judicial(req, res) {
+function vicio(req, res) {
   res.status(200).send({
-    message: "Accion de test de judicial",
+    message: "Accion de test de Vicio",
   });
 }
 
-//Registro de judicials
+//Registro de Vicios
 
-function saveJudicial(req, res) {
+function saveVicio(req, res) {
   var params = req.body;
-  var judicial = new Judicial();
+  var vicio = new Vicio();
 
   if (params.nombre) {
-    judicial.user = req.user.sub;
-    judicial.nombre = params.nombre;
+    vicio.user = req.user.sub;
+    vicio.nombre = params.nombre;
+    vicio.frecuencia = params.vicio;
+    vicio.motivo = params.vicio;
 
-    //Judicials duplicados controll
-    Judicial.find({
+    //Vicios duplicados controll
+    Vicio.find({
 
-    }).exec((err, judicials) => {
+    }).exec((err, vicios) => {
       if (err)
         return res
           .status(500)
-          .send({ message: "Error en la petición de Judicial" });
+          .send({ message: "Error en la petición de vicio" });
 
-        judicial.save((err, judicialStored) => {
+        vicio.save((err, vicioStored) => {
           if (err)
             return res
               .status(500)
               .send({ message: "No se ha podido guardar el usuario" });
 
-          if (judicialStored) {
-            res.status(200).send({ judicial: judicialStored });
+          if (vicioStored) {
+            res.status(200).send({ vicio: vicioStored });
           } else {
             res.status(404).send({ message: "No se ha registrado el usuario" });
           }
@@ -58,76 +60,76 @@ function saveJudicial(req, res) {
 
 // Conseguir datos de un perfil laboral
 
-function getJudicial(req, res) {
-  var judicialId = req.params.id;
+function getVicio(req, res) {
+  var vicioId = req.params.id;
 
-  Judicial.findById(judicialId, (err, judicial) => {
+  Vicio.findById(vicioId, (err, vicio) => {
     if (err) return res.status(500).send({ message: "Error en la petición" });
 
-    if (!judicial)
+    if (!vicio)
       return res.status(404).send({ message: "El usuario no existe" });
     return res.status(200).send({
-      judicial,
+      vicio,
     });
   });
 }
 
 // Conseguir datos de un perfil laboral de un solo usuario
-function getJudicialUser(req, res) {
+function getVicioUser(req, res) {
   var identity_user_Id = req.params.id;
 
-  Judicial.find({ user: identity_user_Id }, (err, judicials) => {
+  Vicio.find({ user: identity_user_Id }, (err, vicios) => {
     if (err) return res.status(500).send({ message: "Error en la petición" });
 
-    if (!judicials)
+    if (!vicios)
       return res.status(404).send({ message: "El usuario no existe" });
     return res.status(200).send({
-      judicials,
+      vicios,
     });
   });
 }
 
 //Conseguir todos los perfiles laborales
 
-function getJudicials(req, res) {
+function getVicios(req, res) {
     var identity_user_id = req.user.sub;
   
-    Judicial.find()
+    Vicio.find()
       .sort("_id")
-      .exec((err, judicials) => {
+      .exec((err, vicios) => {
         if (err)
           return res.status(500).send({ message: "Error al devolver los datos" });
-        if (!judicials)
+        if (!vicios)
           return res
             .status(404)
             .send({ message: "No exisen usuarios para mostrar" });
   
         return res.status(200).send({
-            judicials,
+            vicios,
         });
       });
   }
 
   //Actualizar perfil laboral
 
-  function updateJudicial(req, res) {
-    var JudicialId = req.params.id;
+  function updateVicio(req, res) {
+    var vicioId = req.params.id;
     var update = req.body;
   
-    Judicial.findByIdAndUpdate(
-      judicialId,
+    Vicio.findByIdAndUpdate(
+      vicioId,
       update,
       { new: true },
-      (err, judicialUpdated) => {
+      (err, vicioUpdated) => {
         if (err)
           return res
             .status(500)
             .send({ message: "Error al actualizar los datos" });
-        if (!judicialUpdated)
-          return res.status(404).send({ message: "No existe el judicial" });
+        if (!vicioUpdated)
+          return res.status(404).send({ message: "No existe el vicio" });
   
         return res.status(200).send({
-          judicial: judicialUpdated,
+          vicio: vicioUpdated,
         });
       }
     );
@@ -135,7 +137,7 @@ function getJudicials(req, res) {
   
 // Subir archivos de imagen/certificado de usuario
 
-function uploadJudicialImage(req, res){
+function uploadVicioImage(req, res){
 	var certificadoAcademicoId = req.params.id;
 
 	if(req.files){
@@ -156,13 +158,13 @@ function uploadJudicialImage(req, res){
 
 		if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
 			 
-			 // Actualizar documento de Judicial logueado
-			 Judicial.findByIdAndUpdate(certificadoAcademicoId, {certificadoAcademico: file_name}, {new:true}, (err, judicialUpdated) =>{
+			 // Actualizar documento de Vicio logueado
+			 Vicio.findByIdAndUpdate(certificadoAcademicoId, {certificadoAcademico: file_name}, {new:true}, (err, vicioUpdated) =>{
 				if(err) return res.status(500).send({message: 'Error en la petición'});
 
-				if(!judicialUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
+				if(!vicioUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
 
-				return res.status(200).send({judicial: judicialUpdated});
+				return res.status(200).send({vicio: vicioUpdated});
 			 });
 
 		}else{
@@ -180,9 +182,9 @@ function removeFilesOfUploads(res, file_path, message){
 	});
 }
 
-function getJudicialImageFile(req, res){
+function getVicioImageFile(req, res){
 	var image_file = req.params.imageFile;
-	var path_file = './uploads/judicials/'+image_file;
+	var path_file = './uploads/vicios/'+image_file;
 
 	fs.exists(path_file, (exists) => {
 		if(exists){
@@ -193,12 +195,12 @@ function getJudicialImageFile(req, res){
 	});
 }
 module.exports = {
-    judicial,
-    saveJudicial,
-    getJudicial,
-    getJudicialUser,
-    getJudicials,
-    updateJudicial,
-    uploadJudicialImage,
-    getJudicialImageFile,
+    vicio,
+    saveVicio,
+    getVicio,
+    getVicioUser,
+    getVicios,
+    updateVicio,
+    uploadVicioImage,
+    getVicioImageFile,
 };

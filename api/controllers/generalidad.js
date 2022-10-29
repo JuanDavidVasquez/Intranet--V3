@@ -5,44 +5,47 @@ var fs = require('fs');
 var path = require("path");
 
 //Cargar modelo
-var Judicial = require("../models/judicial");
+var Generalidad = require("../models/generalidad");
 var User = require("../models/user");
 var jwt = require("../services/jwt");
 
 //Metodo de pruebas
-function judicial(req, res) {
+function generalidad(req, res) {
   res.status(200).send({
-    message: "Accion de test de judicial",
+    message: "Accion de test de generalidad",
   });
 }
 
-//Registro de judicials
+//Registro de generalidads
 
-function saveJudicial(req, res) {
+function saveGeneralidad(req, res) {
   var params = req.body;
-  var judicial = new Judicial();
+  var generalidad = new Generalidad();
 
-  if (params.nombre) {
-    judicial.user = req.user.sub;
-    judicial.nombre = params.nombre;
+  if (params.aspiracionSalarial) {
+    generalidad.user = req.user.sub;
+    generalidad.aspiracionSalarial = params.aspiracionSalarial;   
+    generalidad.servicioMilitar= params.servicioMilitar;   
+    generalidad.actividadEntreTrabajo= params.actividadEntreTrabajo;
+    generalidad.tiempoLibre= params.tiempoLibre;  
+    generalidad.observaciones= params.observaciones;   
+    //Generalidads duplicados controll
+    Generalidad.find({
 
-    //Judicials duplicados controll
-    Judicial.find({
-
-    }).exec((err, judicials) => {
+    }).exec((err, generalidads) => {
       if (err)
         return res
           .status(500)
-          .send({ message: "Error en la petición de Judicial" });
+          .send({ message: "Error en la petición de generalidad" });
 
-        judicial.save((err, judicialStored) => {
+        generalidad.save((err, generalidadStored) => {
           if (err)
             return res
               .status(500)
               .send({ message: "No se ha podido guardar el usuario" });
 
-          if (judicialStored) {
-            res.status(200).send({ judicial: judicialStored });
+          if (generalidadStored) {
+            res.status(200).send({ generalidad: generalidadStored });
           } else {
             res.status(404).send({ message: "No se ha registrado el usuario" });
           }
@@ -58,76 +61,76 @@ function saveJudicial(req, res) {
 
 // Conseguir datos de un perfil laboral
 
-function getJudicial(req, res) {
-  var judicialId = req.params.id;
+function getGeneralidad(req, res) {
+  var generalidadId = req.params.id;
 
-  Judicial.findById(judicialId, (err, judicial) => {
+  Generalidad.findById(generalidadId, (err, generalidad) => {
     if (err) return res.status(500).send({ message: "Error en la petición" });
 
-    if (!judicial)
+    if (!generalidad)
       return res.status(404).send({ message: "El usuario no existe" });
     return res.status(200).send({
-      judicial,
+      generalidad,
     });
   });
 }
 
 // Conseguir datos de un perfil laboral de un solo usuario
-function getJudicialUser(req, res) {
+function getGeneralidadUser(req, res) {
   var identity_user_Id = req.params.id;
 
-  Judicial.find({ user: identity_user_Id }, (err, judicials) => {
+  Generalidad.find({ user: identity_user_Id }, (err, generalidads) => {
     if (err) return res.status(500).send({ message: "Error en la petición" });
 
-    if (!judicials)
+    if (!generalidads)
       return res.status(404).send({ message: "El usuario no existe" });
     return res.status(200).send({
-      judicials,
+      generalidads,
     });
   });
 }
 
 //Conseguir todos los perfiles laborales
 
-function getJudicials(req, res) {
+function getGeneralidads(req, res) {
     var identity_user_id = req.user.sub;
   
-    Judicial.find()
+    Generalidad.find()
       .sort("_id")
-      .exec((err, judicials) => {
+      .exec((err, generalidads) => {
         if (err)
           return res.status(500).send({ message: "Error al devolver los datos" });
-        if (!judicials)
+        if (!generalidads)
           return res
             .status(404)
             .send({ message: "No exisen usuarios para mostrar" });
   
         return res.status(200).send({
-            judicials,
+            generalidads,
         });
       });
   }
 
   //Actualizar perfil laboral
 
-  function updateJudicial(req, res) {
-    var JudicialId = req.params.id;
+  function updateGeneralidad(req, res) {
+    var generalidadId = req.params.id;
     var update = req.body;
   
-    Judicial.findByIdAndUpdate(
-      judicialId,
+    Generalidad.findByIdAndUpdate(
+      generalidadId,
       update,
       { new: true },
-      (err, judicialUpdated) => {
+      (err, generalidadUpdated) => {
         if (err)
           return res
             .status(500)
             .send({ message: "Error al actualizar los datos" });
-        if (!judicialUpdated)
-          return res.status(404).send({ message: "No existe el judicial" });
+        if (!generalidadUpdated)
+          return res.status(404).send({ message: "No existe el generalidad" });
   
         return res.status(200).send({
-          judicial: judicialUpdated,
+          generalidad: generalidadUpdated,
         });
       }
     );
@@ -135,7 +138,7 @@ function getJudicials(req, res) {
   
 // Subir archivos de imagen/certificado de usuario
 
-function uploadJudicialImage(req, res){
+function uploadGeneralidadImage(req, res){
 	var certificadoAcademicoId = req.params.id;
 
 	if(req.files){
@@ -156,13 +159,13 @@ function uploadJudicialImage(req, res){
 
 		if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
 			 
-			 // Actualizar documento de Judicial logueado
-			 Judicial.findByIdAndUpdate(certificadoAcademicoId, {certificadoAcademico: file_name}, {new:true}, (err, judicialUpdated) =>{
+			 // Actualizar documento de Generalidad logueado
+			 Generalidad.findByIdAndUpdate(certificadoAcademicoId, {certificadoAcademico: file_name}, {new:true}, (err, generalidadUpdated) =>{
 				if(err) return res.status(500).send({message: 'Error en la petición'});
 
-				if(!judicialUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
+				if(!generalidadUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
 
-				return res.status(200).send({judicial: judicialUpdated});
+				return res.status(200).send({generalidad: generalidadUpdated});
 			 });
 
 		}else{
@@ -180,9 +183,9 @@ function removeFilesOfUploads(res, file_path, message){
 	});
 }
 
-function getJudicialImageFile(req, res){
+function getGeneralidadImageFile(req, res){
 	var image_file = req.params.imageFile;
-	var path_file = './uploads/judicials/'+image_file;
+	var path_file = './uploads/generalidads/'+image_file;
 
 	fs.exists(path_file, (exists) => {
 		if(exists){
@@ -193,12 +196,12 @@ function getJudicialImageFile(req, res){
 	});
 }
 module.exports = {
-    judicial,
-    saveJudicial,
-    getJudicial,
-    getJudicialUser,
-    getJudicials,
-    updateJudicial,
-    uploadJudicialImage,
-    getJudicialImageFile,
+    generalidad,
+    saveGeneralidad,
+    getGeneralidad,
+    getGeneralidadUser,
+    getGeneralidads,
+    updateGeneralidad,
+    uploadGeneralidadImage,
+    getGeneralidadImageFile,
 };
