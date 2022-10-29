@@ -1,1 +1,99 @@
-<p>perfil-salud works!</p>
+<app-menus></app-menus>
+<div class="container-fluid">
+    <h1 class="h1-strong">
+        {{ title }}
+    </h1>
+    <div class="col-lg-12 formularios">
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Registro completado correctament, <a [routerLink]="['/salud',salud._id]">
+                Ver Perfil!!!
+            </a>
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            Registro no se ha realizado.
+        </div>
+        <div class="container formulario" style="margin-top: 5%;">
+            <form #SaludForm="ngForm" (ngSubmit)="onSubmit(SaludForm)">
+                <div class="row-lg-12 contenido">
+                    <div class="col-lg-6 registros">
+                        <p>
+                            <label>User</label>
+                            <input type="text" name="user" class="form-control" required value="{{identity.name}}"
+                                disabled="" id="disable" />
+                        </p>
+                        <p>
+                            <label>Estado</label>
+                           <input type="text" name="estado" #estado="ngModel" [(ngModel)]="salud.estado"
+                                class="form-control" required />
+                            <span *ngIf="!estado.valid && estado.touched">
+                                La estado es obligatoria
+                            </span>
+                        </p>
+                        <p>
+                            <label>Accidentes</label>
+                            <input type="text" name="accidentes" #accidentes="ngModel" [(ngModel)]="salud.accidentes"
+                                class="form-control" required />
+                            <span *ngIf="!accidentes.valid && accidentes.touched">
+                                El accidentes es obligatorio
+                            </span>
+                        </p>
+                        <p>
+                            <label>Tipo accidente</label>
+                            <input type="text" name="tipoAccidente" #tipoAccidente="ngModel" [(ngModel)]="salud.tipoAccidente"
+                                class="form-control" required />
+                            <span *ngIf="!tipoAccidente.valid && tipoAccidente.touched">
+                                tipoAccidente es obligatorio
+                            </span>
+                        </p>
+                        <p>
+                            <label>Observacion</label>
+                            <input type="text" name="observacion" #observacion="ngModel" [(ngModel)]="salud.observacion"
+                                class="form-control" required />
+                            <span *ngIf="!observacion.valid && observacion.touched">
+                                El observacion es obligatorio
+                            </span>
+                        </p>
+                        </div>
+                </div>
+                <div class="col-lg-12 text-center registros">
+                    <input type="submit" value="Registrar" class="btn btn-succes"
+                        [disabled]="!SaludForm.form.valid"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="regresar">
+    <a [routerLink]="['/perfil-general']">
+        Regresar
+    </a>
+</div>
+
+
+<div class="col-lg-12 aspirante" *ngIf="saluds.length > 0">
+    <h2 class="h1-strong text-center">Registros</h2>
+    <table class="table table-Success table-striped table-hover" >
+        <thead>
+          <tr class="cabecera">       
+            <th scope="col">Estado</th>
+            <th scope="col">Accidentes</th>
+            <th scope="col">Tipo accidente</th>
+            <th scope="col">Observacion</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let salud of saluds">
+          <tr>
+            <td>{{salud.estado}}</td>
+            <td>{{salud.accidentes}}</td>
+            <td>{{salud.tipoAccidente}}</td>
+            <td>{{salud.observacion}}</td>
+            <td>
+              <a [routerLink]="['/salud-edit', salud._id]">
+                Editar
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-footer></app-footer>
+           

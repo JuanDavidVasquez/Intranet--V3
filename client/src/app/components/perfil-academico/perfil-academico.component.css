@@ -3,3 +3,8 @@
     color: white;
     padding: 25px;
 }
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

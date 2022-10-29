@@ -35,7 +35,7 @@ export class PerfilAcademicoComponent implements OnInit {
 		private _perfilAcademicoService: PerfilAcademicoService,
 		private _userService: UserService,
   ) { 
-    this.title = 'Registro experiencia laboral';
+   	    this.title = 'Registro academico';
 		this.user = this._userService.getIdentity();
 		this.identity = this.user;
 		this.token = this._userService.getToken();
@@ -45,9 +45,9 @@ export class PerfilAcademicoComponent implements OnInit {
 
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
-		this.perfilAcademico = new PerfilAcademico("", "", "", "", "", "", "", "", "");
-		this.url = GLOBAL.url;
-		this.getPerfilAcademicoUser(this.perfilAcademicoId,this.token);
+	this.perfilAcademico = new PerfilAcademico("", "", "", "", "", "", "", "", "");
+	this.url = GLOBAL.url;
+	this.getPerfilAcademicoUser(this.perfilAcademicoId,this.token);
     console.log(this.identity);
     $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
     .css('background-repeat','no-repeat');

@@ -2,11 +2,12 @@
 
 <div class="col-lg-12">
     <h1><span>{{title}}</span></h1>
+    <h2>Welcome {{ identity.name }}</h2>
     <div class="row-lg-12">
         <div class="adm-perfiles">
             <a [routerLink]="['/perfil',identity._id]" class="perfiles">Perfil Laboral</a>
             <a [routerLink]="['/perfil-academico',identity._id]" class="perfiles">Perfil academico</a>
-            <a [routerLink]="['/perfil',identity._id]" class="perfiles">Salud</a>
+            <a [routerLink]="['/salud',identity._id]" class="perfiles">Salud</a>
             <a [routerLink]="['/perfil-academico',identity._id]" class="perfiles">Generalidades</a>
         </div>
     </div>

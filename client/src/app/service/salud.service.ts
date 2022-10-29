@@ -22,7 +22,7 @@ export class SaludService{
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 		.set('Authorization', token);
 
-		return this._http.post(this.url+'register-perfil-academico', params, {headers:headers});
+		return this._http.post(this.url+'register-salud', params, {headers:headers});
 	}
 
 
@@ -43,28 +43,28 @@ export class SaludService{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.put(this.url+'update-perfil-academico/'+salud._id, params, {headers: headers});
+		return this._http.put(this.url+'update-salud/'+salud._id, params, {headers: headers});
 	}
 
 	getSaluds(token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.get(this.url+'perfils-academicos/', {headers: headers});
+		return this._http.get(this.url+'salud-users/', {headers: headers});
 	}
 
 	getSalud(id,token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.get(this.url+'perfil-academico/'+id, {headers: headers});
+		return this._http.get(this.url+'salud/'+id, {headers: headers});
 	}
 
     getSaludUser(user, token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.get(this.url+'perfil-academico-user/'+user, {headers: headers});
+		return this._http.get(this.url+'salud-user/'+user, {headers: headers});
 	}
 
     getSaludid(token){
