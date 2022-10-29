@@ -16,6 +16,7 @@ var noticia_routes = require('./routes/noticia');
 var certificado_routes = require('./routes/certificado');
 var perfilLaboral_routes = require('./routes/perfilLaboral');
 var perfilAcadmico_routes = require('./routes/perfilAcademico');
+var salud_routes = require('./routes/salud');
 
 var follow_routes = require('./routes/follow');
 const follow = require('./models/follow');
@@ -43,6 +44,7 @@ app.use('/api', certificado_routes);
 app.use('/api', follow_routes);
 app.use('/api', perfilLaboral_routes);
 app.use('/api', perfilAcadmico_routes);
+app.use('/api', salud_routes);
 
 app.use(require('./routes/cerificadolaboralroute'));
 
