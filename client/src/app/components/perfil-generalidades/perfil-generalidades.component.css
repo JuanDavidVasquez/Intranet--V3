@@ -1,0 +1,38 @@
+.regresar{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    transition: all 500ms;
+}
+.regresar a{
+    padding: 15px;
+    font-size: 27px;
+    border-radius: 10px;
+    background-color: rgb(0 0 0 / 0%);
+    transition: all 500ms;
+}
+
+.regresar a:hover{
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    transform: translate(10px, -10px);
+    box-shadow: -4px 4px 9px 0px black;
+}
+.formulario{
+    background: #0000008c;
+    color: white;
+    padding: 25px;
+}
+input[type='submit']{
+    color: rgba(0, 0, 0, 0.411);
+    transition: all 500ms;
+}
+input[type='submit']:hover{
+    color: #000;
+}
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
