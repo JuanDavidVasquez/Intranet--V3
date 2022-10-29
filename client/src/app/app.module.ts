@@ -36,6 +36,8 @@ import { PerfilAcademicoComponent } from './components/perfil-academico/perfil-a
 import { PerfilAcademicoEditComponent } from './components/perfil-academico-edit/perfil-academico-edit.component';
 import { PerfilSaludComponent } from './components/perfil-salud/perfil-salud.component';
 import { PerfilGeneralidadesComponent } from './components/perfil-generalidades/perfil-generalidades.component';
+import { EditSaludComponent } from './components/edit-salud/edit-salud.component';
+import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { PerfilGeneralidadesComponent } from './components/perfil-generalidades/
     PerfilAcademicoEditComponent,
     PerfilSaludComponent,
     PerfilGeneralidadesComponent,
+    EditSaludComponent,
+    EditGeneralidadComponent,
   ],
   imports: [
     BrowserModule,

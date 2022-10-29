@@ -25,6 +25,9 @@ import { PerfilAcademicoComponent } from './components/perfil-academico/perfil-a
 import { PerfilAcademicoEditComponent } from './components/perfil-academico-edit/perfil-academico-edit.component';
 import { PerfilSaludComponent } from './components/perfil-salud/perfil-salud.component';
 import { PerfilGeneralidadesComponent } from './components/perfil-generalidades/perfil-generalidades.component';
+import { EditSaludComponent } from './components/edit-salud/edit-salud.component';
+import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
+
 
 
 const routes: Routes = [
@@ -37,7 +40,9 @@ const routes: Routes = [
   {path: 'perfil-academico/:id', component:PerfilAcademicoComponent},
   {path: 'perfil-academico-edit/:id', component:PerfilAcademicoEditComponent},
   {path: 'salud/:id', component:PerfilSaludComponent},
+  {path: 'salud-edit/:id', component:EditSaludComponent},
   {path: 'perfil-generalidades/:id', component:PerfilGeneralidadesComponent},
+  {path: 'edit-generalidades/:id', component:EditGeneralidadComponent},
   {path: 'home', component:HomeComponent},
   {path: 'mis-datos', component:UserEditComponent},
   {path: 'gente', component:UsersComponent},
