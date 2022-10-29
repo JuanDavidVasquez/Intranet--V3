@@ -1,8 +1,12 @@
+.formularios{
+    display: none;
+}
 .regresar{
     position: absolute;
     top: 20%;
     left: 5%;
     transition: all 500ms;
+    z-index: 999;
 }
 .regresar a{
     padding: 15px;

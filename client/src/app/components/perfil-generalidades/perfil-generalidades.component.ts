@@ -51,6 +51,9 @@ export class PerfilGeneralidadesComponent implements OnInit {
     $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
     .css('background-repeat','no-repeat');
   }
+  registrar(){
+	$('.formularios').css('display','block');
+  }
   getGeneralidadUser(generalidadId,token):void{
 		
 		this._generalidadService.getGeneralidadUser(generalidadId,token).subscribe(
