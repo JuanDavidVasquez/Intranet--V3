@@ -17,6 +17,9 @@ var certificado_routes = require('./routes/certificado');
 var perfilLaboral_routes = require('./routes/perfilLaboral');
 var perfilAcadmico_routes = require('./routes/perfilAcademico');
 var salud_routes = require('./routes/salud');
+var vivienda_routes = require('./routes/vivienda');
+var debilidad_routes = require('./routes/debilidad');
+
 
 var follow_routes = require('./routes/follow');
 const follow = require('./models/follow');
@@ -45,6 +48,8 @@ app.use('/api', follow_routes);
 app.use('/api', perfilLaboral_routes);
 app.use('/api', perfilAcadmico_routes);
 app.use('/api', salud_routes);
+app.use('/api', vivienda_routes);
+app.use('/api', debilidad_routes);
 
 app.use(require('./routes/cerificadolaboralroute'));
 
