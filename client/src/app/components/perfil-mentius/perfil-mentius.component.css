@@ -1,0 +1,52 @@
+#cargosFondo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    padding-bottom: 15px;
+}
+#image_user>img{
+    width: 200px;
+    height: 200px;
+}
+.row-lg-6{
+    padding: 50px;
+}
+#cargos{
+    max-width: 700px;
+}
+.cargos-desarrollo{
+    background-color: rgba(91, 26, 26, 0.476);
+    height: 70vh;
+}
+.cargosFondo-desarrollo{
+    background: url('../../../assets/img/fondosProcesos/desarrollo.jpg');
+    background-size: cover;
+}
+.cargos-ti{
+    background-color: rgba(255, 0, 0, 0.368);
+    height: 61vh;
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    color: white;
+}
+.cargosFondo-ti{
+    background: url('../../../assets/img/fondosProcesos/mesaAyuda.jpg');
+    background-size: cover;
+}
+.cargos-redes{
+    background-color: rgba(195, 47, 47, 0.524);
+    height: 70vh;
+}
+.cargosFondo-redes{
+    background: url('../../../assets/img/fondosProcesos/redes.jpg');
+    background-size: cover;
+}
+
+#cargos>#image_user{
+    display: flex;
+    justify-content: center;
+}

@@ -1,4 +1,4 @@
-<app-mentius></app-mentius>
+<app-menus></app-menus>
 <div class="col-lg-8">
     <h1 class="h1-strong">
         {{title}}
@@ -12,7 +12,7 @@
                         <div *ngIf="user.image" class="image_user pull-left">
                             <img src="{{ url+'get-image-user/'+ user.image }}" class="img-avatar"/>
                         </div>
-                        <a href="#"> {{ user.name + ' ' + user.surname }}</a>
+                        <a [routerLink]="['/perfil-mentius',user._id]"> {{ user.name + ' ' + user.surname }}</a>
                         <p>{{ user.nick }}</p>
                     </div>
                 </div>

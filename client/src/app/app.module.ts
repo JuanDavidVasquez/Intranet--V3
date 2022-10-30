@@ -38,6 +38,7 @@ import { PerfilSaludComponent } from './components/perfil-salud/perfil-salud.com
 import { PerfilGeneralidadesComponent } from './components/perfil-generalidades/perfil-generalidades.component';
 import { EditSaludComponent } from './components/edit-salud/edit-salud.component';
 import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
+import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-mentius.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { EditGeneralidadComponent } from './components/edit-generalidad/edit-gen
     PerfilGeneralidadesComponent,
     EditSaludComponent,
     EditGeneralidadComponent,
+    PerfilMentiusComponent,
   ],
   imports: [
     BrowserModule,

@@ -81,7 +81,11 @@
         </div>
     </div>
 </div>
-
+<div class="regresar">
+    <a [routerLink]="['/perfil-general']">
+        Regresar
+    </a>
+</div>
 <div class="col-lg-12 aspirante" *ngIf="perfilAcademicos.length > 0">
     <h2 class="h1-strong text-center">Registros</h2>
     <table class="table table-Success table-striped table-hover" >

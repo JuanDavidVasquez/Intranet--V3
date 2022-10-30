@@ -5,56 +5,49 @@ import { UserService } from 'src/app/service/user.service';
 import  { UploadService } from 'src/app/service/upload.service';
 import { GLOBAL } from 'src/app/service/global';
 declare var $:any;
-	
-
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css'],
+  selector: 'app-perfil-mentius',
+  templateUrl: './perfil-mentius.component.html',
+  styleUrls: ['./perfil-mentius.component.css'],
   providers: [UserService]
 })
-export class UsersComponent implements OnInit {
+export class PerfilMentiusComponent implements OnInit {
 
   public title:string;
   public identity;
   public token;
   public status:string;
   public url: string;
-  public users: User[];
-
+  user: User;
 
   constructor(
     private _route:ActivatedRoute,
     private _router:Router,
     private _userService:UserService
-  ) {
+  ) { 
     this.title = 'Mentius People';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
-   }
-  
-  ngOnInit(): void {
-    console.log("users.components ha sido cargado");
-    this.getUsers();
   }
-   getUsers(){
-    this._userService.getUsers().subscribe(
-      response =>{
-        if(!response.users){
-          this.status = 'error';
-        }else{
-          console.log(response.users);
-          this.users = response.users;
-        }
-      },
-      error=>{
-        var errorMessage = <any>error;
-        if(errorMessage != null){
-          this.status = 'erroor';
-        }
-      }
-    )
-   }
 
+  ngOnInit(): void {
+    this._route.params.subscribe(params => {
+			let id = params['id'];
+			this.getUser(id);
+		});
+    $('.footer').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
+    .css('background-repeat','no-repeat')
+    .css('background-size','cover');
+  }
+  getUser(id){
+    this._userService.getUser(id).subscribe(
+      response => {
+				this.user = response.user;
+			},
+			error => {
+				console.log(<any>error);
+			}
+		)
+	}
 }

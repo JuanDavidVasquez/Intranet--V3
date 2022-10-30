@@ -14,7 +14,7 @@
           </a>
         </li>
 
-        <li>
+        <li *ngIf="identity.cargo == 'admin' || identity.cargo == 'activo'">
           <a [routerLink]="['/gente']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-user"></span>
             Gente Mentius

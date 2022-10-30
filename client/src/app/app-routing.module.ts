@@ -27,6 +27,7 @@ import { PerfilSaludComponent } from './components/perfil-salud/perfil-salud.com
 import { PerfilGeneralidadesComponent } from './components/perfil-generalidades/perfil-generalidades.component';
 import { EditSaludComponent } from './components/edit-salud/edit-salud.component';
 import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
+import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-mentius.component';
 
 
 
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'login', component:LoginComponent },
   {path: 'register', component:RegisterComponent },
+  {path: 'perfil-mentius/:id', component:PerfilMentiusComponent},
   {path: 'perfil-general', component:PerfilGeneralComponent},
   {path: 'perfil/:id', component:PerfilComponent},
   {path: 'edit-perfil-laboral/:id', component:EditPerfilComponent},
