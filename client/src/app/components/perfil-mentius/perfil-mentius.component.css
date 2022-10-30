@@ -4,6 +4,7 @@
     align-items: center;
     padding: 50px;
     padding-bottom: 15px;
+    color: white;
 }
 #image_user>img{
     width: 200px;
@@ -45,8 +46,24 @@
     background: url('../../../assets/img/fondosProcesos/redes.jpg');
     background-size: cover;
 }
-
 #cargos>#image_user{
     display: flex;
     justify-content: center;
+}
+button{
+    position: absolute;
+    top: 80%;
+    right: 20%;
+    padding: 10px;
+    background: none;
+    border: 1px solid transparent;
+    font-size: 21px;
+    transition: all 700ms;
+}
+button:hover{
+    background: rgba(136, 136, 136, 0.556);
+    border: 1px solid rgba(136, 136, 136, 0.556);
+    transform: translate(5px, -5px);
+    color: white;
+    border-radius: 17px;
 }

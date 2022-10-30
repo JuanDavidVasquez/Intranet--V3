@@ -14,7 +14,7 @@
           </a>
         </li>
 
-        <li *ngIf="identity.cargo == 'admin' || identity.cargo == 'activo'">
+        <li *ngIf="identity.role == 'admin'">
           <a [routerLink]="['/gente']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-user"></span>
             Gente Mentius
@@ -26,13 +26,13 @@
             Procesos Mentius
           </a>
         </li>
-        <li *ngIf="identity.cargo == 'admin'">
+        <li *ngIf="identity.role == 'admin'">
           <a [routerLink]="['/dashboard-noticias']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-globe"></span>
             Dashboart Noticias
           </a>
         </li>
-        <li *ngIf="identity.cargo == 'admin'">
+        <li *ngIf="identity.role == 'admin'">
           <a [routerLink]="['/register']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-user"></span>
             New user

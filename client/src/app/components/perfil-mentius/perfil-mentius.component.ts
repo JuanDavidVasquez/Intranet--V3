@@ -50,4 +50,7 @@ export class PerfilMentiusComponent implements OnInit {
 			}
 		)
 	}
+  regresar(){
+    this._router.navigate(['/gente'])
+  }
 }

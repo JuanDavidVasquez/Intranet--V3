@@ -1,6 +1,6 @@
 <app-menus></app-menus>
 
-<div class="col-lg-12"  *ngIf="identity.cargo == 'admin'">
+<div class="col-lg-12"  *ngIf="identity.role == 'admin'">
     <h1 class="h1-strong">{{ title }}</h1>
 
 
@@ -16,6 +16,13 @@
 
     <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-12">
    <div class="col-lg-6">
+    <p>
+        <label>Rol</label>
+        <input type="text" name="role" #role="ngModel" [(ngModel)]="user.role" class="form-control" required />
+        <span *ngIf="!role.valid && role.touched">
+            El role es obligatorio
+        </span>
+    </p>
         <p>
             <label>Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />

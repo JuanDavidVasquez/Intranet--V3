@@ -1,12 +1,14 @@
 <app-menus></app-menus>
 <div class="container-fluid"
-
 id="cargosFondo" [ngClass]="{
     'cargosFondo-desarrollo': user.cargo == 'desarrollo',
     'cargosFondo-ti': user.cargo == 'ti',
     'cargosFondo-redes': user.cargo == 'redes'    
 }"
 >
+<button (click)="regresar()">
+    Regresar
+</button>
     <div id="cargos" [ngClass]="{
         'cargos-desarrollo': user.cargo == 'desarrollo',
         'cargos-ti': user.cargo == 'ti',
