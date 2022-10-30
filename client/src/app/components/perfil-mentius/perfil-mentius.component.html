@@ -3,7 +3,9 @@
 id="cargosFondo" [ngClass]="{
     'cargosFondo-desarrollo': user.cargo == 'desarrollo',
     'cargosFondo-ti': user.cargo == 'ti',
-    'cargosFondo-redes': user.cargo == 'redes'    
+    'cargosFondo-redes': user.cargo == 'redes',
+    'cargosFondo-rrhh': user.cargo == 'rrhh',
+    'cargosFondo-datos': user.cargo == 'datos'    
 }"
 >
 <button (click)="regresar()">
@@ -12,7 +14,9 @@ id="cargosFondo" [ngClass]="{
     <div id="cargos" [ngClass]="{
         'cargos-desarrollo': user.cargo == 'desarrollo',
         'cargos-ti': user.cargo == 'ti',
-        'cargos-redes': user.cargo == 'redes'    
+        'cargos-redes': user.cargo == 'redes',
+        'cargos-rrhh': user.cargo == 'rrhh',
+        'cargos-datos': user.cargo == 'datos'    
     }">
         <div *ngIf="user.image" id="image_user" class="pull-left row-lg-6">
             <img src="{{ url+'get-image-user/'+ user.image }}" class="img-avatar" />

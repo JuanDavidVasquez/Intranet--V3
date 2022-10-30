@@ -50,6 +50,23 @@
     display: flex;
     justify-content: center;
 }
+.cargos-rrhh{
+    background-color: rgba(34, 81, 47, 0.524);
+    height: 70vh;
+}
+.cargosFondo-rrhh{
+    background: url('../../../assets/img/fondosProcesos/rrhh.jpg');
+    background-size: cover;
+}
+.cargos-datos{
+    background-color: rgba(15, 127, 175, 0.524);
+    height: 70vh;
+}
+.cargosFondo-datos{
+    background: url('../../../assets/img/fondosProcesos/datos.jpg');
+    background-size: cover;
+}
+
 button{
     position: absolute;
     top: 80%;

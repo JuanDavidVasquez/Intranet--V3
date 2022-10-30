@@ -22,6 +22,8 @@ export class ReclutamientoComponent implements OnInit {
 	public url: string;
 	public aspirantes: Aspirante[];
 	public users: User[];
+	public user: User;
+
 
   constructor(
 	private _route:ActivatedRoute,
