@@ -53,6 +53,7 @@ export class OfertaLaboralEditComponent implements OnInit {
     this._ofertaLaboralService.getOfertaLaboral(id,token).subscribe(
       response => {
         this.ofertaLaboral = response.ofertaLaboral;
+        
       },
       error => {
         console.log(<any>error);
@@ -66,7 +67,7 @@ export class OfertaLaboralEditComponent implements OnInit {
           this.status = 'error';
         }else{
           this.status = 'success';
-          localStorage.setItem('pAcademico', JSON.stringify(this.ofertaLaboral));
+          localStorage.setItem('pOfertaLaboral', JSON.stringify(this.ofertaLaboral));
             this.pOfertaLaboral = this.ofertaLaboral;
           // SUBIDA DE IMAGEN DE USUARIO
           this._uploadService.makeFileRequest(this.url+'upload-image-ofertaLaboral/'+this.ofertaLaboral._id, [], this.filesToUpload,this.token, 'image')
