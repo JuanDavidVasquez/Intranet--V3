@@ -22,7 +22,7 @@ export class OfertaLaboralService{
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 		.set('Authorization', token);
 
-		return this._http.post(this.url+'register-perfil-academico', params, {headers:headers});
+		return this._http.post(this.url+'subir-ofertaLaboral', params, {headers:headers});
 	}
 
 
@@ -43,21 +43,21 @@ export class OfertaLaboralService{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.put(this.url+'update-perfil-academico/'+ofertaLaboral._id, params, {headers: headers});
+		return this._http.put(this.url+'update-ofertaLaboral/'+ofertaLaboral._id, params, {headers: headers});
 	}
 
 	getOfertaLaborals(token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.get(this.url+'perfils-academicos/', {headers: headers});
+		return this._http.get(this.url+'ofertaLaborals/', {headers: headers});
 	}
 
 	getOfertaLaboral(id,token):Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json')
 		.set('Authorization', token);
 
-		return this._http.get(this.url+'perfil-academico/'+id, {headers: headers});
+		return this._http.get(this.url+'ofertaLaboral/'+id, {headers: headers});
 	}
 
     getOfertaLaboralUser(user, token):Observable<any>{

@@ -11,27 +11,42 @@ function saveOfertaLaboral(req, res) {
   var params = req.body;
   var ofertaLaboral = new OfertaLaboral();
 
-  ofertaLaboral.user = req.user.sub;
-  ofertaLaboral.aprobacion = params.aprobacion;
-  ofertaLaboral.titulo = params.resumen;
-  ofertaLaboral.cargo = params.cargo;
-  ofertaLaboral.description = params.description;
-  ofertaLaboral.image = null;
+  if (params.titulo) {
+    ofertaLaboral.user = req.user.sub;
+    ofertaLaboral.titulo = params.titulo;
+    ofertaLaboral.cargo = params.cargo;
+    ofertaLaboral.description = params.description;
+    ofertaLaboral.aprobacion = params.aprobacion;
+    ofertaLaboral.image = null;
 
-  ofertaLaboral.save((err, ofertaLaboralStored) => {
-    if (err) return res.status(500).send({ message: "Error al guardar" });
-    if (!ofertaLaboralStored)
-      return res
-        .status(404)
-        .send({ message: "No se ha podido guardar la ofertaLaboral" });
+    //ofertaLaborals duplicados controll
+    OfertaLaboral.find({
 
-    return res.status(200).send({ ofertaLaboral: ofertaLaboralStored });
-  });
+    }).exec((err, ofertaLaborals) => {
+      if (err)
+        return res
+          .status(500)
+          .send({ message: "Error en la petición de ofertaLaboral" });
 
-  return res.status(200).send({
-    ofertaLaboral: ofertaLaboral,
-    message: "Metodo SaveofertaLaboral",
-  });
+        ofertaLaboral.save((err, ofertaLaboralStored) => {
+          if (err)
+            return res
+              .status(500)
+              .send({ message: "No se ha podido guardar el usuario" });
+
+          if (ofertaLaboralStored) {
+            res.status(200).send({ ofertaLaboral: ofertaLaboralStored });
+          } else {
+            res.status(404).send({ message: "No se ha registrado el usuario" });
+          }
+        });
+      
+    });
+  } else {
+    res.status(200).send({
+      message: "Envia todos los campos necesarios",
+    });
+  }
 }
 
 // Conseguir datos de un OfertaLaboral

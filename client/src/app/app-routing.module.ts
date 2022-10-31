@@ -62,7 +62,7 @@ const routes: Routes = [
   {path: 'registro-de-aspirante', component:RegisterAspiranteComponent},
   {path: 'edit-aspirante/:id', component:EditAspiranteComponent},
   {path: 'edit-aspirante', component:EditAspiranteComponent},
-  {path: 'oferta-laboral/:id', component:OfertaLaboralComponent},
+  {path: 'oferta-laboral', component:OfertaLaboralComponent},
   {path: '**', component:ErrorComponent }
 ];
 
