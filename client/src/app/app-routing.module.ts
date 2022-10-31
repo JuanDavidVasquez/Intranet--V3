@@ -29,6 +29,7 @@ import { EditSaludComponent } from './components/edit-salud/edit-salud.component
 import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
 import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-mentius.component';
 import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-laboral.component';
+import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
 
 
 
@@ -63,6 +64,7 @@ const routes: Routes = [
   {path: 'edit-aspirante/:id', component:EditAspiranteComponent},
   {path: 'edit-aspirante', component:EditAspiranteComponent},
   {path: 'oferta-laboral', component:OfertaLaboralComponent},
+  {path: 'oferta-laboral-edit/:id', component:OfertaLaboralEditComponent},
   {path: '**', component:ErrorComponent }
 ];
 

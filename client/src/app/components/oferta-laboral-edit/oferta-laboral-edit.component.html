@@ -13,7 +13,7 @@
             Registro no se ha realizado.
         </div>
         <div class="container formulario" style="margin-top: 5%;">
-            <form #registroOfertaLaboralForm="ngForm" (ngSubmit)="onSubmit(registroOfertaLaboralForm)">
+            <form #editOfertaLaboralForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="row-lg-12">
                     <div class="col-lg-6 registros">
                         <p>
@@ -45,11 +45,18 @@
                                 Description obligatoria
                             </span>
                         </p>
+                        <div *ngIf="ofertaLaboral.image">
+                            <img src="{{ url+'get-image-ofertaLaboral/'+ ofertaLaboral.image }}" />
+                        </div>
+                        <p>
+                            <label>Certificado academico</label>
+                            <input type="file" placeholder="Subir imágen" (change)="fileChangeEvent($event)" />
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-12 text-center registros">
                     <input type="submit" value="Registrar" class="btn btn-succes"
-                        [disabled]="!registroOfertaLaboralForm.form.valid" />
+                        [disabled]="!editOfertaLaboralForm.form.valid" />
                 </div>
             </form>
         </div>

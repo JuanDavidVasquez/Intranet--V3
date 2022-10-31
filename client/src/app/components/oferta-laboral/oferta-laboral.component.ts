@@ -36,7 +36,7 @@ export class OfertaLaboralComponent implements OnInit {
     private _ofertaLaboralService: OfertaLaboralService,
     private _userService: UserService,
   ) {
-    this.title = 'Registro academico';
+    this.title = 'Registro de oferta';
     this.user = this._userService.getIdentity();
     this.identity = this.user;
     this.token = this._userService.getToken();

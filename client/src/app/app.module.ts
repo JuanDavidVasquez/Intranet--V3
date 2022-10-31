@@ -40,6 +40,7 @@ import { EditSaludComponent } from './components/edit-salud/edit-salud.component
 import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
 import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-mentius.component';
 import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-laboral.component';
+import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-labor
     EditGeneralidadComponent,
     PerfilMentiusComponent,
     OfertaLaboralComponent,
+    OfertaLaboralEditComponent,
   ],
   imports: [
     BrowserModule,
