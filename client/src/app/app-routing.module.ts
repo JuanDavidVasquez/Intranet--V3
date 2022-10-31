@@ -28,6 +28,7 @@ import { PerfilGeneralidadesComponent } from './components/perfil-generalidades/
 import { EditSaludComponent } from './components/edit-salud/edit-salud.component';
 import { EditGeneralidadComponent } from './components/edit-generalidad/edit-generalidad.component';
 import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-mentius.component';
+import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-laboral.component';
 
 
 
@@ -61,6 +62,7 @@ const routes: Routes = [
   {path: 'registro-de-aspirante', component:RegisterAspiranteComponent},
   {path: 'edit-aspirante/:id', component:EditAspiranteComponent},
   {path: 'edit-aspirante', component:EditAspiranteComponent},
+  {path: 'oferta-laboral/:id', component:OfertaLaboralComponent},
   {path: '**', component:ErrorComponent }
 ];
 

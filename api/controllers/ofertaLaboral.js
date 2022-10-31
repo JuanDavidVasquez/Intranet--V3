@@ -1,0 +1,189 @@
+"use strict";
+var fs = require("fs");
+var path = require("path");
+
+var OfertaLaboral = require("../models/ofertaLaboral");
+var User = require("../models/user");
+var jwt = require("../services/jwt");
+// Registro
+
+function saveOfertaLaboral(req, res) {
+  var params = req.body;
+  var ofertaLaboral = new OfertaLaboral();
+
+  ofertaLaboral.user = req.user.sub;
+  ofertaLaboral.aprobacion = params.aprobacion;
+  ofertaLaboral.titulo = params.resumen;
+  ofertaLaboral.cargo = params.cargo;
+  ofertaLaboral.description = params.description;
+  ofertaLaboral.image = null;
+
+  ofertaLaboral.save((err, ofertaLaboralStored) => {
+    if (err) return res.status(500).send({ message: "Error al guardar" });
+    if (!ofertaLaboralStored)
+      return res
+        .status(404)
+        .send({ message: "No se ha podido guardar la ofertaLaboral" });
+
+    return res.status(200).send({ ofertaLaboral: ofertaLaboralStored });
+  });
+
+  return res.status(200).send({
+    ofertaLaboral: ofertaLaboral,
+    message: "Metodo SaveofertaLaboral",
+  });
+}
+
+// Conseguir datos de un OfertaLaboral
+function getOfertaLaboral(req, res) {
+  var ofertaLaboralId = req.params.id;
+
+  if (ofertaLaboralId == null) {
+    if (!ofertaLaboral)
+      return res.status(404).send({ message: "No existe el proyecto" });
+  }
+
+  OfertaLaboral.findById(ofertaLaboralId, (err, ofertaLaboral) => {
+    if (err)
+      return res.status(500).send({ message: "Error al devolver los datos" });
+    if (!ofertaLaboral)
+      return res.status(404).send({ message: "No existe el usuario" });
+
+    return res.status(200).send({
+      ofertaLaboral,
+    });
+  });
+}
+
+function getOfertaLaborals(req, res) {
+  OfertaLaboral.find()
+    .sort("-year")
+    .exec((err, ofertaLaborals) => {
+      if (err)
+        return res.status(500).send({ message: "Error al devolver los datos" });
+      if (!ofertaLaborals)
+        return res
+          .status(404)
+          .send({ message: "No exisen usuarios para mostrar" });
+
+      return res.status(200).send({
+        ofertaLaborals,
+      });
+    });
+}
+
+function updateOfertaLaboral(req, res) {
+  var ofertaLaboralId = req.params.id;
+  var update = req.body;
+
+  OfertaLaboral.findByIdAndUpdate(
+    ofertaLaboralId,
+    update,
+    { new: true },
+    (err, ofertaLaboralUpdated) => {
+      if (err)
+        return res
+          .status(500)
+          .send({ message: "Error al actualizar los datos" });
+      if (!ofertaLaboralUpdated)
+        return res.status(404).send({ message: "No existe el usuario" });
+
+      return res.status(200).send({
+        ofertaLaboral: ofertaLaboralUpdated,
+      });
+    }
+  );
+}
+function deleteOfertaLaboral(req, res) {
+  var ofertaLaboralId = req.params.id;
+
+  OfertaLaboral.findByIdAndRemove(
+    ofertaLaboralId,
+    (err, ofertaLaboralRemoved) => {
+      if (err)
+        return res
+          .status(500)
+          .send({ message: "Error al eliminar el usuario" });
+      if (!ofertaLaboralRemoved)
+        return res
+          .status(404)
+          .send({ message: "No se puede eliminar el usuario" });
+
+      return res.status(200).send({
+        ofertaLaboral: ofertaLaboralRemoved,
+      });
+    }
+  );
+}
+
+
+
+// Subir archivos de imagen/avatar de usuario
+function uploadOfertaLaboralImage(req, res){
+	var ofertaLaboralId = req.params.id;
+
+	if(req.files){
+		var file_path = req.files.image.path;
+		console.log(file_path);
+		
+		var file_split = file_path.split('\\');
+		console.log(file_split);
+
+		var file_name = file_split[2];
+		console.log(file_name);
+
+		var ext_split = file_name.split('\.');
+		console.log(ext_split);
+
+		var file_ext = ext_split[1];
+		console.log(file_ext);
+
+		if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
+			 
+			 // Actualizar documento de ofertaLaboral logueado
+			 OfertaLaboral.findByIdAndUpdate(ofertaLaboralId, {image: file_name}, {new:true}, (err, ofertaLaboralUpdated) =>{
+				if(err) return res.status(500).send({message: 'Error en la petición'});
+
+				if(!ofertaLaboralUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
+
+				return res.status(200).send({ofertaLaboral: ofertaLaboralUpdated});
+			 });
+
+		}else{
+			return removeFilesOfUploads(res, file_path, 'Extensión no válida');
+		}
+
+	}else{
+		return res.status(200).send({message: 'No se han subido imagenes'});
+	}
+}
+
+function removeFilesOfUploads(res, file_path, message){
+	fs.unlink(file_path, (err) => {
+		return res.status(200).send({message: message});
+	});
+}
+
+function getOfertaLaboralImageFile(req, res){
+	var image_file = req.params.imageFile;
+	var path_file = './uploads/ofertaLaborals/'+image_file;
+
+	fs.exists(path_file, (exists) => {
+		if(exists){
+			res.sendFile(path.resolve(path_file));
+		}else{
+			res.status(200).send({message: 'No existe la imagen...'});
+		}
+	});
+}
+
+
+module.exports = {
+  saveOfertaLaboral,
+  getOfertaLaboral,
+  getOfertaLaborals,
+  updateOfertaLaboral,
+  deleteOfertaLaboral,
+  uploadOfertaLaboralImage,
+  getOfertaLaboralImageFile
+};

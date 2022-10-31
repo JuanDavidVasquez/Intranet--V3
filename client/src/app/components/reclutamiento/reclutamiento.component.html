@@ -1,7 +1,7 @@
 <app-menus></app-menus>
 <div class="container-fluid">
     <div class="container tablas">
-        <div class="row" *ngIf="identity.cargo == 'rrhh'">
+        <div class="row" *ngIf="identity.cargo == 'rrhh' || identity.role == 'admin'">
           <a [routerLink]="['/registro-de-aspirante']" class="registro">
             Agregar Aspirante
           </a>

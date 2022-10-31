@@ -22,6 +22,7 @@ var debilidad_routes = require('./routes/debilidad');
 var judicial_routes = require('./routes/judicial');
 var vicio_routes = require('./routes/vicio');
 var generalidad_routes = require('./routes/generalidad');
+var ofertaLaboral_routes = require('./routes/ofertaLaboral');
 
 
 var follow_routes = require('./routes/follow');
@@ -56,6 +57,7 @@ app.use('/api', debilidad_routes);
 app.use('/api', judicial_routes);
 app.use('/api', vicio_routes);
 app.use('/api', generalidad_routes);
+app.use('/api', ofertaLaboral_routes);
 
 app.use(require('./routes/cerificadolaboralroute'));
 
