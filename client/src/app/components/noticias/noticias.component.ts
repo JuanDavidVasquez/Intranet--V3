@@ -69,4 +69,16 @@ export class NoticiasComponent implements OnInit {
       }
     )
    }
+   derecha(){
+    $('.row').css('height','27vh')
+    .css('display','flex')
+    .css('justify-content','flex-end')
+    .css('align-items','center');
+  }
+  izquierda(){
+    $('.row').css('height','27vh')
+    .css('display','flex')
+    .css('justify-content','flex-start')
+    .css('align-items','center');
+  }
 }

@@ -25,5 +25,13 @@
         </div>
     </div>
 </div>
+<div class="mover" *ngIf="favorita">
+    <button (click)="izquierda()">
+        <img src="../../../assets/img/noticias/flecha.png" id="izquierda">
+    </button>
+    <button (click)="derecha()">
+        <img src="../../../assets/img/noticias/flecha.png">
+    </button>
+</div>
 <app-menu-comprimido></app-menu-comprimido>
 <app-footer></app-footer>
