@@ -1,4 +1,7 @@
 export class User{
+    getIdentity() {
+      throw new Error('Method not implemented.');
+    }
  
     constructor(
         public _id: string,

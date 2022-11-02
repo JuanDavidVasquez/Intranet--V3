@@ -94,4 +94,9 @@ export class AspiranteService{
 
 		return this.token;
 	}
+
+	
+	searchAspirante(searchString):Observable<any>{
+		return this._http.get(this.url+'search-aspirante/'+searchString);
+	}
 }

@@ -41,6 +41,7 @@ import { EditGeneralidadComponent } from './components/edit-generalidad/edit-gen
 import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-mentius.component';
 import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-laboral.component';
 import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
+import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-aspirante.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/ofe
     PerfilMentiusComponent,
     OfertaLaboralComponent,
     OfertaLaboralEditComponent,
+    BuscarAspiranteComponent,
   ],
   imports: [
     BrowserModule,

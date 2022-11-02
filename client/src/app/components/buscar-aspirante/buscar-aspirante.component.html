@@ -4,13 +4,7 @@
         <div class="row" *ngIf="identity.cargo == 'rrhh' || identity.role == 'admin'">
           <div class="search" id="search">
             <h3>Buscador de aspirantes</h3>
-            <form #searchFrom="ngForm" (ngSubmit)="goSearch()">
-                <input type="text" name="search" [(ngModel)]="searchString">
-                <input type="submit" name="submit" value="Buscar" class="btn btn-dark">
-            </form>
-            <a [routerLink]="['/registro-de-aspirante']" class="registro">
-              Agregar Aspirante
-            </a>
+            <h2>Estas buscando: {{search}}</h2>
             </div>
             <div class="col-lg-12 aspirante">
                 <table class="table table-Success table-striped table-hover">

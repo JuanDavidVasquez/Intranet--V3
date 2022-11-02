@@ -23,6 +23,7 @@ export class ReclutamientoComponent implements OnInit {
 	public aspirantes: Aspirante[];
 	public users: User[];
 	public user: User;
+	public searchString: string;
 
 
   constructor(
@@ -65,4 +66,7 @@ export class ReclutamientoComponent implements OnInit {
 			}
 		);
 	}
+	goSearch(){
+		this._router.navigate(['/buscar-aspirante', this.searchString]);
+	  }
 }

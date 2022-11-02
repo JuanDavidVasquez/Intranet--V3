@@ -14,12 +14,7 @@ api.post('/register-aspirante', md_auth.ensurreAuth, AspiranteController.saveAsp
 api.get('/aspirante/:id', md_auth.ensurreAuth, AspiranteController.getAspirante);
 api.get('/aspirantes', md_auth.ensurreAuth, AspiranteController.getAspirantes);
 api.put('/update-aspirante/:id', md_auth.ensurreAuth, AspiranteController.updateAspirante);
+api.get('/search-aspirante/:search', AspiranteController.searchAspirante);
 
-/*
-api.get('/aspirante/:id', md_auth.ensurreAuth, AspiranteController.getAspirante);
-api.get('/aspirantes', md_auth.ensurreAuth, AspiranteController.getAspirantes);
-api.get('/counters/:id?', md_auth.ensurreAuth, AspiranteController.getCounters);
-api.put('/update-aspirante/:id', md_auth.ensurreAuth, AspiranteController.updateAspirante);
-*/
 
 module.exports = api;

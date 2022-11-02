@@ -127,10 +127,48 @@ function updateAspirante(req, res) {
     }
   );
 }
+
+function searchAspirante(req,res){
+  //sacar el string a buscar
+  
+  var searchString = req.params.search;
+  
+  //find or
+  
+  Aspirante.find({"$or":[
+    {"name":{"$regex": searchString, "$options":"i"}},
+    {"cedula":{"$regex": searchString, "$options":"i"}}
+  ]})
+  .sort([['cedula', 'descending']])
+  .exec((err,aspirantes)=>{
+  
+    if(err){
+      return res.status(500).send({
+        status: 'error',
+        message: 'Error en la petición'
+      });
+    }
+    if(!aspirantes || aspirantes.length <= 0){
+      return res.status(404).send({
+        status: 'error',
+        message: 'No hay aspirantes para que coincidan con tu busquedad'
+      });
+    }
+  
+    return res.status(200).send({
+      status: 'succes',
+      aspirantes
+    });
+  
+  });
+
+}
+
 module.exports = {
   test,
   saveAspirante,
   getAspirante,
   getAspirantes,
   updateAspirante,
+  searchAspirante
 };
