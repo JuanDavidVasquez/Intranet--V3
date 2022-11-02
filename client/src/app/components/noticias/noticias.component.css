@@ -118,7 +118,11 @@ h4{
     left: 88%;
     opacity: 80%;
 }
-
+.mover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .mover button{
     padding: 15px;
     min-width: 150px;

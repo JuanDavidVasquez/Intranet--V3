@@ -26,6 +26,7 @@ export class NoticiaComponent implements OnInit {
     });
     $('.row').css('height','27vh')
              .css('display','flex')
+             .css('overflow','hidden')
              .css('justify-content','center')
              .css('align-items','center');
   }
