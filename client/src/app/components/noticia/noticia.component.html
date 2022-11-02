@@ -1,0 +1,8 @@
+<h4>{{ noticia.tNoticia }}</h4>
+<span class="Ncontenido">
+    {{ noticia.resumen }}
+</span>
+<img src="{{ url+'get-image-noticia/'+ noticia.image }}" class="imagen-noticia" />
+<button (click)="seleccionar($event, noticia)">
+    Mas Información
+</button>

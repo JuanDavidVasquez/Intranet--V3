@@ -1,14 +1,26 @@
 <app-menus></app-menus>
+
+<div id="favorita" *ngIf="favorita">
+    <h2 class="subheader">
+        {{ favorita.tNoticia | uppercase }}
+    </h2>
+    <h4>
+        {{ favorita.resumen }}
+    </h4>
+    <img src="{{ url+'get-image-noticia/'+ favorita.image }}" class="imagen-noticia" />
+</div>
+
 <div class="col"></div>
 <div class="container-fluid">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 noticia" *ngFor="let noticia of noticias">
-                <h4>{{ noticia.tNoticia }}</h4>
-                <span class="Ncontenido">
-                    {{ noticia.resumen }}
-                </span>
-                <img src="{{ url+'get-image-noticia/'+ noticia.image }}" class="imagen-noticia"/>
+                <app-noticia
+                [noticia]="noticia"
+                (MarcarFavorita)="mostrarFavorita($event)"
+                >
+            </app-noticia>
+
             </div>
         </div>
     </div>

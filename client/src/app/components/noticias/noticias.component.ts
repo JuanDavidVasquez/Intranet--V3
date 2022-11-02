@@ -23,6 +23,7 @@ export class NoticiasComponent implements OnInit {
   public url: string;
   public noticias: Noticia[];
   public users: User[];
+  public favorita!: Noticia;
 
   constructor(
     private _route:ActivatedRoute,
@@ -45,6 +46,10 @@ export class NoticiasComponent implements OnInit {
       .css('background-size','cover');
 
      this.getNoticias();
+     this.mostrarFavorita(event);
+  }
+  mostrarFavorita(event: any){
+    this.favorita = event.noticia;
   }
   getNoticias(){
     this._noticiaService.getNoticias().subscribe(

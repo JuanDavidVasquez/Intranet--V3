@@ -1,0 +1,112 @@
+.row{
+    height: 100vh;
+}
+
+#carouselExampleIndicators .carousel-item img{
+    height: 50vh;
+    box-shadow: 0px 0px 20px 2px black;
+}
+
+.carousel-item.active {
+    display: block;
+    align-content: center;
+    text-align: -webkit-center;
+}
+
+.noticia{
+    opacity: 35%;
+    min-width: 300px;
+    min-height: 300px;
+    background-color: #ccc;
+    margin: 0px;
+    transition: all 500ms
+}
+.noticia:hover{
+    opacity: 80%;
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    color: #27B1A0;
+    font-size: 100px;
+    font-weight: 100;
+    font-family: system-ui;
+    margin-top: 15px;
+}
+h1 span{
+    background: #00000485;
+    padding: 10px;
+    border-radius: 0px 15px 1px 25px; 
+}
+h2{
+    font-size: 55px;
+    font-weight: 400;
+    padding:45px;
+}
+h4{
+    font-size: 20px;
+    margin-top: 15px;
+    background: #00000485;
+    padding: 15px;
+    color: white;
+    position: relative;
+    top: 70%;
+    transition: all 500ms;
+}
+.noticia:hover h4{
+    top: 0%;
+}
+.Ncontenido{
+    display: none;
+    transition: all 500ms;
+}
+.noticia:hover .Ncontenido{
+    display:block;
+    background: #00000485;
+    position: absolute;
+    width: 352px;
+    height: 195px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 16px;
+    animation-name: animationBoton;
+    animation-duration: 150ms;
+    animation-iteration-count:initial;
+    animation-timing-function: linear;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next{
+    width: 53% !important;
+}
+
+.imagen-noticia{
+    width: 100%;
+    height: 211px;
+}
+
+
+@keyframes animationNoticias{
+    0%{
+        transform: translateX(500px);
+    }
+    1%{
+        transform: translateX(200px);
+    }
+
+    50%{
+        transform: translateX(100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+ }
+
+ app-menu-comprimido{
+    top: 80%;
+    position: absolute;
+    left: 88%;
+    opacity: 80%;
+}

@@ -42,6 +42,7 @@ import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-menti
 import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-laboral.component';
 import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
 import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-aspirante.component';
+import { NoticiaComponent } from './components/noticia/noticia.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-a
     OfertaLaboralComponent,
     OfertaLaboralEditComponent,
     BuscarAspiranteComponent,
+    NoticiaComponent,
   ],
   imports: [
     BrowserModule,
