@@ -16,6 +16,7 @@ declare var $:any;
 })
 export class EditAspiranteComponent implements OnInit {
  
+  public fecha:any;
   public title: string;
   public user: User;
 	public aspirante: Aspirante;
@@ -38,6 +39,7 @@ export class EditAspiranteComponent implements OnInit {
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
+    this.fecha = new Date(2022, 10, 3);
   }
 
   ngOnInit(): void {

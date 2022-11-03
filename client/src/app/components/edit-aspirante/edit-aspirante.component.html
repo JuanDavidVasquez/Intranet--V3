@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <h1 class="h1-strong">
         Registro de aspirante
+        {{fecha | date}}
     </h1>
     <div class="regresar">
         <a [routerLink]="['/reclutamiento']">
@@ -118,9 +119,10 @@
                             </span>
                         </p>
                         <p>
-                            <label>Fecha de entrevista</label>
+                            <label>Fecha de entrevista {{aspirante.fechaEntrevista | date}}</label>
+
                             <input type="date" name="fechaEntrevista" #fechaEntrevista="ngModel"
-                                [(ngModel)]="aspirante.fechaEntrevista" class="form-control" required value="string | number | Date">
+                                [(ngModel)]="aspirante.fechaEntrevista" class="form-control" required value="">
 
                             <span *ngIf="!fechaEntrevista.valid && fechaEntrevista.touched">
                                 La fecha de entrevista es obligatoria
