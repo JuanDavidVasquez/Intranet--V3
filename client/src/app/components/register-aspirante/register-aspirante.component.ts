@@ -22,7 +22,6 @@ export class RegisterAspiranteComponent implements OnInit {
   public fecha:any;
 
   constructor(
-    private router:Router,
     private _route: ActivatedRoute,
     private _router: Router,
     private _aspiranteService: AspiranteService,

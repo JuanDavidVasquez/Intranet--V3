@@ -7,6 +7,7 @@ export class OfertaLaboral{
         public description: string,
         public cargo: string,
         public aprobacion: string,
+        public fechaIngreso:string,
         public image: string
     ){
 

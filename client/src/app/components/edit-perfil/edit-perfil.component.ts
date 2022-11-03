@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PerfilLaboral } from 'src/app/models/perfilLaboral';
 import { PerfilLaboralService } from 'src/app/service/perfilLaboral.service';
@@ -7,6 +7,7 @@ import { GLOBAL } from 'src/app/service/global';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
+import { MomentModule } from 'angular2-moment';      ;
 
 @Component({
   selector: 'app-edit-perfil',
@@ -15,7 +16,7 @@ import { UserService } from 'src/app/service/user.service';
   providers: [PerfilLaboralService, UploadService, UserService]
 })
 export class EditPerfilComponent implements OnInit {
-
+	public miFecha : Date;
 	public title: string;
 	public user: User;
 	public perfilLaboral: PerfilLaboral;
@@ -36,6 +37,7 @@ export class EditPerfilComponent implements OnInit {
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
+	
   }
 
   ngOnInit(): void {

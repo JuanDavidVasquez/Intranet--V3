@@ -27,6 +27,9 @@ export class OfertaLaboralComponent implements OnInit {
   public ofertaLaborals: OfertaLaboral[];
   public users: User[];
   public ofertaLaboralId;
+  public fecha:any;
+  public fechaEstimada:any;
+  public dias:Number;
 
   @Input() name: string;
   serverElements: any;
@@ -42,14 +45,24 @@ export class OfertaLaboralComponent implements OnInit {
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
     this.ofertaLaboralId = this.identity._id;
+    this.fecha = Date(); 
   }
 
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
-    this.ofertaLaboral = new OfertaLaboral("", "", "", "", "", "", "");
+    this.ofertaLaboral = new OfertaLaboral("", "", "", "", "", "", "","");
     this.url = GLOBAL.url;
     console.log(this.identity);
+    this.fechas();
   }
+  fechas(){
+    var fechaEstimada = new Date(this.fecha);
+    var dias = 15; // Número de días a agregar
+    fechaEstimada.setDate(fechaEstimada.getDate() + dias);
+    console.log(fechaEstimada);
+    return fechaEstimada;
+  }
+
   onSubmit(form: any) {
     console.log(this.ofertaLaboral);
     this._ofertaLaboralService.saveOfertaLaboral(this.ofertaLaboral, this.token).subscribe(

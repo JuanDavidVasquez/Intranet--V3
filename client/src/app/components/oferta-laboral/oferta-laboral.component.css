@@ -1,8 +1,12 @@
 .regresar{
+    padding: 7px;
     position: absolute;
-    top: 20%;
-    left: 5%;
-    transition: all 500ms;
+    right: 5%;
+    transition: all 500ms;  
+    background: #000000ad;
+}
+.regresar:hover{
+    background: none;
 }
 .regresar a{
     padding: 15px;

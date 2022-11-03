@@ -9,6 +9,7 @@ var OfertaLaboralSchema = Schema ({
     titulo:             String,
     cargo:              String,
     description:        String,
+    fechaIngreso:       String,
     image:              String
 });
 

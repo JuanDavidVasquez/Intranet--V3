@@ -16,6 +16,7 @@ function saveOfertaLaboral(req, res) {
     ofertaLaboral.titulo = params.titulo;
     ofertaLaboral.cargo = params.cargo;
     ofertaLaboral.description = params.description;
+    ofertaLaboral.fechaIngreso = params.fechaIngreso;
     ofertaLaboral.aprobacion = params.aprobacion;
     ofertaLaboral.image = null;
 

@@ -56,8 +56,8 @@
                         </div>
                         <div class="col-lg-6 registros">
                         <p>
-                            <label>Fecha de ingreso</label>
-                            <input type="text" name="fechaIngreso" #fechaIngreso="ngModel" [(ngModel)]="perfilLaboral.fechaIngreso"
+                            <label>Fecha de ingreso </label>
+                            <input type="date" name="fechaIngreso" #fechaIngreso="ngModel" [(ngModel)]="perfilLaboral.fechaIngreso"
                                 class="form-control" required />
                             <span *ngIf="!fechaIngreso.valid && fechaIngreso.touched">
                                 El fecha de ingreso es obligatoria
@@ -65,7 +65,7 @@
                         </p>
                         <p>
                             <label>Fecha de retiro</label>
-                            <input type="text" name="fechaRetiro" #fechaRetiro="ngModel" [(ngModel)]="perfilLaboral.fechaRetiro"
+                            <input type="date" name="fechaRetiro" #fechaRetiro="ngModel" [(ngModel)]="perfilLaboral.fechaRetiro"
                                 class="form-control" required />
                             <span *ngIf="!fechaRetiro.valid && fechaRetiro.touched">
                                 El fecha de retiro es obligatoria

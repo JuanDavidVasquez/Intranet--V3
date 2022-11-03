@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpHeaderResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import  { MomentModule } from 'angular2-moment';
 
 //Componentes
 import { AppRoutingModule } from './app-routing.module';
@@ -89,7 +90,8 @@ import { NoticiaComponent } from './components/noticia/noticia.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
