@@ -28,6 +28,7 @@ export class PortalEmpleosComponent implements OnInit {
   public fecha:any;
   public fechaEstimada:any;
   public dias:Number;
+  public searchString: string;
 
 
   constructor(
@@ -37,7 +38,7 @@ export class PortalEmpleosComponent implements OnInit {
     private _router:Router,
     private _uploadService: UploadService
   ) {
-    this.title = 'Ofertas laborales solicitadas';
+    this.title = 'Ofertas laborales Mentius';
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
@@ -46,8 +47,6 @@ export class PortalEmpleosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOfertaLaborals(this.token);
-    $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
-    .css('background-repeat','no-repeat');
     this.fechas();
   }
   fechas(){
@@ -74,6 +73,8 @@ export class PortalEmpleosComponent implements OnInit {
 
       }
     );
-
   }
+  goSearch(){
+    this._router.navigate(['/buscar-oferta', this.searchString]);
+    }
 }

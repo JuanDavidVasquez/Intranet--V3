@@ -46,6 +46,7 @@ import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-a
 import { NoticiaComponent } from './components/noticia/noticia.component';
 import { OfertasLaboralesComponent } from './components/ofertas-laborales/ofertas-laborales.component';
 import { PortalEmpleosComponent } from './components/portal-empleos/portal-empleos.component';
+import { BuscarOfertaComponent } from './components/buscar-oferta/buscar-oferta.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { PortalEmpleosComponent } from './components/portal-empleos/portal-emple
     NoticiaComponent,
     OfertasLaboralesComponent,
     PortalEmpleosComponent,
+    BuscarOfertaComponent,
   ],
   imports: [
     BrowserModule,

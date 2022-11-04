@@ -79,4 +79,7 @@ export class OfertaLaboralService{
 
 		return this.ofertaLaboralid;
 	}
+	searchOferta(searchString):Observable<any>{
+		return this._http.get(this.url+'search-oferta/'+searchString);
+	}
 }

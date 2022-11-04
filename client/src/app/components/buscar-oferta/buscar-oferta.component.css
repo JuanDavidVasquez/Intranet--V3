@@ -1,12 +1,11 @@
-h1{
-    padding: 50px;
+.search{
+    margin: 50px;
 }
 .aspirante{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.regresar{
-    padding-left: 50px;
-    margin: 25px;
+h1{
+    margin: 50px;
 }

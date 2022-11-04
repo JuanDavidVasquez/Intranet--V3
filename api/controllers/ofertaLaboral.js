@@ -195,6 +195,42 @@ function getOfertaLaboralImageFile(req, res){
 	});
 }
 
+function searchOfertaLaboral(req,res){
+  //sacar el string a buscar
+  
+  var searchString = req.params.search;
+  
+  //find or
+  
+  OfertaLaboral.find({"$or":[
+    {"cargo":{"$regex": searchString, "$options":"i"}},
+    {"titulo":{"$regex": searchString, "$options":"i"}}
+  ]})
+  .sort([['cargo', 'descending']])
+  .exec((err,ofertaLaborals)=>{
+  
+    if(err){
+      return res.status(500).send({
+        status: 'error',
+        message: 'Error en la petición'
+      });
+    }
+    if(!ofertaLaborals || ofertaLaborals.length <= 0){
+      return res.status(404).send({
+        status: 'error',
+        message: 'No hay oferta Laborals para que coincidan con tu busquedad'
+      });
+    }
+  
+    return res.status(200).send({
+      status: 'succes',
+      ofertaLaborals
+    });
+  
+  });
+
+}
+
 
 module.exports = {
   saveOfertaLaboral,
@@ -203,5 +239,6 @@ module.exports = {
   updateOfertaLaboral,
   deleteOfertaLaboral,
   uploadOfertaLaboralImage,
-  getOfertaLaboralImageFile
+  getOfertaLaboralImageFile,
+  searchOfertaLaboral
 };

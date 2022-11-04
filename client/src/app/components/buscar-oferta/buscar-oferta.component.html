@@ -1,17 +1,17 @@
 <app-menus></app-menus>
 <h1><span>{{title}}</span></h1>
-<div class="regresar">
+<div class="search" id="search">
+    <h3>Buscador de ofertas</h3>
+    <form #searchFrom="ngForm" (ngSubmit)="goSearch()">
+        <input type="text" name="search" [(ngModel)]="searchString">
+        <input type="submit" name="submit" value="Buscar" class="btn btn-dark">
+    </form>
     <a [routerLink]="['/portal-de-empleos']">
         Ver todas las ofertas
     </a>
-    <div class="search" id="search">
-        <h3>Buscador de ofertas</h3>
-        <form #searchFrom="ngForm" (ngSubmit)="goSearch()">
-            <input type="text" name="search" [(ngModel)]="searchString">
-            <input type="submit" name="submit" value="Buscar" class="btn btn-dark">
-        </form>
-    </div>
 </div>
+
+
 <div class="aspirante">
     <div class="col-lg-10">
         <table class="table table-Success table-striped table-hover">
