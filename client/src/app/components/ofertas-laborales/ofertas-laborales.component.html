@@ -1,5 +1,10 @@
 <app-menus></app-menus>
 <h1><span>{{title}}</span></h1>
+<div class="regresar">
+  <a [routerLink]="['/oferta-laboral']">
+      Regresar
+  </a>
+</div>
 <div class="aspirante">
   <div class="col-lg-10">
     <table class="table table-Success table-striped table-hover">
@@ -11,6 +16,7 @@
           <th scope="col">Fecha de solicitud</th>
           <th scope="col">Fecha de ingreso</th>
           <th scope="col">Aprobacion</th>
+          <th scope="col">Actividad</th>
         </tr>
       </thead>
       <tbody *ngFor="let ofertaLaboral of ofertaLaborals">
@@ -24,6 +30,10 @@
           <td class="aprobacion" [ngClass]="{'aprobacion-ok': ofertaLaboral.aprobacion =='Aprobada',
           'aprobacion-no': ofertaLaboral.aprobacion =='Descartada' }"
           >{{ofertaLaboral.aprobacion}}</td>
+          <td
+          class="activo" [ngClass]="{'activo-ok': ofertaLaboral.activo =='Activo',
+          'activo-no': ofertaLaboral.activo =='Inactivo' }"
+          >{{ofertaLaboral.activo}}</td>
           <td>
             <a [routerLink]="['/oferta-laboral-edit', ofertaLaboral._id]"
               *ngIf="identity.cargo == 'rrhh' || identity.role == 'admin'">

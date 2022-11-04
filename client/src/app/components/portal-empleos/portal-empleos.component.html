@@ -1,0 +1,32 @@
+<app-menus></app-menus>
+<h1><span>{{title}}</span></h1>
+<div class="regresar">
+    <a [routerLink]="['/oferta-laboral']">
+        Regresar
+    </a>
+</div>
+<div class="aspirante">
+    <div class="col-lg-10">
+        <table class="table table-Success table-striped table-hover">
+            <thead>
+                <tr class="cabecera">
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let ofertaLaboral of ofertaLaborals">
+                <tr *ngIf="identity.role == 'admin' || identity._id == ofertaLaboral.user
+        || identity.cargo == 'rrhh'">
+                    <td>{{ofertaLaboral.titulo}}</td>
+                    <td>{{ofertaLaboral.cargo}}</td>
+                    <td>{{ofertaLaboral.description}}</td>
+                    <td><button>
+                            <a [routerLink]="['/postulacion', ofertaLaboral._id]">Postularme</a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

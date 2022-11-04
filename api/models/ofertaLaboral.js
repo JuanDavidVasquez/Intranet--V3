@@ -11,6 +11,7 @@ var OfertaLaboralSchema = Schema ({
     description:        String,
     fechaIngreso:       String,
     fechaSolicitud:     String,
+    activo:             String,
     image:              String
 });
 

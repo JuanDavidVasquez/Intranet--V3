@@ -19,6 +19,7 @@ function saveOfertaLaboral(req, res) {
     ofertaLaboral.fechaIngreso = params.fechaIngreso;
     ofertaLaboral.fechaSolicitud = params.fechaSolicitud;
     ofertaLaboral.aprobacion = params.aprobacion;
+    ofertaLaboral.activo = params.activo;
     ofertaLaboral.image = null;
 
     //ofertaLaborals duplicados controll

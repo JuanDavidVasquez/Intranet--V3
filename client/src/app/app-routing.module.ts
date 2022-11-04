@@ -32,6 +32,8 @@ import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-labor
 import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
 import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-aspirante.component';
 import { OfertasLaboralesComponent } from './components/ofertas-laborales/ofertas-laborales.component';
+import { PortalEmpleosComponent } from './components/portal-empleos/portal-empleos.component';
+
 
 
 
@@ -69,6 +71,7 @@ const routes: Routes = [
   {path: 'oferta-laboral-edit/:id', component:OfertaLaboralEditComponent},
   {path: 'ofertas-laborales', component:OfertasLaboralesComponent},
   {path: 'buscar-aspirante/:search', component:BuscarAspiranteComponent},
+  {path: 'portal-de-empleos', component:PortalEmpleosComponent},
   {path: '**', component:ErrorComponent }
 ];
 

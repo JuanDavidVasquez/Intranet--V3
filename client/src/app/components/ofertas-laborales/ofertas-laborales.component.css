@@ -22,3 +22,15 @@ h1 span{
     padding: 10px;
     text-align: center;
 }
+.activo-ok{
+    background: rgb(10, 75, 10);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.activo-no{
+    background: rgb(202, 137, 16);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
