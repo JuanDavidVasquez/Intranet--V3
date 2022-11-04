@@ -11,7 +11,7 @@ var md_upload = multipart({uploadDir: './uploads/ofertaLaborals'});
 
 api.post('/subir-ofertaLaboral',md_auth.ensurreAuth, OfertaLaboralController.saveOfertaLaboral);
 api.get('/ofertaLaboral/:id',md_auth.ensurreAuth, OfertaLaboralController.getOfertaLaboral);
-api.get('/ofertaLaborals',md_auth.ensurreAuth, OfertaLaboralController.getOfertaLaborals);
+api.get('/ofertaLaborals', OfertaLaboralController.getOfertaLaborals);
 api.put('/update-ofertaLaboral/:id', md_auth.ensurreAuth,OfertaLaboralController.updateOfertaLaboral);
 api.delete('/ofertaLaboral/:id', md_auth.ensurreAuth,OfertaLaboralController.deleteOfertaLaboral);
 api.post('/upload-image-ofertaLaboral/:id',[md_upload],md_auth.ensurreAuth,OfertaLaboralController.uploadOfertaLaboralImage);

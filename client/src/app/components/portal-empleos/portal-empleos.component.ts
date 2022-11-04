@@ -46,7 +46,7 @@ export class PortalEmpleosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getOfertaLaborals(this.token);
+    this.getOfertaLaborals();
     this.fechas();
   }
   fechas(){
@@ -56,8 +56,8 @@ export class PortalEmpleosComponent implements OnInit {
     console.log(fechaEstimada);
     return fechaEstimada;
   }
-  getOfertaLaborals(token){
-    this._ofertaLaboralService.getOfertaLaborals(token).subscribe(
+  getOfertaLaborals(){
+    this._ofertaLaboralService.getOfertaLaborals().subscribe(
       response=>{
         if(!response.ofertaLaborals){
           this.status = 'error';

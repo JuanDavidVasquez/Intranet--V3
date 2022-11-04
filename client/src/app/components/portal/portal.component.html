@@ -1,17 +1,31 @@
-<div class="container pt-5">
-    <div class="row">
-        <h1>Portal de empleos</h1>
-    </div>
-    <div id="titulos">
-        <div class="titulo">
-            <h2 (click)="portal()" style="cursor:pointer">Ofertas</h2>
-        </div>
-        <div class="titulo2">
-           <a href="https://mentius.com.co/" target="_blank">
-            <button id="conocenos">
-                Conocenos!!!
-            </button>
-           </a>
-        </div>
+
+<h1><span>{{title}}</span></h1>
+<div class="regresar">
+    <a [routerLink]="['/portal-de-empleos']">
+        Ver todas las ofertas
+    </a>
+</div>
+<div class="aspirante">
+    <div class="col-lg-10">
+        <table class="table table-Success table-striped table-hover">
+            <thead>
+                <tr class="cabecera">
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let ofertaLaboral of ofertaLaborals">
+                <tr>
+                    <td>{{ofertaLaboral.titulo}}</td>
+                    <td>{{ofertaLaboral.cargo}}</td>
+                    <td>{{ofertaLaboral.description}}</td>
+                    <td><button>
+                            <a [routerLink]="['/postulacion', ofertaLaboral._id]">Postularme</a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

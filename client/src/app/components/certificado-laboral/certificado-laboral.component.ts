@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
   providers: [UserService, UploadService]
 })
 export class CertificadoLaboralComponent implements OnInit {
-	API_ENDPOINT = 'http://localhost:3700/certificadolaboral/'
-  public title: string;
+	API_ENDPOINT = 'http://localhost:3700/certificadolaboral/';
+    public title: string;
 	public user: User;
 	public identity;
 	public token;

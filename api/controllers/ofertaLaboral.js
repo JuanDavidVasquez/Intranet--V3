@@ -75,7 +75,7 @@ function getOfertaLaboral(req, res) {
 
 function getOfertaLaborals(req, res) {
   OfertaLaboral.find()
-    .sort("-year")
+    .sort("fechaIngreso")
     .exec((err, ofertaLaborals) => {
       if (err)
         return res.status(500).send({ message: "Error al devolver los datos" });

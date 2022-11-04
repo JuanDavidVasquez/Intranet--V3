@@ -14,7 +14,7 @@
      <span class="lines line-2"></span>
      <span class="lines line-3"></span>
    </label>
-    <a [routerLink]="['/certificado-laboral']" class="menu-item blue"
+    <a (click)="dowlandcertificado(user)" class="menu-item blue"
     (mouseover)="certificado=true" (mouseout)="certificado=false"
     > <i class="fa fa-anchor">
         <img src="../../../assets/img/menuComprimido/certificado.png"

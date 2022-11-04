@@ -1,13 +1,11 @@
 .container-fluid{
     background: url(../../../assets/img/rrhh/fondorrhh.jpg);
 }
-
 .tablas{
     display: flex;
     justify-content: center;
     min-height: 62.3vh;
 }
-
 h1{
     color: #f4feff;
     font-size: 45px;
@@ -23,11 +21,9 @@ h1{
     padding: 50px;
     background: #00000094;
 }
-
 .example-full-width {
     width: 100%;
 }
-
 .row {
     padding: 50px;
     --bs-gutter-x: 1.5rem;
@@ -41,12 +37,10 @@ h1{
     justify-content: flex-start;
     align-items: center;
 }
-
 p {
     display: grid;
     margin: 15px 25px;
 }
-
 input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -61,23 +55,21 @@ input {
     border-bottom: 1px solid #ccc;
     transition: all 500ms;
 }
-
 input:focus{
     color: white;
     outline-offset: 4px;
     background: rgb(6, 117, 121);
     transition: all 500ms;
 }
-
 input[type='radio']{
     color: white;
 }
-
 input[type='submit']{
     max-width: 250px;
     font-size: x-large;
     font-weight: bold;
     font-family:cursive;
+    margin-top: -14px !important;
 }
 input[type='submit']:hover{
     transform: translate(10px, 10px);
@@ -85,7 +77,6 @@ input[type='submit']:hover{
     background: rgb(12, 124, 124);
     box-shadow: 4px 4px 8px 5px #ccc;
 }
-
 .label {
     display: inline-block;
     position: absolute;
@@ -103,18 +94,15 @@ input[type='submit']:hover{
 input:focus>.label{
     color: #ccc;
 }
-
 .seleccion1,.seleccion2{
     width: 100%;
 }
-
 #reclutador{
     font-size: 35px;
     margin-left: 9%;
     color: white;
     text-shadow: 5px -4px 7px black;
 }
-
 .radibuttons{
     display: flexbox;
 }
@@ -128,9 +116,9 @@ thead{
     font-size: 16px;
 }
 .registro{
-    position: absolute;
-    top: 7%;
-    left: 8%;
+    position: relative;
+    top: 0%;
+    left: 1%;
     text-decoration: none;
     font-family: cursive;
     font-size: 26px;
@@ -144,7 +132,10 @@ thead{
     transform: translate(10px, -10px);
     color: white;
 }
-
+.registro a{
+    line-height: 2;
+    font-size: 23px;
+}
 .aspirante{
     margin-top: 25px;
 }
@@ -156,8 +147,19 @@ tr:hover{
     background: #000 !important;
     color: white;
 }
-
 .cabecera{
     color: #337ab7;
     background: #00000082 !important;
+}
+h3{
+    color: white;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#buscador{
+display: contents;
 }

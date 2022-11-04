@@ -1,7 +1,7 @@
 .footer{
     height: 30vh;
     padding-top: 40px;
-    display: flow-root;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     text-align: center;

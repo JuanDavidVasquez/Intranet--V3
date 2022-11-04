@@ -44,7 +44,7 @@ export class OfertasLaboralesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getOfertaLaborals(this.token);
+    this.getOfertaLaborals();
     $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
     .css('background-repeat','no-repeat');
     this.fechas();
@@ -56,8 +56,8 @@ export class OfertasLaboralesComponent implements OnInit {
     console.log(fechaEstimada);
     return fechaEstimada;
   }
-  getOfertaLaborals(token){
-    this._ofertaLaboralService.getOfertaLaborals(token).subscribe(
+  getOfertaLaborals(){
+    this._ofertaLaboralService.getOfertaLaborals().subscribe(
       response=>{
         if(!response.ofertaLaborals){
           this.status = 'error';

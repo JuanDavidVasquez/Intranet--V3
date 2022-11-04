@@ -34,6 +34,7 @@ import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-a
 import { OfertasLaboralesComponent } from './components/ofertas-laborales/ofertas-laborales.component';
 import { PortalEmpleosComponent } from './components/portal-empleos/portal-empleos.component';
 import { BuscarOfertaComponent } from './components/buscar-oferta/buscar-oferta.component';
+import { PortalComponent } from './components/portal/portal.component';
 
 
 
@@ -73,6 +74,7 @@ const routes: Routes = [
   {path: 'buscar-aspirante/:search', component:BuscarAspiranteComponent},
   {path: 'portal-de-empleos', component:PortalEmpleosComponent},
   {path: 'buscar-oferta/:search', component:BuscarOfertaComponent},
+  {path: 'portal-de-empleo', component:PortalComponent},
   {path: '**', component:ErrorComponent }
 ];
 
