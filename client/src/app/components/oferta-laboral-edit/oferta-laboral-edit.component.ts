@@ -26,6 +26,9 @@ export class OfertaLaboralEditComponent implements OnInit {
 	public token;
 	public identity;
 	public pOfertaLaboral;
+  public fecha:any;
+  public fechaEstimada:any;
+  public dias:Number;
 
   constructor(
     private _route:ActivatedRoute,
@@ -38,6 +41,7 @@ export class OfertaLaboralEditComponent implements OnInit {
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
+    this.fecha = Date(); 
   }
 
   ngOnInit(): void {
@@ -48,6 +52,14 @@ export class OfertaLaboralEditComponent implements OnInit {
 	});
   $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
   .css('background-repeat','no-repeat');
+  this.fechas();
+  }
+  fechas(){
+    var fechaEstimada = new Date(this.fecha);
+    var dias = 15; // Número de días a agregar
+    fechaEstimada.setDate(fechaEstimada.getDate() + dias);
+    console.log(fechaEstimada);
+    return fechaEstimada;
   }
   getOfertaLaboral(id,token){
     this._ofertaLaboralService.getOfertaLaboral(id,token).subscribe(

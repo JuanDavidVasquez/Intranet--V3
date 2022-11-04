@@ -44,6 +44,7 @@ import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-labor
 import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
 import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-aspirante.component';
 import { NoticiaComponent } from './components/noticia/noticia.component';
+import { OfertasLaboralesComponent } from './components/ofertas-laborales/ofertas-laborales.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { NoticiaComponent } from './components/noticia/noticia.component';
     OfertaLaboralEditComponent,
     BuscarAspiranteComponent,
     NoticiaComponent,
+    OfertasLaboralesComponent,
   ],
   imports: [
     BrowserModule,

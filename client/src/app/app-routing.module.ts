@@ -31,6 +31,7 @@ import { PerfilMentiusComponent } from './components/perfil-mentius/perfil-menti
 import { OfertaLaboralComponent } from './components/oferta-laboral/oferta-laboral.component';
 import { OfertaLaboralEditComponent } from './components/oferta-laboral-edit/oferta-laboral-edit.component';
 import { BuscarAspiranteComponent } from './components/buscar-aspirante/buscar-aspirante.component';
+import { OfertasLaboralesComponent } from './components/ofertas-laborales/ofertas-laborales.component';
 
 
 
@@ -66,6 +67,7 @@ const routes: Routes = [
   {path: 'edit-aspirante', component:EditAspiranteComponent},
   {path: 'oferta-laboral', component:OfertaLaboralComponent},
   {path: 'oferta-laboral-edit/:id', component:OfertaLaboralEditComponent},
+  {path: 'ofertas-laborales', component:OfertasLaboralesComponent},
   {path: 'buscar-aspirante/:search', component:BuscarAspiranteComponent},
   {path: '**', component:ErrorComponent }
 ];

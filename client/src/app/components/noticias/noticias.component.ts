@@ -4,6 +4,8 @@ import { Noticia } from '../../models/noticia';
 import { NoticiaService } from 'src/app/service/noticia.service';
 import { UploadService } from 'src/app/service/upload.service';
 import { GLOBAL } from '../../service/global';
+import { gsap } from "gsap";
+
 
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
@@ -24,6 +26,7 @@ export class NoticiasComponent implements OnInit {
   public noticias: Noticia[];
   public users: User[];
   public favorita!: Noticia;
+  img: any;
 
   constructor(
     private _route:ActivatedRoute,
