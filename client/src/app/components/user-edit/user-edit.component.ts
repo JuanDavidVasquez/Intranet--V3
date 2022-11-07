@@ -5,6 +5,7 @@ import { UserService } from 'src/app/service/user.service';
 import { UploadService } from 'src/app/service/upload.service';
 import { GLOBAL } from 'src/app/service/global';
 import { Observable } from 'rxjs';
+declare var $:any;
 
 @Component({
   selector: 'app-user-edit',
@@ -37,6 +38,7 @@ export class UserEditComponent implements OnInit {
 	ngOnInit(){
 		console.log(this.user._id);
 		console.log('user-edit.component se ha cargado!!');
+		$('body').css('background-image','linear-gradient(to right, #3f3b6c, #4c5e8a, #6081a5, #7ea4be, #a3c7d6');
 	}
 
 	onSubmit(){
