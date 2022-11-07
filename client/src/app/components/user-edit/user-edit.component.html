@@ -1,63 +1,66 @@
 <app-menus></app-menus>
-<div class="col-lg-5">
-    <h1 class="h1-strong">
-        {{ title }}
-    </h1>
+<div class="container-fluid">
+    <div class="col-lg-5">
+        <h1 class="h1-strong">
+            {{ title }}
+        </h1>
 
-    <div class="alert alert-success" *ngIf="status == 'success'">
-        Se han actualizado tus datos correctamente!! <a [routerLink]="['/noticias']">Regresar</a>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Se han actualizado tus datos correctamente!! <a [routerLink]="['/noticias']">Regresar</a>
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            no se han actualizado tus datos.
+        </div>
+
+        <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+
+            <p>
+                <label>Nombre</label>
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required class="form-control" />
+                <span *ngIf="!name.value && name.touched">
+                    El nombre es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>Apellidos</label>
+                <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required
+                    class="form-control" />
+                <span *ngIf="!surname.value && surname.touched">
+                    El apellido es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>Nick</label>
+                <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" required class="form-control" />
+                <span *ngIf="!nick.value && nick.touched">
+                    El nick es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>E mail</label>
+                <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required
+                    class="form-control" />
+                <span *ngIf="!email.value && email.touched">
+                    El email es obligatorio
+                </span>
+            </p>
+            <p>
+                <label>Contraseña</label>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required
+                    class="form-control" />
+                <span *ngIf="!password.value && password.touched">
+                    La contraseña es obligatorio
+                </span>
+            </p>
+            <div *ngIf="user.image">
+                <img src="{{ url+'get-image-user/'+ user.image }}" />
+            </div>
+            <p>
+                <label>Avatar</label>
+                <input type="file" placeholder="Subir imágen" (change)="fileChangeEvent($event)" />
+            </p>
+            <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid" />
+
+        </form>
     </div>
-    <div class="alert alert-danger" *ngIf="status == 'error'">
-        no se han actualizado tus datos.
-    </div>
-
-    <form #userEditForm="ngForm" (ngSubmit)="onSubmit()"
-    class="col-lg-12"
-    >
-
-    <p>
-        <label>Nombre</label>
-        <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required class="form-control"/>
-        <span *ngIf="!name.value && name.touched">
-            El nombre es obligatorio
-        </span>
-    </p>
-    <p>
-        <label>Apellidos</label>
-        <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required class="form-control"/>
-        <span *ngIf="!surname.value && surname.touched">
-            El apellido es obligatorio
-        </span>
-    </p>
-    <p>
-        <label>Nick</label>
-        <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" required class="form-control"/>
-        <span *ngIf="!nick.value && nick.touched">
-            El nick es obligatorio
-        </span>
-    </p>
-    <p>
-        <label>E mail</label>
-        <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required class="form-control"/>
-        <span *ngIf="!email.value && email.touched">
-            El email es obligatorio
-        </span>
-    </p>
-    <p>
-        <label>Contraseña</label>
-        <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required class="form-control"/>
-        <span *ngIf="!password.value && password.touched">
-            La contraseña es obligatorio
-        </span>
-    </p>
-    <div *ngIf="user.image">
-        <img src="{{ url+'get-image-user/'+ user.image }}"/>
-    </div>
-    <p>
-        <label>Avatar</label>
-        <input type="file" placeholder="Subir imágen" (change)="fileChangeEvent($event)"/>
-    </p>
-    <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid"/>
-
-    </form>
 </div>
