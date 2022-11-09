@@ -1,5 +1,5 @@
 .container-fluid{
-    background: url('../../../assets/img/login/fondo.png');
+    background: url('../../../assets/img/login/fondo-login.png');
     height: 100vh;
 }
 .container{
@@ -23,20 +23,20 @@ color: #E6A436;
 
 /*-- Login --*/
 
-#imgLogin{
-    
+.flata{
+  color: #fff;
 }
 
 .login{
-    min-height: 600px;
-    max-width: 400px;
-    border-radius: 39px;
-    display: block;
-    background: #ffffffa6;
-    background: url('../../../assets/img/login/login.png');
-    background-position: center;
-    background-size: cover;
-    text-align: center;
+  min-height: 600px;
+  max-width: 500px;
+  border-radius: 39px;
+  display: block;
+  background: #3d495e;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 30px;
 }
 
 #imgLogin{
@@ -70,6 +70,7 @@ input{
     background: #ffffff3b;
     border-radius: 10px;
     border: 1px solid transparent;
+    color: rgb(29, 44, 84);
     outline: 0;
 }
 

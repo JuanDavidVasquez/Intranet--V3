@@ -178,3 +178,14 @@ h1{
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+a{
+  font-size: 25px;
+  letter-spacing: 2px;
+  padding: 15px;
+  margin: 30px;
+  transition: all 500ms;
+}
+a:hover{
+  box-shadow: #565454 0px 0px 20px 3px;
+}

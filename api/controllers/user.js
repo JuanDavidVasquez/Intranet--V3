@@ -27,9 +27,6 @@ function saveUser(req, res) {
   var user = new User();
 
   if (
-    params.name &&
-    params.surname &&
-    params.nick &&
     params.email &&
     params.password
   ) {
