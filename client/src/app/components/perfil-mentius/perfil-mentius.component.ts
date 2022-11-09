@@ -36,7 +36,7 @@ export class PerfilMentiusComponent implements OnInit {
 			let id = params['id'];
 			this.getUser(id);
 		});
-    $('.footer').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
+    $('body').css('background','url(../../../assets/img/perfiles/fondoPerfiles.png)')
     .css('background-repeat','no-repeat')
     .css('background-size','cover');
   }

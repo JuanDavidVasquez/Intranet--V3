@@ -33,9 +33,11 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 500ms;
 }
 .perfiles span{
     padding: 15px;
+    transition: all 500ms;
 }
 .adm-perfiles:hover>.perfiles{
     box-shadow: 0px 0px 20px 0px black;

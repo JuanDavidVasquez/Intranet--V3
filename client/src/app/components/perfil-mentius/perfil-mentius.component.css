@@ -1,5 +1,6 @@
 #cargosFondo{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px;
@@ -15,6 +16,17 @@
 }
 #cargos{
     max-width: 700px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.39);
+    transition: all 500ms;
+}
+#cargos:hover{
+    clip-path: circle(150% at top right);
+    box-shadow: white 0px 0px 11px 5px;
 }
 .cargos-desarrollo{
     background-color: rgba(91, 26, 26, 0.476);
