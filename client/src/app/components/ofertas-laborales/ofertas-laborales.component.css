@@ -34,3 +34,21 @@ h1 span{
     padding: 10px;
     text-align: center;
 }
+.regresar{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.regresar a{
+    font-size: 25px;
+    margin-right: 50px;
+    border-radius: 15px;
+    transition: all 500ms;
+}
+.regresar a:hover{
+    background: white;
+    padding: 10px;
+}
