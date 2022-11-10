@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
     private _router: Router,
     private _userService: UserService
   ) { 
-    this.title = 'Register';
-    this.user = new User("","","","","","","","","","","","","","","");
+    this.title = 'Registra tus datos y unete a Mentius!!!';
+    this.user = new User("","","","","","","","","","","","","","","","");
     this.url = GLOBAL.url;
   }
 

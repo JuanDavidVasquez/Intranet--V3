@@ -1,95 +1,86 @@
 <app-menus></app-menus>
 
-<div class="col-lg-12" *ngIf="identity.role == 'admin'">
-    <h1 class="h1-strong">{{ title }}</h1>
+<div class="col-lg-12 registros">
+    <div class="container">
+        <h1 class="h1-strong">{{ title }}</h1>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Registro completado correctament, <a [routerLink]="['/login']">
+                Identificate aqui
+            </a>
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            Registro no se ha realizado. quizas tu email o nickname ya este en uso.
+            <br />Intentalo de nuevo con otros datos
+        </div>
 
-
-    <div class="alert alert-success" *ngIf="status == 'success'">
-        Registro completado correctament, <a [routerLink]="['/login']">
-            Identificate aqui
-        </a>
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-12">
+            <div class="col-lg-6">
+                <p>
+                    <label>Nombre</label>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control"
+                        required />
+                    <span *ngIf="!name.valid && name.touched">
+                        El nombre es obligatorio
+                    </span>
+                </p>
+                <p>
+                    <label>Primer Apellido</label>
+                    <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control"
+                        required />
+                    <span *ngIf="!surname.valid && surname.touched">
+                        El apellido es obligatorio
+                    </span>
+                </p>
+                <p>
+                    <label>Segundo Apellido</label>
+                    <input type="text" name="surname2" #surname2="ngModel" [(ngModel)]="user.surname2"
+                        class="form-control" required />
+                    <span *ngIf="!surname2.valid && surname2.touched">
+                        El segundo apellido es obligatorio
+                    </span>
+                </p>
+                <div class="form-group">
+                    <label for="politica">Acepta la politica de datos?</label>
+                </div>
+                <div class="form-group radibuttons">
+                    <input type="radio" name="politica" value="Acepta Politica de datos" #politica="ngModel" [(ngModel)]="user.politica" /> Aceptar
+                </div>
+        
+                <small *ngIf="!politica.valid && politica.touched">
+                    La Aprobación de la politica es obligatoria para tu finalizar tu registro.
+                </small>
+            </div>
+            <div class="col-lg-6">
+                <p>
+                    <label>Cedula</label>
+                    <input type="number" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula" class="form-control"
+                        required />
+                    <span *ngIf="!cedula.valid && cedula.touched">
+                        La cedula es obligatorio
+                    </span>
+                </p>
+                <p>
+                    <label>Correo electronico</label>
+                    <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control"
+                        required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                    <span *ngIf="!email.valid && email.touched">
+                        El email es obligatorio
+                    </span>
+                </p>
+                <p>
+                    <label>Contraseña</label>
+                    <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password"
+                        class="form-control" required />
+                    <span *ngIf="!password.valid && password.touched">
+                        La contraseña es obligatoria
+                    </span>
+                </p>
+            </div>
+            <div class="col-lg-12 text-center">
+                <input type="submit" value="Unete" class="btn btn-succes" [disabled]="!registerForm.form.valid" />
+            </div>
+        </form>
+        <a href="../../../assets/img/login/politica.pdf" target="_blank">Politica de datos</a>
     </div>
-    <div class="alert alert-danger" *ngIf="status == 'error'">
-        Registro no se ha realizado. quizas tu email o nickname ya este en uso.
-        <br />Intentalo de nuevo con otros datos
-    </div>
-
-    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-12">
-        <div class="col-lg-6">
-            <p>
-                <label>Rol</label>
-                <input type="text" name="role" #role="ngModel" [(ngModel)]="user.role" class="form-control" required />
-                <span *ngIf="!role.valid && role.touched">
-                    El role es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Nombre</label>
-                <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
-                <span *ngIf="!name.valid && name.touched">
-                    El nombre es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Primer Apellido</label>
-                <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control"
-                    required />
-                <span *ngIf="!surname.valid && surname.touched">
-                    El apellido es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Segundo Apellido</label>
-                <input type="text" name="surname2" #surname2="ngModel" [(ngModel)]="user.surname2" class="form-control"
-                    required />
-                <span *ngIf="!surname2.valid && surname2.touched">
-                    El segundo apellido es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Usuario de red</label>
-                <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
-                <span *ngIf="!nick.valid && nick.touched">
-                    El nick es obligatorio
-                </span>
-            </p>
-        </div>
-        <div class="col-lg-6">
-            <p>
-                <label>Cedula</label>
-                <input type="text" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula" class="form-control"
-                    required />
-                <span *ngIf="!cedula.valid && cedula.touched">
-                    La cedula es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Cargo</label>
-                <input type="text" name="cargo" #cargo="ngModel" [(ngModel)]="user.cargo" class="form-control"
-                    required />
-                <span *ngIf="!cargo.valid && cargo.touched">
-                    El cargo es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Correo electronico</label>
-                <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control"
-                    required />
-                <span *ngIf="!email.valid && email.touched">
-                    El email es obligatorio
-                </span>
-            </p>
-            <p>
-                <label>Contraseña</label>
-                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password"
-                    class="form-control" required />
-                <span *ngIf="!password.valid && password.touched">
-                    La contraseña es obligatoria
-                </span>
-            </p>
-        </div>
-        <div class="col-lg-12 text-center">
-            <input type="submit" value="{{ title }}" class="btn btn-succes" [disabled]="!registerForm.form.valid" />
-        </div>
-    </form>
 </div>
+<app-footer></app-footer>

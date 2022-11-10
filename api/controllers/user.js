@@ -42,6 +42,7 @@ function saveUser(req, res) {
     user.nick = params.nick;
     user.email = params.email;
     user.role = params.role;
+	user.politica = params.politica;
     user.image = null;
 
     //Usuarios duplicados controll
