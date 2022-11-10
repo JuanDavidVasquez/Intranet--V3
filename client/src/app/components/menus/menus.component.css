@@ -1,3 +1,8 @@
+
+.navigation{
+    position: fixed;
+    z-index: 999;
+}
 .avatar{
     width: 40px;
     height: 40px;
@@ -11,4 +16,32 @@
 .avatar img{
     width: -webkit-fill-available;
     height: auto;
+}
+.navbar-default {
+    background-color: #014568;
+    color: white;
+    height: 90px;
+    border: none;
+}
+a img{
+    max-width: 290px;
+}
+.navbar-header a{
+    display: contents;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #f1f1f1;
+}
+.navbar-nav li{
+transition: all 500ms;
+}
+.navbar-nav li:hover{
+    background: #00A6B6;
+    border-radius: 25px;
 }

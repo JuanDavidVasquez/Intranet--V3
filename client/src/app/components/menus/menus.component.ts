@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from 'src/app/service/global';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-menus',

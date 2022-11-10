@@ -3,7 +3,9 @@
     <div class="container-fluid">
 
       <div class="navbar-header">
-        <a [routerLink]="['/Mentius']" [routerLinkActive]="['active']" class="navbar-brand">{{title}}</a>
+        <a [routerLink]="['/Mentius']" [routerLinkActive]="['active']" class="navbar-brand">
+          <img src="../../../assets/img/logo-blanco.png">
+        </a>
       </div>
 
       <ul class="nav navbar-nav" *ngIf="identity">
@@ -17,7 +19,7 @@
         <li *ngIf="identity.role == 'admin'">
           <a [routerLink]="['/gente']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-user"></span>
-            Gente Mentius
+            Directorio Mentius
           </a>
         </li>
         <li>
@@ -30,12 +32,6 @@
           <a [routerLink]="['/dashboard-noticias']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-globe"></span>
             Dashboart Noticias
-          </a>
-        </li>
-        <li *ngIf="identity.role == 'admin'">
-          <a [routerLink]="['/register']" [routerLinkActive]="['active']">
-            <span class="glyphicon glyphicon-user"></span>
-            New user
           </a>
         </li>
       </ul>
@@ -72,6 +68,26 @@
               </a>
             </li>
           </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
+        <li>
+          <a href="http://192.168.24.124/">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Sitio Web
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/login']" [routerLinkActive]="['active']">
+            <span class="glyphicon glyphicon-log-in"></span>
+            Ingresar
+          </a>
+        </li>        
+        <li>
+          <a [routerLink]="['/register']" [routerLinkActive]="['active']">
+            <span class="glyphicon glyphicon-registration-mark"></span>
+            Registrarme
+          </a>
         </li>
       </ul>
 

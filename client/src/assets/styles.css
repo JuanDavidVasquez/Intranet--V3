@@ -10,18 +10,14 @@
     padding: 15px;
     color: white;
 }
-
 .active{
-    background: #34a5b28b;
+    background: #1ce8ffa6;
     color: white;
 }
-
 .active span,
 .active a{
     color: white;
 }
-
-
 .pointer{
     cursor: pointer;
 }
