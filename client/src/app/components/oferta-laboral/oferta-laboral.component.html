@@ -13,7 +13,7 @@
         <div class="container formulario" style="margin-top: 5%;">
             <form #registroOfertaLaboralForm="ngForm" (ngSubmit)="onSubmit(registroOfertaLaboralForm)">
                 <div class="row-lg-12">
-                    <div class="col-lg-6 registros">
+                    <div class="col-lg-12 registros">
                         <p>
                             <label>User</label>
                             <input type="text" name="user" class="form-control" required value="{{identity.name}}"
@@ -62,15 +62,15 @@
                         [disabled]="!registroOfertaLaboralForm.form.valid" />
                 </div>
             </form>
+            <div class="regresar">
+                <a [routerLink]="['/recursos-humanos']">
+                    Regresar
+                </a>
+                <a [routerLink]="['/ofertas-laborales']">
+                    Ofertas Inscritas
+                </a>
+            </div>
         </div>
     </div>
-</div>
-<div class="regresar">
-    <a [routerLink]="['/recursos-humanos']">
-        Regresar
-    </a>
-    <a [routerLink]="['/ofertas-laborales']">
-        Ofertas Inscritas
-    </a>
 </div>
 <app-footer></app-footer>

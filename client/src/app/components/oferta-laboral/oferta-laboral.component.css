@@ -1,15 +1,12 @@
 .regresar{
     padding: 7px;
-    position: absolute;
-    right: 5%;
-    transition: all 500ms;  
-    background: #000000ad;
+    transition: all 500ms;
 }
 .regresar:hover{
     background: none;
 }
 .regresar a{
-    padding: 15px;
+    line-height: 3;
     font-size: 27px;
     border-radius: 10px;
     background-color: rgb(0 0 0 / 0%);
@@ -18,7 +15,7 @@
 
 .regresar a:hover{
     background: #eee;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     transform: translate(10px, -10px);
     box-shadow: -4px 4px 9px 0px black;
@@ -27,6 +24,8 @@
     background: #0000008c;
     color: white;
     padding: 25px;
+    width: max-content;
+    border-radius: 25px;
 }
 input[type='submit']{
     color: rgba(0, 0, 0, 0.411);

@@ -1,7 +1,7 @@
 <app-menus></app-menus>
 <div class="container-fluid" *ngIf="identity">
     <h1 class="h1-strong">
-        {{ title }}
+        {{ title }}:  {{ofertaLaboral.titulo}}
     </h1>
     <div class="col-lg-12 formularios">
         <div class="alert alert-success" *ngIf="status == 'success'">
@@ -12,10 +12,10 @@
         <div class="alert alert-danger" *ngIf="status == 'error'">
             Registro no se ha realizado.
         </div>
-        <div class="container formulario" style="margin-top: 5%;">
+        <div class="container formulario">
             <form #editOfertaLaboralForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="row-lg-12">
-                    <div class="col-lg-6 registros">
+                    <div class="col-lg-12 registros">
                         <p>
                             <label>User</label>
                             <input type="text" name="user" class="form-control" required value="{{identity.name}}"
@@ -101,13 +101,13 @@
                         [disabled]="!editOfertaLaboralForm.form.valid" />
                 </div>
             </form>
+            <div class="regresar">
+                <a [routerLink]="['/ofertas-laborales']">
+                    Regresar
+                </a>
+            </div>
         </div>
     </div>
-</div>
-<div class="regresar">
-    <a [routerLink]="['/ofertas-laborales']">
-        Regresar
-    </a>
 </div>
 
 <app-footer></app-footer>

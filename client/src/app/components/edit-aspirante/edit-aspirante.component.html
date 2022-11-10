@@ -55,7 +55,7 @@
                         </p>
                         <p>
                             <label>Cedula</label>
-                            <input type="text" name="cedula" #cedula="ngModel" [(ngModel)]="aspirante.cedula"
+                            <input type="number" name="cedula" #cedula="ngModel" [(ngModel)]="aspirante.cedula"
                                 class="form-control" required>
 
                             <span *ngIf="!cedula.valid && cedula.touched">
@@ -101,8 +101,8 @@
                             </span>
                         </p>
                         <p>
-                            <label>Experiencia</label>
-                            <input type="text" name="experiencia" #experiencia="ngModel"
+                            <label>Experiencia en años</label>
+                            <input type="number" name="experiencia" #experiencia="ngModel"
                                 [(ngModel)]="aspirante.experiencia" class="form-control" required>
 
                             <span *ngIf="!experiencia.valid && experiencia.touched">
@@ -157,7 +157,7 @@
                         </p>
                         <p>
                             <label>Numero de llamada</label>
-                            <input type="text" name="numeroLlamada" #numeroLlamada="ngModel"
+                            <input type="number" name="numeroLlamada" #numeroLlamada="ngModel"
                                 [(ngModel)]="aspirante.numeroLlamada" class="form-control" required>
 
                             <span *ngIf="!numeroLlamada.valid && numeroLlamada.touched">
