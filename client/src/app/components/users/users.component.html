@@ -1,22 +1,28 @@
 <app-menus></app-menus>
-<div class="col-lg-8">
-    <h1 class="h1-strong">
-        {{title}}
-    </h1>
+<div class="row-lg-12 contenedor">
+    <div class="col-lg-4">
+        <h1 class="h1-strong">
+            {{title}}
+        </h1>
 
-    <div class="people">
-        <div *ngFor="let user of users" class="item-user">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="user_name pull-letf">
-                        <div *ngIf="user.image" class="image_user pull-left">
-                            <img src="{{ url+'get-image-user/'+ user.image }}" class="img-avatar"/>
-                        </div>
-                        <a [routerLink]="['/perfil-mentius',user._id]"> {{ user.name + ' ' + user.surname }}</a>
-                        <p>{{ user.nick }}</p>
-                    </div>
-                </div>
+        <div class="people">
+            <div *ngFor="let user of users" class="item-user">
+                <app-perfil-mentius [user]="user" (MarcarFavorita)="mostrarFavorita($event)">
+                </app-perfil-mentius>
             </div>
         </div>
     </div>
+    <div class="col-lg-8" id="favorita" *ngIf="!favorita">
+        <img src="../../../assets/img/logotopo_slogan_R_Arriba.png" id="imagenPrincipal">
+    </div>
+    <div class="col-lg-8" id="favorita" *ngIf="favorita">
+        <h2 class="subheader">
+            {{ favorita.name | uppercase }}
+        </h2>
+        <img src="{{ url+'get-image-user/'+ favorita.image }}" class="imagen-noticia" />
+        <h4>
+            {{ favorita.cargo }}
+        </h4>
+    </div>
 </div>
+<app-footer></app-footer>

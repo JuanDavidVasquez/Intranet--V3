@@ -2,7 +2,7 @@ h1{
     font-size: 10rem;
     color: #3b8799; 
     font-family: math;
-    text-shadow: 14px 11px 11px black;
+    text-shadow: 4px 3px 11px #fff9;
     padding-top: 10rem;
 }
 h1>span{

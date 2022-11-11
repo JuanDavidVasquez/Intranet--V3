@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
@@ -18,8 +18,10 @@ export class PerfilMentiusComponent implements OnInit {
   public token;
   public status:string;
   public url: string;
-  user: User;
+  //user: User;
 
+  @Input() user: User;
+  @Output() MarcarFavorita = new EventEmitter;
   constructor(
     private _route:ActivatedRoute,
     private _router:Router,
@@ -34,12 +36,15 @@ export class PerfilMentiusComponent implements OnInit {
   ngOnInit(): void {
     this._route.params.subscribe(params => {
 			let id = params['id'];
-			this.getUser(id);
+		//	this.getUser(id);
 		});
-    $('body').css('background','url(../../../assets/img/perfiles/fondoPerfiles.png)')
-    .css('background-repeat','no-repeat')
-    .css('background-size','cover');
   }
+  seleccionar(event: any, user: any){
+    this.MarcarFavorita.emit({
+      user: user
+    });
+  }
+  /*
   getUser(id){
     this._userService.getUser(id).subscribe(
       response => {
@@ -49,7 +54,7 @@ export class PerfilMentiusComponent implements OnInit {
 				console.log(<any>error);
 			}
 		)
-	}
+	}*/
   regresar(){
     this._router.navigate(['/gente'])
   }

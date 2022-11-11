@@ -41,4 +41,11 @@ input[type='submit']:hover {
 }
 .aspirante {
     padding: 10rem;
+    background: #fff;
+}
+.formularios{
+    background: #fff;
+}
+table{
+    margin-bottom: 50px;
 }

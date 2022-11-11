@@ -2,3 +2,11 @@
     max-width: 55px;
     max-height: 55px;
 }
+#favorita img{
+    max-width: 50%;
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

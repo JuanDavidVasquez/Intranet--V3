@@ -1,9 +1,9 @@
 <app-menus></app-menus>
 <div class="container-fluid general-noticia">
-    <div class="col-lg-4" id="favorita" *ngIf="!favorita">
+    <div class="col-lg-9" id="favorita" *ngIf="!favorita">
         <img src="../../../assets/img/logotopo_slogan_R_Arriba.png" id="imagenPrincipal">
     </div>
-    <div class="col-lg-8" id="favorita" *ngIf="favorita">
+    <div class="col-lg-9" id="favorita" *ngIf="favorita">
         <h2 class="subheader">
             {{ favorita.tNoticia | uppercase }}
         </h2>
@@ -12,7 +12,7 @@
             {{ favorita.resumen }}
         </h4>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="row">
             <div class="col-lg noticia" *ngFor="let noticia of noticias">
                 <app-noticia [noticia]="noticia" (MarcarFavorita)="mostrarFavorita($event)">

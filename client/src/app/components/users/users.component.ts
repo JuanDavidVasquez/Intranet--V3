@@ -21,6 +21,7 @@ export class UsersComponent implements OnInit {
   public status:string;
   public url: string;
   public users: User[];
+  public favorita!: User;
 
 
   constructor(
@@ -28,7 +29,7 @@ export class UsersComponent implements OnInit {
     private _router:Router,
     private _userService:UserService
   ) {
-    this.title = 'Mentius People';
+    this.title = 'Directorio Mentius';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
@@ -37,6 +38,10 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     console.log("users.components ha sido cargado");
     this.getUsers();
+    this.mostrarFavorita(event);
+  }
+  mostrarFavorita(event: any){
+    this.favorita = event.user;
   }
    getUsers(){
     this._userService.getUsers().subscribe(

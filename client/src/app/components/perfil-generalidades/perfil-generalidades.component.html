@@ -16,7 +16,8 @@
             <form #GeneralidadForm="ngForm" (ngSubmit)="onSubmit(GeneralidadForm)">
                 <div class="row-lg-12 contenido">
                     <div class="col-lg-6 registros">
-                        <p>
+                        <h5>{{identity.name}}</h5>
+                        <p style="display: none;">
                             <label>User</label>
                             <input type="text" name="user" class="form-control" required value="{{identity.name}}"
                                 disabled="" id="disable" />

@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
 }
 img{
     max-width: 250px;
