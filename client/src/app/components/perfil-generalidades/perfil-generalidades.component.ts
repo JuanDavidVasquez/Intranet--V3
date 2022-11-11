@@ -48,12 +48,8 @@ export class PerfilGeneralidadesComponent implements OnInit {
 		this.url = GLOBAL.url;
 		this.getGeneralidadUser(this.generalidadId,this.token);
     console.log(this.identity);
-    $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
-    .css('background-repeat','no-repeat');
   }
-  registrar(){
-	$('.formularios').css('display','block');
-  }
+
   getGeneralidadUser(generalidadId,token):void{
 		
 		this._generalidadService.getGeneralidadUser(generalidadId,token).subscribe(
