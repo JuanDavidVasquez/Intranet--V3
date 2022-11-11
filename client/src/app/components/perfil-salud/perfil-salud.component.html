@@ -23,7 +23,7 @@
                         </p>
                         <p>
                             <label>Estado</label>
-                           <input type="text" name="estado" #estado="ngModel" [(ngModel)]="salud.estado"
+                            <input type="text" name="estado" #estado="ngModel" [(ngModel)]="salud.estado"
                                 class="form-control" required />
                             <span *ngIf="!estado.valid && estado.touched">
                                 La estado es obligatoria
@@ -39,8 +39,8 @@
                         </p>
                         <p>
                             <label>Tipo accidente</label>
-                            <input type="text" name="tipoAccidente" #tipoAccidente="ngModel" [(ngModel)]="salud.tipoAccidente"
-                                class="form-control" required />
+                            <input type="text" name="tipoAccidente" #tipoAccidente="ngModel"
+                                [(ngModel)]="salud.tipoAccidente" class="form-control" required />
                             <span *ngIf="!tipoAccidente.valid && tipoAccidente.touched">
                                 tipoAccidente es obligatorio
                             </span>
@@ -53,48 +53,43 @@
                                 El observacion es obligatorio
                             </span>
                         </p>
-                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-12 text-center registros">
-                    <input type="submit" value="Registrar" class="btn btn-succes"
-                        [disabled]="!SaludForm.form.valid"/>
-                        <div class="regresar">
-                            <a [routerLink]="['/perfil-general']">
-                                Regresar
-                            </a>
-                        </div>
+                    <input type="submit" value="Registrar" class="btn btn-succes" [disabled]="!SaludForm.form.valid" />
+                    <div class="regresar">
+                        <a [routerLink]="['/perfil-general']">
+                            Regresar
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
-
 <div class="col-lg-12 aspirante" *ngIf="saluds.length > 0">
     <h2 class="h1-strong text-center">Registros</h2>
-    <table class="table table-Success table-striped table-hover" >
+    <table class="table table-Success table-striped table-hover">
         <thead>
-          <tr class="cabecera">       
-            <th scope="col">Estado</th>
-            <th scope="col">Accidentes</th>
-            <th scope="col">Tipo accidente</th>
-            <th scope="col">Observacion</th>
-          </tr>
+            <tr class="cabecera">
+                <th scope="col">Estado</th>
+                <th scope="col">Accidentes</th>
+                <th scope="col">Tipo accidente</th>
+                <th scope="col">Observacion</th>
+            </tr>
         </thead>
         <tbody *ngFor="let salud of saluds">
-          <tr>
-            <td>{{salud.estado}}</td>
-            <td>{{salud.accidentes}}</td>
-            <td>{{salud.tipoAccidente}}</td>
-            <td>{{salud.observacion}}</td>
-            <td>
-              <a [routerLink]="['/salud-edit', salud._id]">
-                Editar
-              </a>
-            </td>
-          </tr>
+            <tr>
+                <td>{{salud.estado}}</td>
+                <td>{{salud.accidentes}}</td>
+                <td>{{salud.tipoAccidente}}</td>
+                <td>{{salud.observacion}}</td>
+                <td>
+                    <a [routerLink]="['/salud-edit', salud._id]">
+                        Editar
+                    </a>
+                </td>
+            </tr>
         </tbody>
-      </table>
-      <app-footer></app-footer>
-           
+    </table>
+    <app-footer></app-footer>

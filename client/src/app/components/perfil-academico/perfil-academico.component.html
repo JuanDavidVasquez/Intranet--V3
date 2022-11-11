@@ -44,17 +44,17 @@
                             <span *ngIf="!estado.valid && estado.touched">
                                 estado
                             </span>
-                        </p>
-                        <p>
-                            <label>instituto</label>
-                            <input type="text" name="instituto" #instituto="ngModel" [(ngModel)]="perfilAcademico.instituto"
-                                class="form-control" required />
-                            <span *ngIf="!instituto.valid && instituto.touched">
-                                El instituto es obligatorio
-                            </span>
-                        </p>
+                        </p>                        
                         </div>
                         <div class="col-lg-6 registros">
+                            <p>
+                                <label>instituto</label>
+                                <input type="text" name="instituto" #instituto="ngModel" [(ngModel)]="perfilAcademico.instituto"
+                                    class="form-control" required />
+                                <span *ngIf="!instituto.valid && instituto.touched">
+                                    El instituto es obligatorio
+                                </span>
+                            </p>
                         <p>
                             <label>Fecha de ingreso</label>
                             <input type="date" name="fechaIngreso" #fechaIngreso="ngModel" [(ngModel)]="perfilAcademico.fechaIngreso"
