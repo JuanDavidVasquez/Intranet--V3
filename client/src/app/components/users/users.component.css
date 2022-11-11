@@ -10,3 +10,7 @@
     flex-direction: row;
     align-items: center;
 }
+.people{
+    display: flex;
+    flex-direction: column;
+}
