@@ -6,7 +6,7 @@
     opacity: 35%;
     min-width: 300px;
     min-height: 300px;
-    background-color: #ccc;
+    background-color: #014568;
     margin: 0px;
     transition: all 500ms
 }
@@ -35,7 +35,7 @@ h2{
 h4{
     font-size: 20px;
     margin-top: 15px;
-    background: #00000485;
+    background: #014568;
     padding: 15px;
     color: white;
     position: relative;
@@ -90,6 +90,13 @@ h4{
  app-menu-comprimido{
     top: 80%;
     position: absolute;
-    left: 88%;
+    left: 7%;
     opacity: 80%;
+    z-index: 999;
+}
+#favorita{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

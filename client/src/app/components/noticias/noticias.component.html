@@ -1,13 +1,16 @@
 <app-menus></app-menus>
 <div class="container-fluid general-noticia">
-    <div class="col-lg-4" id="favorita" *ngIf="favorita">
+    <div class="col-lg-4" id="favorita" *ngIf="!favorita">
+        <img src="../../../assets/img/logotopo_slogan_R_Arriba.png" id="imagenPrincipal">
+    </div>
+    <div class="col-lg-8" id="favorita" *ngIf="favorita">
         <h2 class="subheader">
             {{ favorita.tNoticia | uppercase }}
         </h2>
+        <img src="{{ url+'get-image-noticia/'+ favorita.image }}" class="imagen-noticia" />
         <h4>
             {{ favorita.resumen }}
         </h4>
-        <img src="{{ url+'get-image-noticia/'+ favorita.image }}" class="imagen-noticia" />
     </div>
     <div class="col-lg-4">
         <div class="row">

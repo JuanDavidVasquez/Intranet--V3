@@ -48,8 +48,6 @@ export class PerfilSaludComponent implements OnInit {
 		this.url = GLOBAL.url;
 		this.getSaludUser(this.saludId,this.token);
     console.log(this.identity);
-    $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
-    .css('background-repeat','no-repeat');
   }
   getSaludUser(saludId,token):void{
 		

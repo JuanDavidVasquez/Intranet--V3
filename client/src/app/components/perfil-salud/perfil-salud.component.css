@@ -20,9 +20,12 @@
     box-shadow: -4px 4px 9px 0px black;
 }
 .formulario{
-    background: #0000008c;
+    background: #000000cc;
     color: white;
     padding: 25px;
+    width: max-content;
+    border-radius: 25px;
+    min-width: 30%;
 }
 input[type='submit']{
     color: rgba(0, 0, 0, 0.411);
@@ -35,4 +38,7 @@ input[type='submit']:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.aspirante{
+    padding: 10rem;
 }
