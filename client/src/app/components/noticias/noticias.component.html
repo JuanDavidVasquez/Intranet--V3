@@ -1,36 +1,22 @@
 <app-menus></app-menus>
-<div id="favorita" *ngIf="favorita">
-    <h2 class="subheader">
-        {{ favorita.tNoticia | uppercase }}
-    </h2>
-    <h4>
-        {{ favorita.resumen }}
-    </h4>
-    <img src="{{ url+'get-image-noticia/'+ favorita.image }}" class="imagen-noticia" />
-</div>
-
-<div class="col"></div>
-<div class="container-fluid">
-    <div class="container">
+<div class="container-fluid general-noticia">
+    <div class="col-lg-4" id="favorita" *ngIf="favorita">
+        <h2 class="subheader">
+            {{ favorita.tNoticia | uppercase }}
+        </h2>
+        <h4>
+            {{ favorita.resumen }}
+        </h4>
+        <img src="{{ url+'get-image-noticia/'+ favorita.image }}" class="imagen-noticia" />
+    </div>
+    <div class="col-lg-4">
         <div class="row">
-            <div class="col-lg-4 noticia" *ngFor="let noticia of noticias">
-                <app-noticia
-                [noticia]="noticia"
-                (MarcarFavorita)="mostrarFavorita($event)"
-                >
-            </app-noticia>
-
+            <div class="col-lg noticia" *ngFor="let noticia of noticias">
+                <app-noticia [noticia]="noticia" (MarcarFavorita)="mostrarFavorita($event)">
+                </app-noticia>
             </div>
         </div>
     </div>
-</div>
-<div class="mover" *ngIf="favorita">
-    <button (click)="izquierda()">
-        <img src="../../../assets/img/noticias/flecha.png" id="izquierda">
-    </button>
-    <button (click)="derecha()">
-        <img src="../../../assets/img/noticias/flecha.png">
-    </button>
 </div>
 <app-menu-comprimido></app-menu-comprimido>
 <app-footer></app-footer>

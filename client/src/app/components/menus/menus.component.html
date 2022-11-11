@@ -23,9 +23,15 @@
           </a>
         </li>
         <li>
-          <a [routerLink]="['/Mentius']" [routerLinkActive]="['active']">
+          <a [routerLink]="['/Mentius']" [routerLinkActive]="['active']" *ngIf="identity.role != ''">
             <span class="glyphicon glyphicon-globe"></span>
             Procesos Mentius
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/perfil-general']" [routerLinkActive]="['active']" *ngIf="identity.role == ''">
+            <span class="glyphicon glyphicon-cloud-upload"></span>
+            Completa tu registro aqui!!!
           </a>
         </li>
         <li *ngIf="identity.role == 'admin'">

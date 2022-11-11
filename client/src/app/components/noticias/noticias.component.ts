@@ -5,6 +5,7 @@ import { NoticiaService } from 'src/app/service/noticia.service';
 import { UploadService } from 'src/app/service/upload.service';
 import { GLOBAL } from '../../service/global';
 import { gsap } from "gsap";
+declare var $:any;
 
 
 import { User } from 'src/app/models/user';
@@ -43,6 +44,7 @@ export class NoticiasComponent implements OnInit {
   ngOnInit(): void {
      this.getNoticias();
      this.mostrarFavorita(event);
+     $('body').css('background','none');
   }
   mostrarFavorita(event: any){
     this.favorita = event.noticia;
@@ -65,20 +67,4 @@ export class NoticiasComponent implements OnInit {
       }
     )
    }
-   derecha(){
-    $('.row').css('height','27vh')
-    .css('display','flex')
-    .css('justify-content','flex-end')
-    .css('overflow','hidden')
-    .css('align-items','center')
-    .css('transition','all 500ms');
-  }
-  izquierda(){
-    $('.row').css('height','27vh')
-    .css('display','flex')
-    .css('overflow','hidden')    
-    .css('justify-content','flex-start')
-    .css('align-items','center')
-    .css('transition','all 500ms');
-  }
 }

@@ -24,10 +24,5 @@ export class NoticiaComponent implements OnInit {
     this.MarcarFavorita.emit({
       noticia: noticia
     });
-    $('.row').css('height','27vh')
-             .css('display','flex')
-             .css('overflow','hidden')
-             .css('justify-content','center')
-             .css('align-items','center');
   }
 }
