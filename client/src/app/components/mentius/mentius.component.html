@@ -1,46 +1,4 @@
-<div class="container-fluid" *ngIf="identity">
-    <div class="container">
-        <nav>
-            <ul>          
-                <li>
-                    <a [routerLink]="['/ti']">T.I</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/operaciones']">Operaciones</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/recursos-humanos']">Recursos Humanos</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/financiero']">Financiera</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/diseño']">Comercial</a>
-                </li>
-                <li>
-                    <a class="pointer" (click)="logout()">
-                        {{identity.name}}
-                    <span class="glyphicon glyphicon-log-out"></span>
-                    </a>
-                </li>
-            </ul>            
-        </nav>
-        <div class="row">
-            <div class="col-6 sombreado">
-                <h1 id="mentius">Intranet<br>
-                    <span id="titulo"> Men<span id="blanco">tius</span></span></h1>
-            <p class="noticias">
-                Procesos amigables<br>
-                <button class="boton" (click)="noticias()">
-                    Noticias
-                </button>
-            </p>
-                </div>
-            <div class="col-6">
-                <app-menu-comprimido
-                [menu]="menus"
-                ></app-menu-comprimido>
-            </div>
-        </div>
-    </div>
+<app-menus></app-menus>
+<div class="container-fluid">
+<app-organigrama></app-organigrama>
 </div>

@@ -1,0 +1,34 @@
+.fondos{
+    display: none;
+    transition: all 500ms;
+}
+.img-proceso{
+    max-width: 35rem;
+}
+.procesos{
+    overflow: hidden;
+    transition: all 700ms;
+}
+.procesos{
+    overflow: hidden;
+}
+.procesos:hover .fondos{
+    display: block;
+    padding: 15px;
+    background: rgba(207, 207, 207, 0.452);
+    position: absolute;
+    left: 3%;
+    width: 35rem;
+    height: -webkit-fill-available;
+    animation-name: cambio;
+    animation-duration: initial;
+    animation: cambio 0.5s linear;
+    transition: all 700ms;
+}
+@keyframes cambio {
+    0%  { top: -55%;}
+    30% { top: -35%;}
+    50% {top: -25%;}
+    70% { top: -10%;}
+    100% {top: 0%;transition: all 500ms;}
+}

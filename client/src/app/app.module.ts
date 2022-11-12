@@ -49,6 +49,7 @@ import { PortalEmpleosComponent } from './components/portal-empleos/portal-emple
 import { BuscarOfertaComponent } from './components/buscar-oferta/buscar-oferta.component';
 import { DisenoComponent } from './components/diseno/diseno.component';
 import { PiezaGraficaOfertaComponent } from './components/pieza-grafica-oferta/pieza-grafica-oferta.component';
+import { OrganigramaComponent } from './components/organigrama/organigrama.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { PiezaGraficaOfertaComponent } from './components/pieza-grafica-oferta/p
     BuscarOfertaComponent,
     DisenoComponent,
     PiezaGraficaOfertaComponent,
+    OrganigramaComponent,
   ],
   imports: [
     BrowserModule,
