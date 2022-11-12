@@ -17,8 +17,10 @@
 /*Favorita*/
 
 .imagen-noticia{
-    width: 450px;
-    height: 450px;
+    width: 100%;
+    height: 70vh;
+    border-radius: 35px;
+    box-shadow: #2e2e2e 0px 0px 20px 7px;
 }
 
 /*Menu comprimido*/
@@ -31,15 +33,19 @@ app-menu-comprimido{
 }
 /*Imagen*/
 #imagenPrincipal{
-    max-width: 90% !important;
+    max-width: 100%;
     padding-top: 75px;
 }
 h4{
     margin-top: 25px;
+    text-justify: auto;
 }
 #favorita{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.subheader{
+    letter-spacing: 2px;
 }

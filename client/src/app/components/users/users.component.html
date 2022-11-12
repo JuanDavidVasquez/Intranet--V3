@@ -19,9 +19,12 @@
         <h2 class="subheader">
             {{ favorita.name | uppercase }}
         </h2>
-        <img src="{{ url+'get-image-user/'+ favorita.image }}" class="imagen-noticia" />
+        <img src="{{ url+'get-image-user/'+ favorita.image }}" class="imagen-usuario" />
         <h4>
-            {{ favorita.cargo }}
+           Cargo: {{ favorita.cargo }}
+        </h4>
+        <h4>
+            E mail: {{ favorita.email }}
         </h4>
     </div>
 </div>
