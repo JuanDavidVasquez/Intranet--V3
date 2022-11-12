@@ -27,6 +27,7 @@ export class NoticiasComponent implements OnInit {
   public noticias: Noticia[];
   public users: User[];
   public favorita!: Noticia;
+  public searchString: string;
   img: any;
 
   constructor(
@@ -67,4 +68,7 @@ export class NoticiasComponent implements OnInit {
       }
     )
    }
+   goSearch(){
+    this._router.navigate(['/buscar-oferta', this.searchString]);
+    }
 }

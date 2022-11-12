@@ -49,3 +49,56 @@ h4{
 .subheader{
     letter-spacing: 2px;
 }
+
+/*Ofertas*/
+
+.search{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15rem;
+    background-image: url(../../../assets/img/noticias/ofertas.jpg);
+}
+
+.formulario{
+    width: 60%;
+    border-radius: 14px;
+    text-align: center;
+    background-color: rgba(69, 60, 60, 0.719);
+    opacity: 1;
+    margin-left: 20%;
+    margin-right: 20%;
+    /* padding: 1%; */
+    color: var(--blanco);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    height: 50px;
+}
+.ofertaInput{
+    background: transparent !important;
+    border: none !important;
+    font-size: 25px;
+    width: 100%;
+    color: var(--azul) !important;
+    opacity: 1;
+}
+.buscarOferta a{
+ margin-top: 5rem;
+}
+.buscarOferta h3{
+    font-size: 45px;
+    padding: 3rem;
+    background: #ffffffa1;
+    border-radius: 56px;
+}
+input[type='submit']{
+    height: 5rem;
+    border-radius: 10px;
+    background: transparent;
+    color: #e7e4e4;
+}
