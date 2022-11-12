@@ -2,8 +2,8 @@
 <div class="container-fluid">
     <div class="container tablas">
         <div class="row" *ngIf="identity.cargo == 'rrhh' || identity.role == 'admin'">
-          <div class="search registro" id="search">
-            <h3>Buscador de aspirantes</h3>
+          <div class="search" id="search">
+            <h3>Buscar aspirante</h3>
             <form #searchFrom="ngForm" (ngSubmit)="goSearch()" id="buscador">
                 <input type="text" name="search" [(ngModel)]="searchString">
                 <input type="submit" name="submit" value="Buscar" class="btn btn-dark">

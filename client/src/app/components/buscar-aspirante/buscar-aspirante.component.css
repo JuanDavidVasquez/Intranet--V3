@@ -1,0 +1,153 @@
+.container-fluid{
+    background: #fff;
+    padding: 10rem;
+}
+.tablas{
+    display: flex;
+    justify-content: center;
+    min-height: 62.3vh;
+}
+h1{
+    color: #f4feff;
+    font-size: 45px;
+    margin: 0px auto;
+    text-align: center;
+    font-weight: 100;
+    text-shadow: 4px -5px 11px #000000;
+}
+.example-form {
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 50px;
+    background: #00000094;
+}
+.example-full-width {
+    width: 100%;
+}
+.row {
+    padding: 50px;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+   display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+p {
+    display: grid;
+    margin: 15px 25px;
+}
+input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: transparent;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    transition: all 500ms;
+}
+input:focus{
+    color: white;
+    outline-offset: 4px;
+    background: rgb(6, 117, 121);
+    transition: all 500ms;
+}
+input[type='radio']{
+    color: white;
+}
+input[type='submit']{
+    max-width: 250px;
+    font-size: x-large;
+    font-weight: bold;
+    font-family:cursive;
+    margin-top: -14px !important;
+}
+input[type='submit']:hover{
+    transform: translate(10px, 10px);
+    color: white;
+    background: rgb(12, 124, 124);
+    box-shadow: 4px 4px 8px 5px #ccc;
+}
+.label {
+    display: inline-block;
+    position: absolute;
+    transform: translate(10px, 16px);
+    transition: all 500ms;
+    color: white;
+}
+.label-N {
+    display: inline-block;
+    position: unset;
+    transform: translate(0px, 0px);
+    transition: all 500ms;
+}
+
+input:focus>.label{
+    color: #ccc;
+}
+.seleccion1,.seleccion2{
+    width: 100%;
+}
+#reclutador{
+    font-size: 35px;
+    margin-left: 9%;
+    color: white;
+    text-shadow: 5px -4px 7px black;
+}
+.radibuttons{
+    display: flexbox;
+}
+td, th {
+    padding: 5px;
+    min-width: 105px;
+}
+thead{
+    background: #00000094;
+    color: #337ab7;
+    font-size: 16px;
+}
+.registro{
+    position: relative;
+    top: 0%;
+    left: 1%;
+    text-decoration: none;
+    font-family: cursive;
+    font-size: 26px;
+    background: #000000a3;
+    padding: 15px;
+    border-radius: 6px;
+    transition: all 550ms;
+}
+.registro:hover{
+    transition: all 700ms;
+    transform: translate(10px, -10px);
+    color: white;
+}
+.registro a{
+    line-height: 2;
+    font-size: 23px;
+}
+.aspirante{
+    margin-top: 25px;
+}
+tr{
+    background: #4eadba52  !important;
+    color: black;
+}
+tr:hover{
+    background: #000 !important;
+    color: white;
+}
+.cabecera{
+    color: #337ab7;
+    background: #00000082 !important;
+}
