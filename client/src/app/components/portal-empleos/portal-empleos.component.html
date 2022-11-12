@@ -1,9 +1,6 @@
 <app-menus></app-menus>
 <h1><span>{{title}}</span></h1>
 <div class="regresar">
-    <a [routerLink]="['/portal-de-empleos']">
-        Ver todas las ofertas
-    </a>
     <div class="search" id="search">
         <h3>Buscador de ofertas</h3>
         <form #searchFrom="ngForm" (ngSubmit)="goSearch()">
@@ -23,12 +20,11 @@
                 </tr>
             </thead>
             <tbody *ngFor="let ofertaLaboral of ofertaLaborals">
-                <tr *ngIf="identity.role == 'admin' || identity._id == ofertaLaboral.user
-              || identity.cargo == 'rrhh'">
+                <tr *ngIf="ofertaLaboral.activo == 'Activo'">
                     <td>{{ofertaLaboral.titulo}}</td>
                     <td>{{ofertaLaboral.cargo}}</td>
                     <td>{{ofertaLaboral.description}}</td>
-                    <td><button>
+                    <td><button class="btn btn-info">
                             <a [routerLink]="['/postulacion', ofertaLaboral._id]">Postularme</a>
                         </button>
                     </td>
