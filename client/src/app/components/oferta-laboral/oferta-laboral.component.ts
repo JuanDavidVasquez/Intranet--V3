@@ -54,9 +54,6 @@ export class OfertaLaboralComponent implements OnInit {
     this.url = GLOBAL.url;
     console.log(this.identity);
     this.fechas();
-    $('body').css('background','url(../../../assets/img/noticias/fondonoticias.jpg)')
-    .css('background-repeat','no-repeat')
-    .css('background-size','cover');
   }
   fechas(){
     var fechaEstimada = new Date(this.fecha);
