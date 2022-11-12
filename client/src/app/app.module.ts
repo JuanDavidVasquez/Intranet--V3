@@ -50,6 +50,7 @@ import { BuscarOfertaComponent } from './components/buscar-oferta/buscar-oferta.
 import { DisenoComponent } from './components/diseno/diseno.component';
 import { PiezaGraficaOfertaComponent } from './components/pieza-grafica-oferta/pieza-grafica-oferta.component';
 import { OrganigramaComponent } from './components/organigrama/organigrama.component';
+import { PostulacionComponent } from './components/postulacion/postulacion.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { OrganigramaComponent } from './components/organigrama/organigrama.compo
     DisenoComponent,
     PiezaGraficaOfertaComponent,
     OrganigramaComponent,
+    PostulacionComponent,
   ],
   imports: [
     BrowserModule,

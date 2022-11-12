@@ -1,0 +1,16 @@
+<app-menus></app-menus>
+<div class="container-fluid">
+<h1>{{ofertaLaboral.titulo}}</h1>
+<img src="{{ url+'get-image-ofertaLaboral/' +ofertaLaboral.image }}" class="imagen-noticia" />
+<br>
+Usuario: {{identity.name}}
+<br>
+<p>
+    <span>Descripción</span>
+{{ofertaLaboral.description}}
+</p>
+<p>
+    <span>Cargo</span>
+    {{ofertaLaboral.cargo}}
+</p>
+</div>

@@ -162,7 +162,7 @@ function uploadOfertaLaboralImage(req, res){
 			 OfertaLaboral.findByIdAndUpdate(ofertaLaboralId, {image: file_name}, {new:true}, (err, ofertaLaboralUpdated) =>{
 				if(err) return res.status(500).send({message: 'Error en la petición'});
 
-				if(!ofertaLaboralUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
+				if(!ofertaLaboralUpdated) return res.status(404).send({message: 'No se ha podido actualizar la oferta'});
 
 				return res.status(200).send({ofertaLaboral: ofertaLaboralUpdated});
 			 });
