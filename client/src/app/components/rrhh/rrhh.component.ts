@@ -23,7 +23,7 @@ export class RrhhComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
   	private _userService:UserService) { 
-      this.title = 'Intranet';
+      this.title = 'Recursos Humanos';
       this.url = GLOBAL.url;
   }
   ngOnInit(){

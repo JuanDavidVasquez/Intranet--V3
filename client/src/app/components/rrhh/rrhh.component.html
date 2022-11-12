@@ -1,38 +1,49 @@
-<div class="container-fluid" *ngIf="identity">
-    <div class="container">
-        <nav>
-            <ul>
-                <li id="rr">
-                    <a [routerLink]="['/']">Selección y reclutamiento</a>
-                    <ul id="seleccion">
-                        <li class="syr">
-                            <a [routerLink]="['/']">Selección</a>
-                        </li>
-                        <li class="syr">
-                            <a [routerLink]="['/reclutamiento']">Reclutamiento</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a [routerLink]="['/oferta-laboral']">Solicitar<span class="sombra"> Oferta laboral</span></a>
-                </li>
-                <li>
-                    <a [routerLink]="['/recursos-humanos']">Equipo</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/Mentius']">Home</a>
-                </li>
-            </ul>            
-        </nav>
-        <div class="row">
-            <div class="col-6 sombreado">
-                <h1 id="mentius">Recursos<br>
-                    <span id="titulo"> <span id="blanco">Humanos</span></span></h1>
-                </div>
-            <div class="col-6">
-
-             
+<app-menus></app-menus>
+<div class="container-fluid">
+    <div class="row-lg-12">
+        <h1>{{title}}</h1>
+        <div class="col-lg-4 procesos">
+            <div class="fondos">
+                <h3>Selección</h3>
+                <p>Estamos para apoyarte!!!</p>
+                <a [routerLink]="['/recursos-humanos']" class="btn btn-info">
+                    Conocenos
+                </a>
             </div>
+            <img src="../../../assets/img/fondosProcesos/rrhh.jpg" class="img-proceso">
+        </div>
+        <div class="col-lg-4 procesos">
+            <div class="fondos">
+                <h3>Reclutamiento</h3>
+                <p>En busca de lo incríble!!!</p>
+                <a [routerLink]="['/reclutamiento']" class="btn btn-info">
+                    Conocenos
+                </a>
+            </div>
+            <img src="../../../assets/img/fondosProcesos/desarrollo.jpg" class="img-proceso">
+        </div>
+        <div class="col-lg-4 procesos">
+            <div class="fondos">
+                <h3>Oferta laboral</h3>
+                <p>Solicita tu personal aqui!!!</p>
+                <a [routerLink]="['/ofertas-laborales']" class="btn btn-info">
+                    Solicitud
+                </a>
+            </div>
+            <img src="../../../assets/img/fondosProcesos/desarrollo.jpg" class="img-proceso">
+        </div>
+    </div>
+    <div class="row-lg-12 espacio">
+        <div class="col-lg-4 procesos">
+            <div class="fondos">
+                <h3>Equipo</h3>
+                <p>Estamos para apoyarte!!!</p>
+                <a [routerLink]="['/recursos-humanos']" class="btn btn-info">
+                    Conocenos
+                </a>
+            </div>
+            <img src="../../../assets/img/fondosProcesos/rrhh.jpg" class="img-proceso">
         </div>
     </div>
 </div>
+<app-footer></app-footer>

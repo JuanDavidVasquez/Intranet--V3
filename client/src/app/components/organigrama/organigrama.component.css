@@ -1,21 +1,24 @@
+h1{
+    padding-bottom: 5rem;
+}
 .fondos{
     display: none;
     transition: all 500ms;
 }
 .img-proceso{
-    max-width: 35rem;
+    width: 35rem;
+    height: 25rem;
 }
 .procesos{
     overflow: hidden;
     transition: all 700ms;
 }
-.procesos{
-    overflow: hidden;
-}
+
 .procesos:hover .fondos{
     display: block;
     padding: 15px;
     background: rgba(207, 207, 207, 0.452);
+    box-shadow: #444 0px 0px 10px 3px;
     position: absolute;
     left: 3%;
     width: 35rem;
@@ -31,4 +34,15 @@
     50% {top: -25%;}
     70% { top: -10%;}
     100% {top: 0%;transition: all 500ms;}
+}
+h3{
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+p{
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+a{
+    color: white;
 }
