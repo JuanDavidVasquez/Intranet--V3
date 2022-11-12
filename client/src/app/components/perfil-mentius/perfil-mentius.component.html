@@ -1,4 +1,4 @@
-<div (click)="seleccionar($event, user)">
+<div (click)="seleccionar($event, user)" class="pointer">
     <div *ngIf="user.image" id="image_user" class="pull-left row-lg-6">
         <img src="{{ url+'get-image-user/'+ user.image }}" class="img-avatar" />
     </div>

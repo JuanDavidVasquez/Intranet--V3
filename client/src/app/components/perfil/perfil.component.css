@@ -1,3 +1,6 @@
+.container-fluid{
+    background-color: #fff;
+}
 .regresar {
     position: absolute;
     top: 20%;

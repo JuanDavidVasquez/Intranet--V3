@@ -2,6 +2,7 @@
     background-image: url(../../../assets/img/noticias/fontdoNoticia1.jpg);
     background-repeat: space;
     height: 100vh;
+    padding: 15rem;
 }
 .formulario{
     position: absolute;
