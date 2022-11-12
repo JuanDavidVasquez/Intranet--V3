@@ -48,6 +48,10 @@ h4{
 }
 .subheader{
     letter-spacing: 2px;
+    padding: 3rem;
+    font-size: 50px;
+    font-weight: 100;
+    font-family: system-ui;
 }
 
 /*Ofertas*/
@@ -60,6 +64,9 @@ h4{
     align-items: center;
     padding: 15rem;
     background-image: url(../../../assets/img/noticias/ofertas.jpg);
+    background-attachment: fixed;
+    /* background-position: center; */
+    background-repeat: no-repeat;
 }
 
 .formulario{
@@ -101,4 +108,7 @@ input[type='submit']{
     border-radius: 10px;
     background: transparent;
     color: #e7e4e4;
+}
+input[type='text']{
+    color: #e7e4e4 !important;
 }
