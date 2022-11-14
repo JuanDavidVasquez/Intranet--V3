@@ -1,3 +1,7 @@
 .container-fluid{
     padding: 15rem;
 }
+#oculto{
+    visibility: hidden;
+    display: none;
+}

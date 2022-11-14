@@ -27,6 +27,7 @@
         <form #registerPostulacionForm="ngForm" (ngSubmit)="onSubmit(registerPostulacionForm)">
             <div class="row-lg-12">
                 <div class="col-lg-6">
+<span id="oculto">
                     <p>
                         <label>User</label>
                         <input type="text" name="user" class="form-control" required value="{{identity._id}}"
@@ -38,6 +39,7 @@
                         <input type="text" name="ofertaLaborall" class="form-control" required value="{{ofertaLaboral._id}}"
                             disabled="" />
                     </p>
+               
                     <p>
                         <label>Fecha de postulacion </label>
                         <input id="fech" type="date" name="fechaPostulacion" #fechaPostulacion="ngModel"
@@ -49,6 +51,7 @@
                             fecha de ingreso obligatoria
                         </span>
                     </p>
+</span>
                     <p>
                         <label>politica</label>
                         <input type="text" name="politica" #politica="ngModel" [(ngModel)]="postulacion.politica"
