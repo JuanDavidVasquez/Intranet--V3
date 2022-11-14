@@ -23,6 +23,7 @@ var judicial_routes = require('./routes/judicial');
 var vicio_routes = require('./routes/vicio');
 var generalidad_routes = require('./routes/generalidad');
 var ofertaLaboral_routes = require('./routes/ofertaLaboral');
+var postulacion_routes = require('./routes/postulacion');
 
 
 var follow_routes = require('./routes/follow');
@@ -58,6 +59,7 @@ app.use('/api', judicial_routes);
 app.use('/api', vicio_routes);
 app.use('/api', generalidad_routes);
 app.use('/api', ofertaLaboral_routes);
+app.use('/api', postulacion_routes);
 
 app.use(require('./routes/cerificadolaboralroute'));
 
