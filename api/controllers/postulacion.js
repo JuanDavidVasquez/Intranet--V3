@@ -13,7 +13,7 @@ function savePostulacion(req, res) {
 
   if (params.politica) {
     postulacion.user = req.user.sub;
-    postulacion.ofertaLaboral = params.ofertaLaboral;
+    postulacion.ofertaLaborall = params.ofertaLaborall;
     postulacion.fechaPostulacion = params.fechaPostulacion;
     postulacion.politica = params.politica;
 

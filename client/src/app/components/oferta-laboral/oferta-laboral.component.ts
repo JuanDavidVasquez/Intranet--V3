@@ -50,7 +50,7 @@ export class OfertaLaboralComponent implements OnInit {
 
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
-    this.ofertaLaboral = new OfertaLaboral("", "", "", "", "", "", "",Date(),"","");
+    this.ofertaLaboral = new OfertaLaboral("", "", "", "", "", "", "",this.fecha,"","");
     this.url = GLOBAL.url;
     console.log(this.identity);
     this.fechas();

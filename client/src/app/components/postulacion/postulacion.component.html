@@ -1,16 +1,68 @@
 <app-menus></app-menus>
 <div class="container-fluid">
-<h1>{{ofertaLaboral.titulo}}</h1>
-<img src="{{ url+'get-image-ofertaLaboral/' +ofertaLaboral.image }}" class="imagen-noticia" />
-<br>
-Usuario: {{identity.name}}
-<br>
-<p>
-    <span>Descripción</span>
-{{ofertaLaboral.description}}
-</p>
-<p>
-    <span>Cargo</span>
-    {{ofertaLaboral.cargo}}
-</p>
+    <h1>{{ofertaLaboral.titulo}}</h1>
+    <img src="{{ url+'get-image-ofertaLaboral/' +ofertaLaboral.image }}" class="imagen-noticia" />
+    <br>
+    Usuario: {{identity.name}}
+    <br>
+    <p>
+        <span>Descripción</span>
+        {{ofertaLaboral.description}}
+    </p>
+    <p>
+        <span>Cargo</span>
+        {{ofertaLaboral.cargo}}
+    </p>
 </div>
+
+
+<div class="col-lg-12 formularios">
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Registro completado correctament.
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Registro no se ha realizado.
+    </div>
+    <div class="container formulario">
+        <form #registerPostulacionForm="ngForm" (ngSubmit)="onSubmit(registerPostulacionForm)">
+            <div class="row-lg-12">
+                <div class="col-lg-6">
+                    <p>
+                        <label>User</label>
+                        <input type="text" name="user" class="form-control" required value="{{identity._id}}"
+                            disabled="" />
+                    </p>
+
+                    <p>
+                        <label>Oferta Laboral</label>
+                        <input type="text" name="ofertaLaborall" class="form-control" required value="{{ofertaLaboral._id}}"
+                            disabled="" />
+                    </p>
+                    <p>
+                        <label>Fecha de postulacion </label>
+                        <input id="fech" type="date" name="fechaPostulacion" #fechaPostulacion="ngModel"
+                            [(ngModel)]="postulacion.fechaPostulacion" class="form-control" 
+                            
+                            
+                            required/>
+                        <span *ngIf="!fechaPostulacion.valid && fechaPostulacion.touched">
+                            fecha de ingreso obligatoria
+                        </span>
+                    </p>
+                    <p>
+                        <label>politica</label>
+                        <input type="text" name="politica" #politica="ngModel" [(ngModel)]="postulacion.politica"
+                            class="form-control" required>
+
+                        <span *ngIf="!politica.valid && politica.touched">
+                            La politica es obligatorio
+                        </span>
+                    </p>
+                    <div class="col-lg-12 text-center">
+                        <input type="submit" value="{{ title }}" class="btn btn-succes"
+                            [disabled]="!registerPostulacionForm.form.valid" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

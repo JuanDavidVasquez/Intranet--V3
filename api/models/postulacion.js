@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var PostulacionSchema = Schema({
     user:             {type: Schema.ObjectId, ref: 'User'},
-    ofertaLaboral:    String,
+    ofertaLaborall:    String,
     fechaPostulacion: String,
     politica:         String
 });

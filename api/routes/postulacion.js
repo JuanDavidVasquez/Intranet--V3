@@ -9,7 +9,7 @@ var md_auth = require('../middlewares/authenticated.js');
 var multipart = require('connect-multiparty');
 var md_upload = multipart({uploadDir: './uploads/postulacions'});
 
-api.post('/subir-postulacion',md_auth.ensurreAuth, PostulacionController.savePostulacion);
+api.post('/register-postulacion',md_auth.ensurreAuth, PostulacionController.savePostulacion);
 api.get('/postulacion/:id',md_auth.ensurreAuth, PostulacionController.getPostulacion);
 api.get('/postulacions', PostulacionController.getPostulacions);
 api.put('/update-postulacion/:id', md_auth.ensurreAuth,PostulacionController.updatePostulacion);
