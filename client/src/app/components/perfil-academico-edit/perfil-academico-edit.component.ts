@@ -45,8 +45,7 @@ export class PerfilAcademicoEditComponent implements OnInit {
 			let id = params['id'];
       this.getPerfilAcademico(id,this.token);
 	});
-  $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
-  .css('background-repeat','no-repeat');
+  $('body').css('background','#fff');
   }
   getPerfilAcademico(id,token){
     this._perfilAcademicoService.getPerfilAcademico(id,token).subscribe(

@@ -47,7 +47,7 @@ export class PerfilGeneralidadesComponent implements OnInit {
 		this.generalidad = new Generalidad("", "", "", "", "", "", "");
 		this.url = GLOBAL.url;
 		this.getGeneralidadUser(this.generalidadId,this.token);
-    console.log(this.identity);
+    	$('body').css('background','#fff');
   }
 
   getGeneralidadUser(generalidadId,token):void{

@@ -5,6 +5,7 @@
     position: absolute;
     top: 20%;
     left: 5%;
+    background-color: #fff !important;
     transition: all 500ms;
 }
 .regresar a {

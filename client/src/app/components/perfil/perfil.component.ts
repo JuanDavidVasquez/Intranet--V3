@@ -53,6 +53,7 @@ export class PerfilComponent implements OnInit, OnChanges{
 		this.perfilLaboral = new PerfilLaboral("", "", "", "", "", "", "", "", "", "", "", "");
 		this.url = GLOBAL.url;
 		this.getPerfilLaboralUser(this.perfilLaboralId,this.token);
+		$('body').css('background','#fff');
 	}
 	
 	

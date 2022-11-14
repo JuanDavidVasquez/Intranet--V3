@@ -29,7 +29,6 @@ export class PerfilGeneralComponent implements OnInit {
   ngOnInit(): void {
     $('body').css('background','url(../../../assets/img/perfiles/fondoGeneral.jpg)')
     .css('background-repeat','no-repeat');
-    console.log(this.identity._id)
   }
 
 }

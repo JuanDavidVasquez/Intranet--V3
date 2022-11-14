@@ -49,8 +49,7 @@ export class PerfilAcademicoComponent implements OnInit {
 	this.url = GLOBAL.url;
 	this.getPerfilAcademicoUser(this.perfilAcademicoId,this.token);
     console.log(this.identity);
-    $('body').css('background','url(../../../assets/img/perfiles/fondoAcademico.jpg)')
-    .css('background-repeat','no-repeat');
+	$('body').css('background','#fff');
   }
   getPerfilAcademicoUser(perfilAcademicoId,token):void{
 		
