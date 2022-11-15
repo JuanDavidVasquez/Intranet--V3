@@ -34,7 +34,7 @@ export class SolicitudVacacionesComponent implements OnInit {
     private _vacacionesService: VacacionesService
   ) { 
     this.title = 'Registra tu solicitud de vacaciones!!!';
-    this.vacaciones = new Vacaciones("","","","","","","");
+    this.vacaciones = new Vacaciones("","",Date(),"","","","");
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
