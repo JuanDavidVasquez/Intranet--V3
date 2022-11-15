@@ -12,10 +12,14 @@
 
         <form #editVacacionesForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
             <div class="col-lg-6">
-                   
+                
                 <h3>
-                    Fecha de solicitud: {{fecha | date:'short'}}
+                    Solicitante: {{ vacaciones.name }}
                 </h3>
+                <h3>
+                    Fecha de solicitud: {{vacaciones.fechaSolicitud}}
+                </h3>
+
                 <p>
                     <label>Fecha inicio de sus vacaciones</label>
                     <input type="date" name="fechaInicio" #fechaInicio="ngModel" [(ngModel)]="vacaciones.fechaInicio"

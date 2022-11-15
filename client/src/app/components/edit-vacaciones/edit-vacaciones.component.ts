@@ -43,6 +43,10 @@ export class EditVacacionesComponent implements OnInit {
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
     this.fechas();
+    this._route.params.subscribe(params => {
+			let id = params['id'];
+			this.getVacaciones(id,this.token);
+		});
   }
   fechas(){
     var fechaEstimada = new Date(this.fecha);
@@ -51,23 +55,35 @@ export class EditVacacionesComponent implements OnInit {
     console.log(fechaEstimada);
     return fechaEstimada;
   }
+  getVacaciones(id,token){
+    this._vacacionesService.getVacaciones(id,token).subscribe(
+      response => {
+				this.getVacaciones = response.vacaciones;
+			},
+			error => {
+				console.log(<any>error);
+			}
+		)
+	}
+
   onSubmit(){
-    this._vacacionesService.saveVacaciones(this.vacaciones, this.token).subscribe(
-      response =>{
-        if(response.vacaciones){
-          this.token = response.token;
-          this.status = 'success';
-        }else{
+    this._vacacionesService.updateVacaciones(this.vacaciones,this.token).subscribe(
+      response => {
+        if(!response.vacaciones){
           this.status = 'error';
+        }else{
+          this.status = 'success';		
         }
       },
-      error =>{
-        console.log(<any>error);
+      error => {
+        var errorMessage = <any>error;
+        console.log(errorMessage);
+  
+        if(errorMessage != null){
+          this.status = 'error';
+        }
       }
     );
-  }
-  ngDoCheck(){
-  	this.identity = this._userService.getIdentity();
   }
 
 }
