@@ -15,7 +15,7 @@ api.get('/ofertaLaborals', OfertaLaboralController.getOfertaLaborals);
 api.put('/update-ofertaLaboral/:id', md_auth.ensurreAuth,OfertaLaboralController.updateOfertaLaboral);
 api.delete('/ofertaLaboral/:id', md_auth.ensurreAuth,OfertaLaboralController.deleteOfertaLaboral);
 api.post('/upload-image-ofertaLaboral/:id',[md_upload],md_auth.ensurreAuth,OfertaLaboralController.uploadOfertaLaboralImage);
-api.get('/get-image-ofertaLaboral/:imageFile',md_auth.ensurreAuth, OfertaLaboralController.getOfertaLaboralImageFile);
+api.get('/get-image-ofertaLaboral/:imageFile', OfertaLaboralController.getOfertaLaboralImageFile);
 api.get('/search-oferta/:search', OfertaLaboralController.searchOfertaLaboral);
 
 /*

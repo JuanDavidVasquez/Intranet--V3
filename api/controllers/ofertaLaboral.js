@@ -144,7 +144,7 @@ function uploadOfertaLaboralImage(req, res){
 		var file_path = req.files.image.path;
 		console.log(file_path);
 		
-		var file_split = file_path.split('\\');
+    var file_split = file_path.split('\\');
 		console.log(file_split);
 
 		var file_name = file_split[2];
@@ -155,6 +155,7 @@ function uploadOfertaLaboralImage(req, res){
 
 		var file_ext = ext_split[1];
 		console.log(file_ext);
+
 
 		if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
 			 

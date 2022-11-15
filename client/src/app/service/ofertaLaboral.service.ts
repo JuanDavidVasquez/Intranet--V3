@@ -45,7 +45,6 @@ export class OfertaLaboralService{
 
 		return this._http.put(this.url+'update-ofertaLaboral/'+ofertaLaboral._id, params, {headers: headers});
 	}
-
 	getOfertaLaborals():Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type','application/json');
 
