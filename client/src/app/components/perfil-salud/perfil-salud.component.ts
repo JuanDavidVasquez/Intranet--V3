@@ -48,7 +48,7 @@ export class PerfilSaludComponent implements OnInit {
 		this.url = GLOBAL.url;
 		this.getSaludUser(this.saludId,this.token);
     console.log(this.identity);
-	$('body').css('background','#fff')
+	$('body').css('background','#fff');
   }
   getSaludUser(saludId,token):void{
 		
