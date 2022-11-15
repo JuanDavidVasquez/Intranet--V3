@@ -51,6 +51,8 @@ import { DisenoComponent } from './components/diseno/diseno.component';
 import { PiezaGraficaOfertaComponent } from './components/pieza-grafica-oferta/pieza-grafica-oferta.component';
 import { OrganigramaComponent } from './components/organigrama/organigrama.component';
 import { PostulacionComponent } from './components/postulacion/postulacion.component';
+import { DesarrolloComponent } from './components/desarrollo/desarrollo.component';
+import { DesarrollosComponent } from './components/desarrollos/desarrollos.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +101,8 @@ import { PostulacionComponent } from './components/postulacion/postulacion.compo
     PiezaGraficaOfertaComponent,
     OrganigramaComponent,
     PostulacionComponent,
+    DesarrolloComponent,
+    DesarrollosComponent,
   ],
   imports: [
     BrowserModule,
