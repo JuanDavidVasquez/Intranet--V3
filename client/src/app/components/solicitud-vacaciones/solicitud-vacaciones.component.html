@@ -12,18 +12,24 @@
 
         <form #registerVacacionesForm="ngForm" (ngSubmit)="onSubmit(registerVacacionesForm)" class="col-lg-12">
             <div class="col-lg-6">
-                <h5>{{identity.name}}</h5>
-           <p style="display: none;">
+                <h2>{{identity.name}}</h2>
+                     <p style="display: none;">
                     <label>User</label>
                     <input type="text" name="user" class="form-control" required value="{{identity.id}}"
                         disabled="" id="disable" />
                 </p>
-               
-                <p>
-                    Fecha de solicitud: {{fecha | date:'short'}}
+                <p style="display: none;">
+                    <label>name</label>
+                    <input type="text" name="name" class="form-control" required value="{{identity.name}}"
+                        disabled="" id="disable" />
                 </p>
+                <h3>
+                    Fecha de solicitud: {{fecha | date:'short'}}
+                </h3>
+            </div>
+            <div class="col-lg-6">
                 <p>
-                    <label>fechaInicio</label>
+                    <label>Fecha inicio de sus vacaciones</label>
                     <input type="date" name="fechaInicio" #fechaInicio="ngModel" [(ngModel)]="vacaciones.fechaInicio"
                         class="form-control" required
                         value="{{ vacaciones.fechaInicio | date:'yyyy-MM-dd'}}"
@@ -33,32 +39,14 @@
                         fechaInicio
                     </span>
                 </p>
-            </div>
-            <div class="col-lg-6">
                 <p>
-                    <label>fechaFin</label>
+                    <label>Fecha final de sus vacaciones</label>
                     <input type="date" name="fechaFin" #fechaFin="ngModel" [(ngModel)]="vacaciones.fechaFin" class="form-control"
                         required 
                         value="{{ vacaciones.fechaInicio | date:'yyyy-MM-dd'}}"
                         min="{{ fechas() | date:'yyyy-MM-dd'}}"/>
                     <span *ngIf="!fechaFin.valid && fechaFin.touched">
                         fechaFin
-                    </span>
-                </p>
-                <p>
-                    <label>AprovacionJefe</label>
-                    <input type="text" name="AprovacionJefe" #AprovacionJefe="ngModel" [(ngModel)]="vacaciones.AprovacionJefe" class="form-control"
-                        required/>
-                    <span *ngIf="!AprovacionJefe.valid && AprovacionJefe.touched">
-                        AprovacionJefe
-                    </span>
-                </p>
-                <p>
-                    <label>AprovacionRrHh</label>
-                    <input type="AprovacionRrHh" name="AprovacionRrHh" #AprovacionRrHh="ngModel" [(ngModel)]="vacaciones.AprovacionRrHh"
-                        class="form-control" required />
-                    <span *ngIf="!AprovacionRrHh.valid && AprovacionRrHh.touched">
-                        AprovacionRrHh
                     </span>
                 </p>
             </div>

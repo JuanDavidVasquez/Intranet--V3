@@ -13,6 +13,7 @@ function saveVacaciones(req, res) {
 
   if (params.fechaInicio) {
     vacaciones.user = req.user.sub;
+    vacaciones.name = params.name;
     vacaciones.fechaSolicitud = params.fechaSolicitud;
     vacaciones.fechaInicio = params.fechaInicio;
     vacaciones.fechaFin = params.fechaFin;

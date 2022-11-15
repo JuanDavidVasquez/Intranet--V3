@@ -1,0 +1,80 @@
+<app-menus></app-menus>
+
+<div class="col-lg-12 registros">
+    <div class="container">
+        <h1 class="h1-strong">{{ title }}</h1>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Registro completado correctament
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            Registro no se ha realizado. Ya tienes una solicitud en proceso
+        </div>
+
+        <form #editVacacionesForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+            <div class="col-lg-6">
+                   
+                <h3>
+                    Fecha de solicitud: {{fecha | date:'short'}}
+                </h3>
+                <p>
+                    <label>Fecha inicio de sus vacaciones</label>
+                    <input type="date" name="fechaInicio" #fechaInicio="ngModel" [(ngModel)]="vacaciones.fechaInicio"
+                        class="form-control" required
+                        value="{{ vacaciones.fechaInicio | date:'yyyy-MM-dd'}}"
+                                min="{{ fechas() | date:'yyyy-MM-dd'}}"
+                        />
+                    <span *ngIf="!fechaInicio.valid && fechaInicio.touched">
+                        fechaInicio
+                    </span>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <p>
+                    <label>Fecha final de sus vacaciones</label>
+                    <input type="date" name="fechaFin" #fechaFin="ngModel" [(ngModel)]="vacaciones.fechaFin" class="form-control"
+                        required 
+                        value="{{ vacaciones.fechaInicio | date:'yyyy-MM-dd'}}"
+                        min="{{ fechas() | date:'yyyy-MM-dd'}}"/>
+                    <span *ngIf="!fechaFin.valid && fechaFin.touched">
+                        fechaFin
+                    </span>
+                </p>
+                <div class="form-group">
+                    <label for="aprobacion">Aprovacion de su jefe inmediato</label>
+                </div>
+                <br>
+                <div class="form-group radibuttons">
+                    <input type="radio" name="AprovacionJefe" value="Aprobada" #AprovacionJefe="ngModel" [(ngModel)]="vacaciones.AprovacionJefe" /> Aprobar
+                    <input type="radio" name="AprovacionJefe" value="Negada" #AprovacionJefe="ngModel" [(ngModel)]="vacaciones.AprovacionJefe" /> Negada
+                </div>
+        
+                <small *ngIf="!AprovacionJefe.valid && AprovacionJefe.touched">
+                    La Aprobación o negación no eson validas
+                </small>
+
+                <span *ngIf="vacaciones.AprovacionJefe == 'Aprobada'">
+                    <div class="form-group">
+                        <label for="aprobacion">Aprovacion desde RrHh</label>
+                    </div>
+                    <br>
+                    <div class="form-group radibuttons">
+                        <input type="radio" name="AprovacionRrHh" value="Aprobada" #AprovacionRrHh="ngModel" [(ngModel)]="vacaciones.AprovacionRrHh" /> Aprobar
+                        <input type="radio" name="AprovacionRrHh" value="Negada" #AprovacionRrHh="ngModel" [(ngModel)]="vacaciones.AprovacionRrHh" /> Negada
+                    </div>
+            
+                    <small *ngIf="!AprovacionRrHh.valid && AprovacionRrHh.touched">
+                        La Aprobación o descartar no eson validas
+                    </small>
+                </span>
+
+
+
+
+            </div>
+            <div class="col-lg-12 text-center">
+                <input type="submit" value="Solicitar" class="btn btn-succes" [disabled]="!editVacacionesForm.form.valid" />
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

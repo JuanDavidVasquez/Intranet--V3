@@ -3,6 +3,7 @@ export class Vacaciones{
     constructor(
         public _id: string,
         public user: string,
+        public name:string,
         public fechaSolicitud: string,
         public fechaInicio: string,
         public fechaFin: string,

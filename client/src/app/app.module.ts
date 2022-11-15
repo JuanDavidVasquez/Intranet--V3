@@ -54,6 +54,7 @@ import { PostulacionComponent } from './components/postulacion/postulacion.compo
 import { DesarrolloComponent } from './components/desarrollo/desarrollo.component';
 import { DesarrollosComponent } from './components/desarrollos/desarrollos.component';
 import { SolicitudVacacionesComponent } from './components/solicitud-vacaciones/solicitud-vacaciones.component';
+import { EditVacacionesComponent } from './components/edit-vacaciones/edit-vacaciones.component';
 
 @NgModule({
   declarations: [
@@ -105,6 +106,7 @@ import { SolicitudVacacionesComponent } from './components/solicitud-vacaciones/
     DesarrolloComponent,
     DesarrollosComponent,
     SolicitudVacacionesComponent,
+    EditVacacionesComponent,
   ],
   imports: [
     BrowserModule,

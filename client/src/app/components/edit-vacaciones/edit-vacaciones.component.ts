@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 declare var $: any;
 
 @Component({
-  selector: 'app-solicitud-vacaciones',
-  templateUrl: './solicitud-vacaciones.component.html',
-  styleUrls: ['./solicitud-vacaciones.component.css'],
+  selector: 'app-edit-vacaciones',
+  templateUrl: './edit-vacaciones.component.html',
+  styleUrls: ['./edit-vacaciones.component.css'],
   providers: [VacacionesService, UserService]
 })
-export class SolicitudVacacionesComponent implements OnInit {
-  
+export class EditVacacionesComponent implements OnInit {
+
   public title:string;
   public identity;
   public token;
@@ -33,8 +33,7 @@ export class SolicitudVacacionesComponent implements OnInit {
     private _userService: UserService,
     private _vacacionesService: VacacionesService
   ) { 
-    this.title = 'Realiza tu solicitud de vacaciones!!!';
-    this.vacaciones = new Vacaciones("","","",Date(),"","","","");
+    this.title = 'Solicitud de vacaciones!!!';
     this.url = GLOBAL.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
@@ -44,7 +43,6 @@ export class SolicitudVacacionesComponent implements OnInit {
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
     this.fechas();
-    this.vacaciones = new Vacaciones("","",this.identity.name+' '+this.identity.surname,Date(),"","","","");
   }
   fechas(){
     var fechaEstimada = new Date(this.fecha);
@@ -53,13 +51,12 @@ export class SolicitudVacacionesComponent implements OnInit {
     console.log(fechaEstimada);
     return fechaEstimada;
   }
-  onSubmit(form:any){
+  onSubmit(){
     this._vacacionesService.saveVacaciones(this.vacaciones, this.token).subscribe(
       response =>{
         if(response.vacaciones){
           this.token = response.token;
           this.status = 'success';
-          form.reset();
         }else{
           this.status = 'error';
         }
