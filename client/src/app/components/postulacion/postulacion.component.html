@@ -27,38 +27,39 @@
         <form #registerPostulacionForm="ngForm" (ngSubmit)="onSubmit(registerPostulacionForm)">
             <div class="row-lg-12">
                 <div class="col-lg-6">
-<span id="oculto">
-                    <p>
-                        <label>User</label>
-                        <input type="text" name="user" class="form-control" required value="{{identity._id}}"
-                            disabled="" />
-                    </p>
-                    <p>
-                        <label>Oferta Laboral</label>
-                        <input type="text" name="ofertaLaborall" class="form-control" required value="{{ofertaLaboral._id}}"
-                            disabled="" />
-                    </p>
-                    <p>
-                        <label>Fecha de postulacion </label>
-                        <input id="fech" type="date" name="fechaPostulacion" #fechaPostulacion="ngModel"
-                            [(ngModel)]="postulacion.fechaPostulacion" class="form-control" 
-                            
-                            
-                            required/>
-                        <span *ngIf="!fechaPostulacion.valid && fechaPostulacion.touched">
-                            fecha de ingreso obligatoria
-                        </span>
-                    </p>
-</span>
-                    <p>
-                        <label>politica</label>
-                        <input type="text" name="politica" #politica="ngModel" [(ngModel)]="postulacion.politica"
-                            class="form-control" required>
+                    <span id="oculto">
+                        <p>
+                            <label>User</label>
+                            <input type="text" name="user" class="form-control" required value="{{identity._id}}"
+                                disabled="" />
+                        </p>
+                        <p>
+                            <label>Oferta Laboral</label>
+                            <input type="text" name="ofertaLaborall" class="form-control" required
+                                value="{{ofertaLaboral._id}}" disabled="" />
+                        </p>
+                        <p>
+                            <label>Fecha de postulacion </label>
+                            <input id="fech" type="date" name="fechaPostulacion" #fechaPostulacion="ngModel"
+                                [(ngModel)]="postulacion.fechaPostulacion" class="form-control" required />
+                            <span *ngIf="!fechaPostulacion.valid && fechaPostulacion.touched">
+                                fecha de ingreso obligatoria
+                            </span>
+                        </p>
+                    </span>
+                    <div class="form-group">
+                        <label for="politica">Politica</label>
+                    </div>
+                    <br>
+                    <div class="form-group radibuttons">
+                        <input type="radio" name="politica" value="Acepta" #politica="ngModel"
+                            [(ngModel)]="postulacion.politica" /> Acepta la politica de datos?
+                    </div>
 
-                        <span *ngIf="!politica.valid && politica.touched">
-                            La politica es obligatorio
-                        </span>
-                    </p>
+                    <small *ngIf="!politica.valid && politica.touched">
+                        La politica es valida
+                    </small>
+
                     <div class="col-lg-12 text-center">
                         <input type="submit" value="{{ title }}" class="btn btn-succes"
                             [disabled]="!registerPostulacionForm.form.valid" />

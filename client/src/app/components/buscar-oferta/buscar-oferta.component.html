@@ -24,7 +24,9 @@
             </thead>
             <tbody *ngFor="let ofertaLaboral of ofertaLaborals">
                 <tr *ngIf="identity.role == 'admin' || identity._id == ofertaLaboral.user
-              || identity.cargo == 'rrhh'">
+              || identity.cargo == 'rrhh'
+              ||ofertaLaboral.activo == 'Activo'
+              ">
                     <td>{{ofertaLaboral.titulo}}</td>
                     <td>{{ofertaLaboral.cargo}}</td>
                     <td>{{ofertaLaboral.description}}</td>
