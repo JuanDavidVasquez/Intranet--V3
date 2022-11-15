@@ -26,7 +26,7 @@
     > <i class="fa fa-coffee">
         <img src="../../../assets/img/menuComprimido/pago.png"/>
     </i> </a>
-    <a href="#" class="menu-item red"
+    <a [routerLink]="['/solicitar-vacaciones', identity._id]" class="menu-item red"
     (mouseover)="vacaciones=true" (mouseout)="vacaciones=false"
     > <i class="fa fa-heart">
         <img src="../../../assets/img/menuComprimido/vacaciones.png"/>

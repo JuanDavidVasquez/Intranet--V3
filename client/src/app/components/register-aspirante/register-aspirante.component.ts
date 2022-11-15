@@ -37,7 +37,6 @@ export class RegisterAspiranteComponent implements OnInit {
 
   ngOnInit(): void {
     this.identity = this._userService.getIdentity();
-    console.log(this.token);
     $('body').css('background','url(../../../assets/img/rrhh/fondorrhh.jpg)')
     .css('background-repeat','no-repeat');
     this.fecha = Date();

@@ -37,6 +37,7 @@ import { BuscarOfertaComponent } from './components/buscar-oferta/buscar-oferta.
 import { PortalComponent } from './components/portal/portal.component';
 import { DisenoComponent } from './components/diseno/diseno.component';
 import { PostulacionComponent } from './components/postulacion/postulacion.component';
+import { SolicitudVacacionesComponent } from './components/solicitud-vacaciones/solicitud-vacaciones.component';
 
 
 const routes: Routes = [
@@ -78,6 +79,7 @@ const routes: Routes = [
   {path: 'portal-de-empleo', component:PortalComponent},
   {path: 'diseño', component:DisenoComponent},
   {path: 'postulacion/:id', component:PostulacionComponent},
+  {path: 'solicitar-vacaciones/:id', component:SolicitudVacacionesComponent},
   {path: '**', component:ErrorComponent }
 ];
 

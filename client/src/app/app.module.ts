@@ -53,6 +53,7 @@ import { OrganigramaComponent } from './components/organigrama/organigrama.compo
 import { PostulacionComponent } from './components/postulacion/postulacion.component';
 import { DesarrolloComponent } from './components/desarrollo/desarrollo.component';
 import { DesarrollosComponent } from './components/desarrollos/desarrollos.component';
+import { SolicitudVacacionesComponent } from './components/solicitud-vacaciones/solicitud-vacaciones.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { DesarrollosComponent } from './components/desarrollos/desarrollos.compo
     PostulacionComponent,
     DesarrolloComponent,
     DesarrollosComponent,
+    SolicitudVacacionesComponent,
   ],
   imports: [
     BrowserModule,
