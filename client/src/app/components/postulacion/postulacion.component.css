@@ -1,7 +1,17 @@
 .container-fluid{
-    padding: 15rem;
+    padding: 10rem;
 }
 #oculto{
     visibility: hidden;
     display: none;
+}
+.imagen-oferta{
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    transition: all 500ms;
+}
+
+.imagen-oferta:hover{
+    box-shadow: #ccc 0px 0px 20px 20px;
 }
