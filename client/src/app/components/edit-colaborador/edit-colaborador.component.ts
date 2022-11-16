@@ -28,7 +28,7 @@ export class EditColaboradorComponent implements OnInit {
 		private _userService: UserService,
 		private _uploadService: UploadService
 	){
-		this.title = 'Actualizar datos Colaborador';
+		this.title = 'Actualizar datos del colaborador';
 		this.user = this._userService.getIdentity();
 		this.identity = this.user;
 		this.token = this._userService.getToken();

@@ -1,0 +1,16 @@
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formulario{
+    padding: 15rem;
+}
+p{
+    width: 50vh;
+}
