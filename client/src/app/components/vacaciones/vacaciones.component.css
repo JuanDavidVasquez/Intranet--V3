@@ -1,0 +1,13 @@
+h1{
+    font-family: monospace;
+    color: #34A5B2;
+}
+app-vacacion{
+    display: contents;
+}
+.container-fluid{
+    padding: 15rem;
+}
+.container{
+    padding-top: 5rem;
+}

@@ -1,0 +1,35 @@
+<app-menus></app-menus>
+<div class="container-fluid">
+<h1>
+    {{title}}
+</h1>
+    <div class="row-lg-8">
+        <div class="col-lg-9" id="favorita" *ngIf="favorita">
+            <h2 class="subheader">
+                {{ favorita.name | uppercase }}
+            </h2>
+            <h4>
+                {{ favorita.fechaInicio }}
+            </h4>
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Solicitante</th>
+                        <th scope="col">Fecha de inicio</th>
+                        <th scope="col">Fecha de retorno</th>
+                        <th scope="col">Gestionar solicitud</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let vacaciones of vacacioness">
+                    <app-vacacion [vacaciones]="vacaciones" (MarcarFavorita)="mostrarFavorita($event)">
+
+                    </app-vacacion>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

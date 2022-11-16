@@ -6,12 +6,9 @@ import { UploadService } from 'src/app/service/upload.service';
 import { GLOBAL } from '../../service/global';
 import { gsap } from "gsap";
 declare var $:any;
-
-
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
 
-declare var $:any;
 
 @Component({
   selector: 'app-noticias',
@@ -66,7 +63,7 @@ export class NoticiasComponent implements OnInit {
           this.status = 'erroor';
         }
       }
-    )
+    );
    }
    goSearch(){
     this._router.navigate(['/buscar-oferta', this.searchString]);

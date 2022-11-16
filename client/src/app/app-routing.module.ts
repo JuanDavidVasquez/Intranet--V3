@@ -39,6 +39,8 @@ import { DisenoComponent } from './components/diseno/diseno.component';
 import { PostulacionComponent } from './components/postulacion/postulacion.component';
 import { SolicitudVacacionesComponent } from './components/solicitud-vacaciones/solicitud-vacaciones.component';
 import { EditVacacionesComponent } from './components/edit-vacaciones/edit-vacaciones.component';
+import { VacacionesComponent } from './components/vacaciones/vacaciones.component';
+
 
 
 const routes: Routes = [
@@ -82,6 +84,7 @@ const routes: Routes = [
   {path: 'postulacion/:id', component:PostulacionComponent},
   {path: 'solicitar-vacaciones/:id', component:SolicitudVacacionesComponent},
   {path: 'edit-vacaciones/:id', component:EditVacacionesComponent},
+  {path: 'vacaciones', component:VacacionesComponent},
   {path: '**', component:ErrorComponent }
 ];
 

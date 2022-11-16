@@ -22,6 +22,7 @@ export class EditVacacionesComponent implements OnInit {
   public status:string;
   public url: string;
   public vacaciones: Vacaciones;
+  public vacacionesid;
   public user: User;
   public fecha:any;
   public fechaEstimada:any;
@@ -35,6 +36,7 @@ export class EditVacacionesComponent implements OnInit {
   ) { 
     this.title = 'Solicitud de vacaciones!!!';
     this.url = GLOBAL.url;
+   // this.vacacionesid = this._vacacionesService.getVacacionesid();
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
     this.fecha = Date(); 
@@ -58,7 +60,7 @@ export class EditVacacionesComponent implements OnInit {
   getVacaciones(id,token){
     this._vacacionesService.getVacaciones(id,token).subscribe(
       response => {
-				this.getVacaciones = response.vacaciones;
+				this.vacaciones = response.vacaciones;
 			},
 			error => {
 				console.log(<any>error);
