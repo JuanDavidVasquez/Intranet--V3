@@ -1,3 +1,6 @@
 th{
     padding: 10px;
 }
+td{
+    cursor: pointer;
+}

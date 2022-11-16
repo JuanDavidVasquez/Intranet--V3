@@ -51,4 +51,5 @@ input[type='submit']:hover {
     display: flex;
     flex-direction: column;
     padding: 16rem;
+    background: #fff;
 }
