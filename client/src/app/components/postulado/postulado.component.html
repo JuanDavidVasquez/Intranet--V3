@@ -1,6 +1,5 @@
-<div (click)="seleccionar($event, postulacion)" class="pointer">
-    <div class="row-lg-6">
-        <h1>{{postulacion._id}}</h1>
-        <p>{{postulacion.fechaPostulacion}}</p>
-    </div>
-</div>
+<tr class="pointer">
+    <td (click)="seleccionar($event, postulacion)" >{{ postulacion._id }}</td>
+    <td (click)="seleccionar($event, postulacion)" >{{ postulacion.ofertaLaborall }}</td>  
+    <td (click)="seleccionar($event, postulacion)" >{{ postulacion.fechaPostulacion }}</td>
+</tr>

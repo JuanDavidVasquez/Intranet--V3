@@ -1,7 +1,23 @@
-<p>postulados works!</p>
-
-<div *ngFor="let postulacion of postulacions" class="item-user">
-    <app-postulado [postulacion]="postulacion" (MarcarFavorita)="mostrarFavorita($event)">
+<app-menus></app-menus>
+<div class="container-fluid">
     
-    </app-postulado>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Solicitante</th>
+                    <th scope="col">Fecha de ofertaLaboral</th>
+                    <th scope="col">Fecha de postulacion</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let postulacion of postulacions" class="item-user">
+                <app-postulado [postulacion]="postulacion" (MarcarFavorita)="mostrarFavorita($event)">
+                </app-postulado>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-9" id="favorita" *ngIf="favorita">
+        <h4>ID oferta laboral{{ favorita.ofertaLaborall }}</h4>
+        <h4>Fecha postulacion{{ favorita.fechaPostulacion }}</h4>
+    </div>
 </div>

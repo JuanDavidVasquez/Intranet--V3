@@ -42,9 +42,9 @@ export class PostuladosComponent implements OnInit {
     this.mostrarFavorita(event);
   }
   mostrarFavorita(event: any){
-    this.favorita = event.user;
-    $('#favorita').toggle('drop', 100);
-    $('#favorita').toggle('drop', 700);
+    this.favorita = event.postulacion;
+    $('#favorita').toggle('drop');
+    $('#favorita').toggle('drop');
   }
   getPostulacions(){
     this._postulacionService.getPostulacions(this.token).subscribe(

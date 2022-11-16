@@ -43,6 +43,7 @@ export class VacacionesComponent implements OnInit {
   mostrarFavorita(event: any){
     this.favorita = event.vacaciones;
     $('#favorita').toggle('explode');
+    $('#favorita').toggle('explode');
   }
   getVacacioness(){
     this._vacacionesService.getVacacioness().subscribe(
