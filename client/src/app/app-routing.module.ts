@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './components/error/error.component';
 
@@ -43,6 +43,7 @@ import { VacacionesComponent } from './components/vacaciones/vacaciones.componen
 import { EditColaboradorComponent } from './components/edit-colaborador/edit-colaborador.component';
 import { PostuladoComponent } from './components/postulado/postulado.component';
 import { PostuladosComponent } from './components/postulados/postulados.component';
+import { TestsComponent } from './components/tests/tests.component';
 
 
 const routes: Routes = [
@@ -89,6 +90,7 @@ const routes: Routes = [
   {path: 'vacaciones', component:VacacionesComponent},
   {path: 'edit-colaborador/:id', component:EditColaboradorComponent},
   {path: 'postulados', component:PostuladosComponent},
+  {path: 'tester', component:TestsComponent},
   {path: '**', component:ErrorComponent }
 ];
 

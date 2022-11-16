@@ -60,6 +60,7 @@ import { VacacionComponent } from './components/vacacion/vacacion.component';
 import { EditColaboradorComponent } from './components/edit-colaborador/edit-colaborador.component';
 import { PostuladosComponent } from './components/postulados/postulados.component';
 import { PostuladoComponent } from './components/postulado/postulado.component';
+import { TestsComponent } from './components/tests/tests.component';
 
 @NgModule({
   declarations: [
@@ -117,13 +118,14 @@ import { PostuladoComponent } from './components/postulado/postulado.component';
     EditColaboradorComponent,
     PostuladosComponent,
     PostuladoComponent,
+    TestsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
