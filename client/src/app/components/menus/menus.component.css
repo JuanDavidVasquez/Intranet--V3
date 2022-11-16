@@ -45,3 +45,7 @@ transition: all 500ms;
     background: #00A6B6;
     border-radius: 25px;
 }
+.navbar-default .navbar-nav>.open>a{
+    background-color: #4EADBA;
+    border-radius: 25px;
+}
