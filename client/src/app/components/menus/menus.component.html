@@ -34,7 +34,7 @@
             Completa tu registro aqui!!!
           </a>
         </li>
-       <li class="dropdown">
+       <li class="dropdown" *ngIf="identity.role != ''">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Solicitudes <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Certificado Laboral</a></li>
