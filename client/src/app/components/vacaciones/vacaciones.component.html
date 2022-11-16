@@ -8,8 +8,13 @@
             <h2 class="subheader">
                 {{ favorita.name | uppercase }}
             </h2>
-            <h4>{{ favorita.fechaInicio }}</h4>
-            <h4>{{ favorita.fechaFin }}</h4>
+            <h4>Fecha de inicio{{ favorita.fechaInicio }}</h4>
+            <h4>Fecha retorno{{ favorita.fechaFin }}</h4>
+            <p>Aprobaciones:<br/>
+            Jefe Inmediaro<span> {{ favorita.AprovacionJefe }} </span>
+            <br/>
+            Recursos Humanos <span> {{ favorita.AprovacionRrHh }} </span>
+            </p>
         </div>
         <div class="container">
             <table class="table table-striped">
