@@ -20,7 +20,7 @@
         <h2 class="subheader">
             {{ favorita.name | uppercase }}
         </h2>
-        <img src="{{ url+'get-image-user/'+ favorita.image }}" class="imagen-usuario" />
+        <img src="{{ url+'get-image-user/'+ favorita.image }}" class="imagen-usuario" *ngIf="favorita.image"/>
         <h4>
            Cargo: {{ favorita.cargo }}
         </h4>

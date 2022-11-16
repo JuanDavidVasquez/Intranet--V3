@@ -46,6 +46,8 @@ export class NoticiasComponent implements OnInit {
   }
   mostrarFavorita(event: any){
     this.favorita = event.noticia;
+    $('#favorita').toggle('drop');
+    $('#favorita').toggle('drop');
   }
   getNoticias(){
     this._noticiaService.getNoticias().subscribe(

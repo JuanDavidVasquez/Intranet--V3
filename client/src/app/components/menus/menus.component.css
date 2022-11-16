@@ -49,3 +49,6 @@ transition: all 500ms;
     background-color: #4EADBA;
     border-radius: 25px;
 }
+a{
+    cursor: pointer;
+}

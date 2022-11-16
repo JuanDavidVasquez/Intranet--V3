@@ -42,8 +42,8 @@ export class UsersComponent implements OnInit {
   }
   mostrarFavorita(event: any){
     this.favorita = event.user;
-    $('#favorita').toggle('explode', 500);
-    $('#favorita').toggle('explode', 500);
+    $('#favorita').toggle('drop', 100);
+    $('#favorita').toggle('drop', 700);
   }
    getUsers(){
     this._userService.getUsers().subscribe(
