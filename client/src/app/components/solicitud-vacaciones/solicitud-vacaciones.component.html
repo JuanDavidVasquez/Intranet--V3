@@ -1,6 +1,9 @@
 <app-menus></app-menus>
 
 <div class="col-lg-12 registros">
+    <a [routerLink]="['/vacaciones']"
+    *ngIf="identity.role == 'admin' || identity.role == 'rrhh'"
+    >Ver todas las solicitudes</a>
     <div class="container">
         <h1 class="h1-strong">{{ title }}</h1>
         <div class="alert alert-success" *ngIf="status == 'success'">

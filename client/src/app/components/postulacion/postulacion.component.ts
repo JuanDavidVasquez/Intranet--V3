@@ -76,7 +76,7 @@ export class PostulacionComponent implements OnInit {
           this.token = response.token;
           this.status = 'success';
           form.reset();
-          this._router.navigate(['/portal-de-empleos']);
+          //this._router.navigate(['/portal-de-empleos']);
         }else{
           this.status = 'error';
         }
