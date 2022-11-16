@@ -1,7 +1,6 @@
 <tr>
-    <th scope="row" (click)="seleccionar($event, vacaciones)">{{ vacaciones._id}}</th>
     <td (click)="seleccionar($event, vacaciones)">{{ vacaciones.name }}</td>
     <td (click)="seleccionar($event, vacaciones)">{{ vacaciones.fechaInicio }}</td> 
     <td (click)="seleccionar($event, vacaciones)">{{ vacaciones.fechaFin }}</td> 
-    <button class="btn btn-warning">Gestionar</button>
+    <a [routerLink]="['/edit-vacaciones',vacaciones._id]" routerLinkActive="router-link-active" ><button class="btn btn-warning">Gestionar</button></a>
 </tr>
