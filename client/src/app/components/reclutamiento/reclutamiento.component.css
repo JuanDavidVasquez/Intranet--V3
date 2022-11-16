@@ -152,9 +152,6 @@ tr:hover{
     background: #00000082 !important;
 }
 
-.search{
-   
-}
-#buscador{
-
+.chart-container{
+    max-width: 100%;
 }

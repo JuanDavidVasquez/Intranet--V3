@@ -5,6 +5,7 @@ import { Aspirante } from 'src/app/models/aspirante';
 import { UserService } from 'src/app/service/user.service';
 import { AspiranteService } from 'src/app/service/aspirante.service';
 import { GLOBAL } from 'src/app/service/global';
+import Chart from 'chart.js/auto';
 declare var $:any;
 
 @Component({
@@ -24,6 +25,7 @@ export class ReclutamientoComponent implements OnInit {
 	public users: User[];
 	public user: User;
 	public searchString: string;
+	public chart: any;
 
 
   constructor(
@@ -43,8 +45,7 @@ export class ReclutamientoComponent implements OnInit {
 				.css('background-repeat','no-repeat');
 
 	this.getAspirantes(this.token);
-	console.log(this.token+' token de reclutamiento');
-	console.log(this.identity);
+	this.createChart();
 }
   getAspirantes(token){
 		this._aspiranteService.getAspirantes(token).subscribe(
@@ -68,5 +69,35 @@ export class ReclutamientoComponent implements OnInit {
 	}
 	goSearch(){
 		this._router.navigate(['/buscar-aspirante', this.searchString]);
+	  }
+
+	  createChart(){
+  
+		this.chart = new Chart("MyChart", {
+		  type: 'bar', //this denotes tha type of chart
+	
+		  data: {// values on X-Axis
+			labels: ['Psicologa', '2022-05-11', '2022-05-12','2022-05-13',
+									 '2022-05-14', '2022-05-15', '2022-05-16','2022-05-17', ], 
+			   datasets: [
+			  {
+				label: "Laura",
+				data: ['576','576', '572', '79', '92',
+									 '574', '573', '576'],
+				backgroundColor: 'blue'
+			  },
+			  {
+				label: "Chacon",
+				data: ['542', '542', '536', '327', '17',
+										 '0.00', '538', '541'],
+				backgroundColor: 'limegreen'
+			  }  
+			]
+		  },
+		  options: {
+			aspectRatio:2.5
+		  }
+		  
+		});
 	  }
 }

@@ -1,5 +1,16 @@
 <app-menus></app-menus>
 <div class="container-fluid">
+  <div class="container">
+    <div class="contenedor-graficos">
+      <div class="chart-container">
+        <canvas  id="MyChart" >{{ chart }}</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
     <div class="container tablas">
         <div class="row" *ngIf="identity.cargo == 'rrhh' || identity.role == 'admin'">
           <div class="search" id="search">
