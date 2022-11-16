@@ -315,9 +315,9 @@ body {
 
 h1{
    position: fixed;
-   top: 47%;
+   top: 85%;
    font-size: 55px;
-   left: 75%;
+   left: 5%;
    letter-spacing: 2px;
    height: -webkit-fill-available;
    color: transparent;

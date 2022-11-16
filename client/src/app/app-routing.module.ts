@@ -40,6 +40,7 @@ import { PostulacionComponent } from './components/postulacion/postulacion.compo
 import { SolicitudVacacionesComponent } from './components/solicitud-vacaciones/solicitud-vacaciones.component';
 import { EditVacacionesComponent } from './components/edit-vacaciones/edit-vacaciones.component';
 import { VacacionesComponent } from './components/vacaciones/vacaciones.component';
+import { EditColaboradorComponent } from './components/edit-colaborador/edit-colaborador.component';
 
 
 
@@ -85,6 +86,7 @@ const routes: Routes = [
   {path: 'solicitar-vacaciones/:id', component:SolicitudVacacionesComponent},
   {path: 'edit-vacaciones/:id', component:EditVacacionesComponent},
   {path: 'vacaciones', component:VacacionesComponent},
+  {path: 'edit-colaborador/:id', component:EditColaboradorComponent},
   {path: '**', component:ErrorComponent }
 ];
 

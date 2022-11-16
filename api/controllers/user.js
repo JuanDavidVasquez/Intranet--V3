@@ -378,6 +378,37 @@ function updateUser(req, res){
 		 });
 }
 
+function updateColaborador(req, res){
+	var userId = req.params.id;
+	var update = req.body;
+
+	// borrar propiedad password
+	delete update.password;
+
+
+	User.find({ $or: [
+				 {email: update.email.toLowerCase()},
+				 {nick: update.nick.toLowerCase()}
+		 ]}).exec((err, users) => {
+		 
+		 	var user_isset = false;
+		 	users.forEach((user) => {
+		 		if(user && user._id != userId) user_isset = true;
+		 	});
+
+		 	if(user_isset) return res.status(404).send({message: 'Los datos ya están en uso'});
+		 	
+		 	User.findByIdAndUpdate(userId, update, {new:true}, (err, userUpdated) => {
+				if(err) return res.status(500).send({message: 'Error en la petición'});
+
+				if(!userUpdated) return res.status(404).send({message: 'No se ha podido actualizar el usuario'});
+
+				return res.status(200).send({user: userUpdated});
+			});
+
+		 });
+}
+
 
 // Subir archivos de imagen/avatar de usuario
 function uploadImage(req, res){
@@ -451,5 +482,6 @@ module.exports = {
 	updateUser,
 	uploadImage,
 	getImageFile,
-    getCounters
+    getCounters,
+	updateColaborador
 }

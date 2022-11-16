@@ -8,6 +8,7 @@
         <div class="people">
             <div *ngFor="let user of users" class="item-user">
                 <app-perfil-mentius [user]="user" (MarcarFavorita)="mostrarFavorita($event)">
+                
                 </app-perfil-mentius>
             </div>
         </div>
@@ -26,6 +27,9 @@
         <h4>
             E mail: {{ favorita.email }}
         </h4>
+        <a [routerLink]="['/edit-colaborador', favorita._id]">
+            <button class="btn btn-warning">Editar Colaborador</button>
+        </a>
     </div>
 </div>
 <app-footer></app-footer>

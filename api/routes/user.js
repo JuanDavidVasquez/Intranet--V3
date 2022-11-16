@@ -16,6 +16,7 @@ api.get('/user/:id', md_auth.ensurreAuth, UserController.getUser);
 api.get('/users', md_auth.ensurreAuth, UserController.getUsers);
 api.get('/counters/:id?', md_auth.ensurreAuth, UserController.getCounters);
 api.put('/update-user/:id', md_auth.ensurreAuth, UserController.updateUser);
+api.put('/update-colaborador/:id', md_auth.ensurreAuth, UserController.updateColaborador);
 api.post('/upload-image-user/:id', [md_auth.ensurreAuth, md_upload], UserController.uploadImage);
 api.get('/get-image-user/:imageFile', UserController.getImageFile);
 
