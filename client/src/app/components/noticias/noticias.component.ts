@@ -38,7 +38,6 @@ export class NoticiasComponent implements OnInit {
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
    }
-
   ngOnInit(): void {
      this.getNoticias();
      this.mostrarFavorita(event);

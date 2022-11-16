@@ -7,7 +7,6 @@
           <img src="../../../assets/img/logo-blanco.png">
         </a>
       </div>
-
       <ul class="nav navbar-nav" *ngIf="identity">
         <li>
           <a [routerLink]="['/noticias']" [routerLinkActive]="['active']">
@@ -43,7 +42,7 @@
               </a>
             </li>
             <li><a href="#">Desprendible de Nomina</a></li>
-            <li><a href="#">Vacaciones</a></li>
+            <li><a [routerLink]="['/solicitar-vacaciones', identity._id]">Vacaciones</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Incapacidades</a></li>
             <li role="separator" class="divider"></li>
