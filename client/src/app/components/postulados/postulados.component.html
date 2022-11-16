@@ -1,0 +1,7 @@
+<p>postulados works!</p>
+
+<div *ngFor="let postulacion of postulacions" class="item-user">
+    <app-postulado [postulacion]="postulacion" (MarcarFavorita)="mostrarFavorita($event)">
+    
+    </app-postulado>
+</div>

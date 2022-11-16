@@ -58,6 +58,8 @@ import { EditVacacionesComponent } from './components/edit-vacaciones/edit-vacac
 import { VacacionesComponent } from './components/vacaciones/vacaciones.component';
 import { VacacionComponent } from './components/vacacion/vacacion.component';
 import { EditColaboradorComponent } from './components/edit-colaborador/edit-colaborador.component';
+import { PostuladosComponent } from './components/postulados/postulados.component';
+import { PostuladoComponent } from './components/postulado/postulado.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +115,8 @@ import { EditColaboradorComponent } from './components/edit-colaborador/edit-col
     VacacionesComponent,
     VacacionComponent,
     EditColaboradorComponent,
+    PostuladosComponent,
+    PostuladoComponent,
   ],
   imports: [
     BrowserModule,
